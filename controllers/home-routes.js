@@ -6,10 +6,10 @@ const router = require("express").Router();
 //GET//http://localhost:3001/
 router.get("/", async (req, res) => {
   try {
-    // if (req.session.loggedIn) {
-    //   res.redirect('/home');
-    //   return;
-    // }
+    if (req.session.loggedIn) {
+      res.redirect('/home');
+      return;
+    }
     res.render('signup', { title: 'signup-page', layout: 'signup' });
   } catch (err) {
     console.log(err);
@@ -20,11 +20,7 @@ router.get("/", async (req, res) => {
 
 //GET//http://localhost:3001/login
 router.get("/login", (req, res) => {
-  // if (req.session.loggedIn) {
-  //   res.redirect("/home");
-  //   return;
-  // }
-  res.render('loginn', { title: 'signup-page', layout: 'signup' });
+  res.render('login', { title: 'signup-page', layout: 'signup' });
 });
 
 

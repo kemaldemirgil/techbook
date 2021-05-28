@@ -22,13 +22,10 @@ const sess = {
   cookie: {expires : 10 * 60 * 1000 },
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize,
-  }),
+  store: new SequelizeStore({ db: sequelize }),
 };
 
 app.use(session(sess));
-app.use(routes);
 
 // Handlebars...............................................
 const hbs = exphbs.create({ helpers });
@@ -40,6 +37,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(__dirname, '/public/upload')));
+
+app.use(routes);
 
 // Listener.................................................
 sequelize.sync({ force: false }).then(() => {

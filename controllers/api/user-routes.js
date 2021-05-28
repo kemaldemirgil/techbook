@@ -11,11 +11,19 @@ router.post('/', async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: req.body.password,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      city: req.body.city,
+      country: req.body.country,
+      github: req.body.github,
+      linkedin: req.body.linkedin,
+      experience: req.body.experience,
     });
 
     req.session.save(() => {
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-
       res.status(200).json(dbUserData);
     });
   } catch (err) {

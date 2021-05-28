@@ -38,6 +38,34 @@ User.init(
         len: [6],
       },
     },
+    firstname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    linkedin: {
+      type: DataTypes.STRING,
+      unique: true,
+    },
+    city: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    country: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    github: {
+      type: DataTypes.STRING,
+      unique: true,
+    },
+    experience: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     hooks: {
