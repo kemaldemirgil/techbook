@@ -1,0 +1,11 @@
+<div class="wrapper">
+    <form action="/profile" method="POST" class="profile-picture" enctype="multipart/form-data">
+    <h3>Upload Profile Photo</h3>
+    <input type="file" name="sampleFile" class="img-input" accept="image/*"/>
+    <input type="submit" class="btn btn-primary"/>
+</form>
+    <div class="image-card">
+        {{> user-profile}}
+    </div>
+</div>
+<script src="/js/profile.js"></script>

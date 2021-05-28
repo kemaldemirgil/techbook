@@ -1,0 +1,13 @@
+
+{{#if users.profile_image}}
+<img class="_image" src="/upload/{{users.profile_image}}" alt="User Profile">
+  {{else}}
+<img class="_image" src="/images/default.jpg" alt="User Profile">
+{{/if}}
+<h1 class="_title">{{users.name}}</h1>
+<div class="_job">JOB TITLE</div>
+<p class="_about">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Minima asperiores a ex 
+    accusantium libero officia blanditiis, ullam tempore! Ratione, esse.
+</p>
+<button type="button" class="image-button image-button-color">View Profile</button>

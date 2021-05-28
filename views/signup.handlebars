@@ -1,0 +1,72 @@
+<section>
+    <div class="imgBx">
+        <img src="/images/signup.jpg">
+    </div>
+    <div class="contentBx">
+        <div class="formBx">
+            <h2>Signup</h2>
+            <form class="signup-form">
+                <div class="inputBx">
+                    <span>Username</span>
+                    <input type="text" id="username-signup" autocomplete="off" placeholder="Enter your username">
+                </div>
+                <div class="inputBx">
+                    <span>Email</span>
+                    <input type="text" id="email-signup" autocomplete="off" placeholder="Enter your email">
+                </div>
+                <div class="inputBx">
+                    <span>Password</span>
+                    <input type="password" id="password-signup" autocomplete="off" placeholder="Enter your password">
+                </div>
+                <div class="account">
+                    <span>Account Type</span><br>
+                    <div>
+                        <input type="radio" id="user" name="account-type" value="user">
+                        <label for="user">User</label>
+                        <input type="radio" id="recruiter" name="account-type" value="recruiter">
+                        <label for="recruiter">Recruiter</label><br>
+                    </div>
+                </div>
+                <div class="inputBx">
+                    <button class="signup-button" id="modal-button">Sign up</button>
+                </div>
+                <div class="inputBx">
+                    <p>Already have an account? <a href="/login">Log in</a></p>
+                </div>
+            </form>
+            <!-- modal -->
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h1 class="page-title text-dark">User Information</h1>
+                    <form class="form create-post">
+                        <div class="inputBx">
+                            <span>First Name</span>
+                            <input type="text" id="username-signup" autocomplete="off" placeholder="Enter your username">
+                        </div>
+                        <div class="inputBx">
+                            <span>Last Name</span>
+                            <input type="text" id="username-signup" autocomplete="off" placeholder="Enter your username">
+                        </div>
+                        <div class="inputBx">
+                            <span>Github</span>
+                            <input type="text" id="username-signup" autocomplete="off" placeholder="Enter your username">
+                        </div>
+                        <div class="inputBx">
+                            <span>LinkedIn</span>
+                            <input type="text" id="username-signup" autocomplete="off" placeholder="Enter your username">
+                        </div>
+                        <div class="inputBx">
+                            <span>Location</span>
+                            <input type="text" id="username-signup" autocomplete="off" placeholder="Enter your username">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-dark btn-block" id="create-user" type="submit">Create Account</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="./js/signup.js"></script>
