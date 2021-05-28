@@ -14,6 +14,10 @@ Technology.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    techname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   },
   {
     sequelize,

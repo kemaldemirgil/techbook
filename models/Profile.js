@@ -14,6 +14,26 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    userid: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+    },
+    profilepic: {
+      type: DataTypes.BLOB,
+      allowNull: true,
+    },
+    aboutme: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    contactme: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        isEmail: true,
+      },
+    },
   },
   {
     sequelize,

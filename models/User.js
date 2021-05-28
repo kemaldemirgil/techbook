@@ -23,6 +23,18 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    firstname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    lastname: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    linkedin: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     email: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -31,12 +43,24 @@ User.init(
         isEmail: true,
       },
     },
+    locationcity: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
+    locationcountry: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
         len: [6],
       },
+    },
+    experiencelvl: {
+      type: DataTypes.STRING,
+      allowNull: true,
     },
   },
   {
