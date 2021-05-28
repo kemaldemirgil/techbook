@@ -4,7 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/Techbook-Organization/techbook?color=pink&label=License&logo=github&logoColor=pink)
 ![GitHub contributors](https://img.shields.io/github/contributors/Techbook-Organization/techbook?color=yellow&label=Contributors&logo=git&logoColor=yellow)
 # Techbook
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://my-techbook.herokuapp.com)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://my-techbook.herokuapp.com)\
 Techbook allows people from the Tech industry to connect with each other, gives recruiters the ability to connect and interact with people, enables students to improve their work. 
 
 
