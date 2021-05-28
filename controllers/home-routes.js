@@ -1,5 +1,6 @@
 //Imports............................................
 const router = require("express").Router();
+const { User } = require('../models');
 
 //HomeRoutes........................................
 
@@ -36,15 +37,67 @@ router.get("/questions", (req, res) => {
 
 //GET//http://localhost:3001/home
 router.get("/home", async (req, res) => {
-  if (!req.session.loggedIn) {
-    res.redirect("/login");
-  } else {
-    try {
-      res.render("home");
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
+  try {
+    if (!req.session.loggedIn) {
+      res.redirect('/login');
+      return;
     }
+    const dbUserData = await User.findOne({
+      where: {
+        username: req.session.username,
+      },
+    });
+    const user = dbUserData.get({ plain: true })
+    console.log(user);
+    res.status(200);
+    res.render('home', { user, title: 'home-page', layout: 'main' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//GET//http://localhost:3001/profile
+router.get("/profile", async (req, res) => {
+  try {
+    if (!req.session.loggedIn) {
+      res.redirect('/login');
+      return;
+    }
+    const dbUserData = await User.findOne({
+      where: {
+        username: req.session.username,
+      },
+    });
+    const user = dbUserData.get({ plain: true })
+    console.log(user);
+    res.status(200);
+    res.render('profile', { user, title: 'profile-page', layout: 'main' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+//GET//http://localhost:3001/search
+router.get("/search", async (req, res) => {
+  try {
+    if (!req.session.loggedIn) {
+      res.redirect('/login');
+      return;
+    }
+    const dbUserData = await User.findOne({
+      where: {
+        username: req.session.username,
+      },
+    });
+    const user = dbUserData.get({ plain: true })
+    console.log(user);
+    res.status(200);
+    res.render('search', { user, title: 'search-page', layout: 'main' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 

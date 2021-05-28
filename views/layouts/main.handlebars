@@ -5,26 +5,37 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Techbook</title>
-  <link rel="stylesheet" type="text/css" href="/css/jass.css">
+  {{!-- <link rel="stylesheet" type="text/css" href="/css/jass.css"> --}}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <link rel="stylesheet" type="text/css" href="/css/nav.css">
   <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
 <body>
-  <header>
-    <h1>Techbook</h1>
-  </header>
-  <nav>
-    <a href="/">Home</a>
-    <button id="logout" class="btn-no-style">Logout</button>
-  </nav>
-  <main>
-    <aside>
-      <h2>Connect with people...</h2>
-    </aside>
-    <div class="gallery">
-      {{{body}}}
+  <div class="container">
+    <div class="circle-container">
+        <div class="circle">
+            <button id="close">
+            <i class="fas fa-times"></i>
+            </button>
+            <button id="open">
+            <i class="fas fa-bars"></i>
+            </button>
+        </div>
     </div>
-  </main>
+      
+    {{{body}}}
+
+  </div>
+  <nav>
+      <ul>
+      <li><i class="fas fa-home"></i><a href="/home">Home</a></li>
+      <li><i class="fas fa-user"></i><a href="/profile">Profile</a></li>
+      <li><i class="fas fa-search"></i><a href="/search">Search</a></li>
+      <li><i class="fas fa-sign-out-alt"></i><a href="#" id="logout">Logout</a></li>
+      </ul>
+  </nav>
+
   <script src="/js/logout.js"></script>
 </body>
 
