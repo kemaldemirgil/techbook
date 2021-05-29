@@ -1,6 +1,6 @@
 var nameInputEl = document.querySelector('#username');
 var repoContainerEl = document.querySelector('#repos-container');
-var repoSearchTerm = document.querySelector('#repo-search-term');
+
 
 var formSubmitHandler = function () {
   var username = nameInputEl.innerHTML.trim();
@@ -23,7 +23,7 @@ var getUserRepos = function (user) {
         console.log(response);
         response.json().then(function (data) {
           console.log(data);
-          displayRepos(data, user);
+          displayRepos(data);
         });
       } else {
         alert('Error: ' + response.statusText);
@@ -65,5 +65,5 @@ var displayRepos = function (repos) {
   }
 };
 
-
-document.querySelector(".repo_search").addEventListener("click", () => formSubmitHandler)
+const repoButton = document.querySelector(".get-repos-button");
+repoButton.addEventListener("click", formSubmitHandler);

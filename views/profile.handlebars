@@ -1,5 +1,5 @@
 <div class="content">
-
+    <button class="get-repos-button" type="click">get repos</button>
     <h2 class="fullname">{{user.firstname}} {{user.lastname}}</h2>
     <h3>{{user.city}}/{{user.country}}</h3>
     <p><a href="https://github.com/{{user.github}}" target="_blank" class="repo_search">Github</a></p>
@@ -11,10 +11,12 @@
     <h4>My repositories for <span id="username">{{user.github}}</span></h4>
     <main class="flex-row justify-space-between">
         <div class="col-12 col-md-8">
-            <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
+            <h2 class="subtitle">Showing Repositories for:</h2>
             <div id="repos-container" class="list-group"></div>
         </div>
     </main>
 
     </div>
 </div>
+
+<script src="./js/profile.js"></script>
