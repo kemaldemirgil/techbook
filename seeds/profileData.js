@@ -6,15 +6,12 @@ const { Profile } = require('../models');
 const profiledata = [
   {
     id: 1,
-    username: 'admin',
-    email: 'admin@admin.com',
-    password: 'admin123',
-  },
-  {
-    id: 2,
-    username: 'sarah',
-    email: 'sarah@sarah.com',
-    password: 'sarah123',
+    userid: '32',
+    imagetype: 'sd',
+    imagename: 'ssd',
+    imagedata: 'ssd',
+    aboutme: 'ssd',
+    contactme: "asdas@asdasd.com"
   },
 ];
 

@@ -18,8 +18,16 @@ Profile.init(
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-    profilepic: {
-      type: DataTypes.BLOB,
+    imagetype: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    imagename: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    imagedata: {
+      type: DataTypes.BLOB('long'),
       allowNull: true,
     },
     aboutme: {

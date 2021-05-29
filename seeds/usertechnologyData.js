@@ -6,15 +6,8 @@ const { UserTechnology } = require('../models');
 const usertechnologyData = [
   {
     id: 1,
-    username: 'admin',
-    email: 'admin@admin.com',
-    password: 'admin123',
-  },
-  {
-    id: 2,
-    username: 'sarah',
-    email: 'sarah@sarah.com',
-    password: 'sarah123',
+    techid: '12',
+    userid: '32',
   },
 ];
 

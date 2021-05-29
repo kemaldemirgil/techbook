@@ -117,4 +117,9 @@ nav ul li + li + li + li{
 
 nav * a {
     color: #fff;
+    text-decoration: none;
+}
+
+nav * a:hover {
+    color: #616161;
 }

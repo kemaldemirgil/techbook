@@ -6,6 +6,7 @@ const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 // const fileUpload = require('express-fileupload');
 
+
 // Directories...............................................
 const routes = require('./controllers');
 const sequelize = require('./config/connection');

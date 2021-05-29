@@ -6,15 +6,11 @@ const { Technology } = require('../models');
 const technologyData = [
   {
     id: 1,
-    username: 'admin',
-    email: 'admin@admin.com',
-    password: 'admin123',
+    techname: 'javascript',
   },
   {
     id: 2,
-    username: 'sarah',
-    email: 'sarah@sarah.com',
-    password: 'sarah123',
+    techname: 'css',
   },
 ];
 
