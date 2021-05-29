@@ -6,7 +6,7 @@ const { Profile } = require('../models');
 const profiledata = [
   {
     id: 1,
-    userid: '32',
+    userid: '1',
     imagetype: 'sd',
     imagename: 'ssd',
     imagedata: 'ssd',

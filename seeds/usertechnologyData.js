@@ -6,8 +6,8 @@ const { UserTechnology } = require('../models');
 const usertechnologyData = [
   {
     id: 1,
-    techid: '12',
-    userid: '32',
+    techid: '1',
+    userid: '1',
   },
 ];
 
