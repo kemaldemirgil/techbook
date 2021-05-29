@@ -5,7 +5,7 @@
 
 .content {
   max-width: 1000px;
-  margin: 50px auto;
+  margin: 10px auto;
 }
 
 .content h1 {
@@ -20,4 +20,10 @@
 .content p {
   color: #333;
   line-height: 1.5;
+}
+
+.content .fullname {
+  text-align: left;
+  font-size: 66px;
+  margin: 0%;
 }
