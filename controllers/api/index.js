@@ -1,9 +1,9 @@
 //Imports............................................
 const router = require('express').Router();
-const developerRoutes = require('./developer-routes');
+const userRoutes = require('./user-routes');
 
 //Navigator..........................................
-router.use('/users', developerRoutes);
+router.use('/users', userRoutes);
 
 
 //Exports............................................

@@ -6,6 +6,14 @@
     <p><a href="https://github.com/{{user.github}}" target="_blank">Github</a></p>
     <p><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></p>
     <h3>About me:</h3>
+    {{#if loggedInUser}}
+    <form action="/action_page.php">
+        <textarea id="aboutme-textarea" name="aboutme" rows="4" cols="50"></textarea>
+        <input type="submit" value="Submit">
+    </form>
+    {{else}}
+        <textarea id="aboutme-textarea" name="aboutme" rows="4" cols="50"></textarea>
+    {{/if}}
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere natus similique itaque dolor aut hic!</p>
     <h4>Tools:</h4>
     <h4>My repositories</h4>

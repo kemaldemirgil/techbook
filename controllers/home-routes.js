@@ -25,15 +25,6 @@ router.get("/login", (req, res) => {
 });
 
 
-// //GET//http://localhost:3001/questions
-// router.get("/questions", (req, res) => {
-//   if (req.session.loggedIn) {
-//     res.redirect("/home");
-//     return;
-//   }
-//   res.render('questions', { title: 'questions-page', layout: 'questions' });
-// });
-
 
 //GET//http://localhost:3001/home
 router.get("/home", async (req, res) => {
@@ -50,7 +41,7 @@ router.get("/home", async (req, res) => {
     const user = dbUserData.get({ plain: true })
     console.log(user);
     res.status(200);
-    res.render('home', { user, title: 'home-page', layout: 'main' });
+    res.render('home', { user, loggedIn: req.session.loggedIn, title: 'home-page', layout: 'main' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -72,7 +63,13 @@ router.get("/profile", async (req, res) => {
     const user = dbUserData.get({ plain: true })
     console.log(user);
     res.status(200);
-    res.render('profile', { user, title: 'profile-page', layout: 'main' });
+    res.render('profile', { 
+      user, 
+      loggedIn: req.session.loggedIn, 
+      loggedInUser: req.session.username, 
+      title: 'profile-page', 
+      layout: 'main' 
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -94,7 +91,7 @@ router.get("/search", async (req, res) => {
     const user = dbUserData.get({ plain: true })
     console.log(user);
     res.status(200);
-    res.render('search', { user, title: 'search-page', layout: 'main' });
+    res.render('search', { user, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
