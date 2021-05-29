@@ -21,18 +21,18 @@ router.get("/", async (req, res) => {
 
 //GET//http://localhost:3001/login
 router.get("/login", (req, res) => {
-  res.render('login', { title: 'signup-page', layout: 'signup' });
+  res.render('login', { title: 'login-page', layout: 'signup' });
 });
 
 
-//GET//http://localhost:3001/questions
-router.get("/questions", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/home");
-    return;
-  }
-  res.render('questions', { title: 'questions-page', layout: 'questions' });
-});
+// //GET//http://localhost:3001/questions
+// router.get("/questions", (req, res) => {
+//   if (req.session.loggedIn) {
+//     res.redirect("/home");
+//     return;
+//   }
+//   res.render('questions', { title: 'questions-page', layout: 'questions' });
+// });
 
 
 //GET//http://localhost:3001/home
