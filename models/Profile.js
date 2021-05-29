@@ -17,6 +17,10 @@ Profile.init(
     userid: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
     imagetype: {
       type: DataTypes.STRING,
@@ -33,14 +37,6 @@ Profile.init(
     aboutme: {
       type: DataTypes.STRING,
       allowNull: true,
-    },
-    contactme: {
-      type: DataTypes.STRING,
-      allowNull: false,
-      unique: true,
-      validate: {
-        isEmail: true,
-      },
     },
   },
   {
