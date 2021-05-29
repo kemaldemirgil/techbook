@@ -63,13 +63,7 @@ router.get("/profile", async (req, res) => {
     const user = dbUserData.get({ plain: true })
     console.log(user);
     res.status(200);
-    res.render('profile', { 
-      user, 
-      loggedIn: req.session.loggedIn, 
-      loggedInUser: req.session.username, 
-      title: 'profile-page', 
-      layout: 'main' 
-    });
+    res.render('profile', { user, title: 'profile-page', layout: 'main' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

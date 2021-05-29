@@ -1,19 +1,11 @@
 <div class="content">
-    {{!-- <h1>Profile</h1>
-    <small>{{user.username}}</small> --}}
+
     <h2 class="fullname">{{user.firstname}} {{user.lastname}}</h2>
     <h3>{{user.city}}/{{user.country}}</h3>
-    <p><a href="https://github.com/{{user.github}}" target="_blank">Github</a></p>
+    <p><a href="https://github.com/{{user.github}}" target="_blank" class="repo_search">Github</a></p>
     <p><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></p>
     <h3>About me:</h3>
-    {{#if loggedInUser}}
-    <form action="">
-        <textarea id="aboutme-textarea" name="aboutme" rows="4" cols="50"></textarea>
-        <input type="submit" value="Submit">
-    </form>
-    {{else}}
-        <textarea readonly id="aboutme-textarea" name="aboutme" rows="4" cols="50"></textarea>
-    {{/if}}
+
     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere natus similique itaque dolor aut hic!</p>
     <h4>Tools:</h4>
     <h4>My repositories for <span id="username">{{user.github}}</span></h4>
@@ -26,4 +18,3 @@
 
     </div>
 </div>
-<script src="./js/profile.js"></script>

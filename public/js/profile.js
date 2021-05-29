@@ -65,4 +65,5 @@ var displayRepos = function (repos) {
   }
 };
 
-formSubmitHandler();
+
+document.querySelector(".repo_search").addEventListener("click", () => formSubmitHandler)
