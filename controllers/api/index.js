@@ -1,13 +1,10 @@
 //Imports............................................
 const router = require('express').Router();
-const developerRoutes = require('./developer-routes');
-const recruiterRoutes = require('./recruiter-routes');
-const loginRoute = require('./login-routes');
+const userRoutes = require('./user-routes');
 
 //Navigator..........................................
-router.use('/users', developerRoutes);
-router.use('/recruiter',recruiterRoutes);
-router.use('/login',loginRoute)
+router.use('/users', userRoutes);
+
 
 //Exports............................................
 module.exports = router;

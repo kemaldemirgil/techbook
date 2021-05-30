@@ -17,10 +17,18 @@ UserTechnology.init(
     techid: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'technology',
+        key: 'id',
+      },
     },
     userid: {
       type: DataTypes.INTEGER,
       allowNull: false,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
     },
   },
   {
