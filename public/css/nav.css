@@ -6,22 +6,23 @@
 
 body {
   font-family: 'Lato', sans-serif;
-  background-color: #333;
+  background-color: #333333;
   color: #222;
   overflow-x: hidden;
   margin: 0;
 }
 
-.container {
-    background-color: #fafafa;
+
+
+.main-container {
+    background-color: #dadada;
     transform-origin: top left;
     transition: transform 0.5s linear;
-    width: 100vw;
+    min-width: 100vw;
     min-height: 100vh;
-    padding: 50px;
 }
   
-.container.show-nav {
+.main-container.show-nav {
     transform: rotate(-20deg);
 }
   
@@ -38,9 +39,10 @@ body {
     border-radius: 50%;
     position: relative;
     transition: transform 0.5s linear;
+    z-index: 1;
 }
   
-.container.show-nav .circle {
+.main-container.show-nav .circle {
     transform: rotate(-70deg);
 }
   
@@ -70,7 +72,7 @@ body {
     transform-origin: top left;
 }
   
-.container.show-nav + nav li {
+.main-container.show-nav + nav li {
     transform: translateX(0);
     transition-delay: 0.3s;
 }
@@ -116,7 +118,7 @@ nav ul li + li + li + li{
 }
 
 nav * a {
-    color: #fff;
+    color: #cccccc;
     text-decoration: none;
 }
 

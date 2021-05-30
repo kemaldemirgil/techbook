@@ -4,7 +4,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Techbook</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
   <link rel="stylesheet" type="text/css" href="/css/nav.css">
   <link rel="stylesheet" type="text/css" href="/css/home.css">
@@ -12,33 +14,31 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
 </head>
-
 <body>
-  <div class="container">
-    <div class="circle-container">
-      <div class="circle">
-        <button id="close">
-        <i class="fas fa-times"></i>
-        </button>
-        <button id="open">
-        <i class="fas fa-bars"></i>
-        </button>
+    <div class="main-container">
+      <div class="circle-container">
+        <div class="circle">
+          <button id="close">
+          <i class="fas fa-times"></i>
+          </button>
+          <button id="open">
+          <i class="fas fa-bars"></i>
+          </button>
+        </div>
       </div>
-    </div>
-    {{{body}}}
 
-  </div>
+      {{{body}}}
+
+    </div>
   <nav>
     <ul>
-    <li><i class="fas fa-home"></i><a href="/home">Home</a></li>
-    <li><i class="fas fa-user"></i><a href="/profile">Profile</a></li>
-    <li><i class="fas fa-search"></i><a href="/search">Search</a></li>
-    <li><i class="fas fa-sign-out-alt"></i><a href="#" id="logout">Logout</a></li>
+    <li><i class="fas fa-home"></i><a class="nav-option" href="/home">Home</a></li>
+    <li><i class="fas fa-user"></i><a class="nav-option" href="/profile">Profile</a></li>
+    <li><i class="fas fa-search"></i><a class="nav-option" href="/search">Search</a></li>
+    <li><i class="fas fa-sign-out-alt"></i><a class="nav-option" href="#" id="logout">Logout</a></li>
     </ul>
   </nav>
-
   <script src="/js/logout.js"></script>
-  <script src="/js/profile.js"></script>
+  
 </body>
-
 </html>

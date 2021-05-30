@@ -1,20 +1,43 @@
 <div class="content">
-    <button class="get-repos-button" type="click">get repos</button>
-    <h2 class="fullname">{{user.firstname}} {{user.lastname}}</h2>
-    <h3>{{user.city}}/{{user.country}}</h3>
-    <p><a href="https://github.com/{{user.github}}" target="_blank" class="repo_search">Github</a></p>
-    <p><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></p>
-    <h3>About me:</h3>
-
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere natus similique itaque dolor aut hic!</p>
-    <h4>Tools:</h4>
-    <h4>My repositories for <span id="username">{{user.github}}</span></h4>
-    <main class="flex-row justify-space-between">
-        <div class="col-12 col-md-8">
-            <h2 class="subtitle">Showing Repositories for:</h2>
-            <div id="repos-container" class="list-group"></div>
-        </div>
-    </main>
-
+    <div class="entry">
+        <h2 class="fullname">{{user.firstname}} {{user.lastname}}<small class="badge">{{user.experience}}</small></h2>
+        <small class="location">{{user.city}} / {{user.country}}</small>
     </div>
+    <div class="social">
+        <button class="button"><span>Add Link</span></button>
+        <input type="text" id="portfolio-input" autocomplete="off" placeholder="Add your portfolio link">
+        <a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank"><button class="button"><span>Portfolio</span></button></a>
+        <a href="https://github.com/{{user.github}}" target="_blank" class="repo_search"><button class="button"><span>Github</span></button></a>
+        <a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank"><button class="button"><span>Linkedin</span></button></a>
+    </div>
+    <div class="about">
+        <h3>About me</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere natus similique itaque dolor aut hic!</p>
+    </div>
+    <div class="technologies">
+        <h4>Technologies <input type="text" id="tech-input" autocomplete="off" placeholder="Add new technology">
+            <select id="tech-input">
+                <option>mySQL</option>
+            </select>
+            <button>Add</button>
+        </h4>
+        <div class="main-project"></div>
+        <div class="tech">
+            <span>css</span>
+            <span>javascript</span>
+            <span>node.js</span>
+        </div>
+    </div>
+    <h4>My repositories for <span id="username">{{user.github}}</span></h4>
+        <h4>Select main project
+            <select id="myRepos">
+                <option>/repo1</option>
+            </select>
+            <button>Add</button>
+        </h4>
+        <small>Your main project will appear a at the homepage!</small>
+    <div id="repos-container"></div>
+    <div class="users-container"></div>
 </div>
+  <script src="/js/profile.js"></script>
+
