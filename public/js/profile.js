@@ -100,11 +100,8 @@ const addTech = async () => {
 
     if (response.status === 200) {
       location.reload();
-    }
-    if (response.status === 400) {
-      alert("");
     } else {
-      console.log(response);
+      console.log("addtech");
     }
   }
 };

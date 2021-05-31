@@ -105,6 +105,57 @@ router.get("/profile", async (req, res) => {
   }
 });
 
+//GET//http://localhost:3001/
+router.get("/profile/:id", async (req, res) => {
+  const userData = await User.findOne({
+    where: {
+      id: req.params.id
+    },
+    attributes: [
+      'id',
+      'username',
+      'email',
+      'firstname',
+      'lastname',
+      'city',
+      'country',
+      'github',
+      'experience',
+      'usermainproject',
+      'mainprojectname'
+    ],
+  });
+  const techData = await UserTechnology.findAll({
+    where: {
+      userid: req.params.id
+    },
+    attributes: [
+      'techid',
+      'userid',
+      'name'
+    ],
+  });
+  const profileData = await Profile.findOne({
+    where: {
+      userid: req.params.id
+    },
+    attributes: [
+      'userid',
+      'aboutme',
+      'portfolio',
+      'mainproject'
+    ],
+  });
+  const userprofile = profileData.get({ plain: true });
+  const usertechname = techData.map(post => post.get({ plain: true }));
+  const user = userData.get({ plain: true });
+  console.log(userprofile);
+  console.log(usertechname);
+  console.log(user);
+  res.status(200);
+  res.render('userprofile', {user, usertechname, userprofile, title: 'user-profile-page', layout: 'main' });
+});
+
 //GET//http://localhost:3001/search
 router.get("/search", async (req, res) => {
   try {

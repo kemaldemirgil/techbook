@@ -6,11 +6,13 @@
       <h3>> Techbook allows people from the tech industry to connect with each other</h3>
       <h3>> Gives recruiters the ability to connect and interact with people</h3>
       <h3>> Enables students to improve their work</h3>
-      <div class="ui animated fade button" tabindex="0">
-        <div class="visible content">Connect with people</div>
-            <div class="hidden content">Search for users</div>
+      <a href="/search">
+        <div class="ui animated fade button" tabindex="0">
+            <div class="visible content">Connect with people</div>
+                <div class="hidden content">Search for users</div>
+            </div>
         </div>
-      </div>
+      </a>
       <h4 class="ui horizontal header divider"></h4>
     </div>
 </div>
@@ -19,11 +21,11 @@
     <div class="ui middle aligned stackable grid container">
     <div class="row">
     <div class="eight wide column">
-        <h3 class="ui header">We Help Developers find Jobs</h3>
+        <h3 class="ui header">We Help Developers Find Jobs</h3>
         <p>Build your profile, add an about me section and insert your tools. 
             These are very important when potential recruiters are looking for you. 
             Dont forget to add your portfolio link as well!</p>
-        <h3 class="ui header">We Help Recruiters find Developers</h3>
+        <h3 class="ui header">We Help Recruiters Find Developers</h3>
         <p>Yes that's right, head over to the search section to look for the ideal candidate, or simply browse main projects and catch the developer!</p>
     </div>
     <div class="six wide right floated column">
@@ -66,7 +68,7 @@
     <div class="ui middle aligned stackable grid container">
         <div class="column">
             <h3 class="ui header"><p>Your Main Project Will Appear at the Homepage!</p></h3>
-            <p>Select your main project from your profile, it can be any of your current repositories posted on your github accopunt.</p>
+            <p>Select your main project from your profile, it can be any of your current repositories posted on your github account.</p>
         </div>
         </div>
     </div>
@@ -77,14 +79,14 @@
     <div class="ui container grid">
         <div class="ui cards">
             {{#each mainprojects}}
-            <a class=" ui card purple" href="{{usermainproject}}">
+            <div class=" ui card purple">
                 <div class="content">
-                    <div class="header">{{mainprojectname}}</div>
+                    <a href="{{usermainproject}}" class="header">{{mainprojectname}}</a>
                     <div class="meta">
                         <span class="category">{{github}}</span>
                     </div>
                     <div class="description">
-                        <p>{{firstname}} {{lastname}}</p>
+                        <a id="user-profile" href="/profile/{{id}}">{{firstname}} {{lastname}}</a>
                     </div>
                 </div>
                 <div class="extra content">
@@ -92,12 +94,12 @@
                         <p class="user-badge-home">{{experience}}</p>
                     </div>
                     <div class="left floated author">
-                        {{country}}
+                        {{country}} / {{city}}
                     </div>
+                    <small id="user-id">{{id}}</small>
                 </div>
-            </a>
+            </div>
             {{/each}}
         </div>
     </div>
 </div>
-<script src="/js/home.js"></script>
