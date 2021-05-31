@@ -22,18 +22,11 @@ Profile.init(
         key: 'id',
       },
     },
-    imagetype: {
+    profilepic: {
       type: DataTypes.STRING,
       allowNull: true,
     },
-    imagename: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    imagedata: {
-      type: DataTypes.BLOB('long'),
-      allowNull: true,
-    },
+  
     aboutme: {
       type: DataTypes.STRING,
       allowNull: true,
