@@ -4,8 +4,21 @@ const { User } = require('../models');
 
 //Seeds............................................
 const userdata = [
+ 
+ { id: 1,
+  username: 'kemal',
+  email: 'kemal@kemal.com',
+  password: 'Admin123',
+  firstname: 'Kemal',
+  lastname: 'Demergil',
+  linkedin: 'kemallinedkin',
+  city: 'Ottawa',
+  country: 'Canada',
+  github: 'kemaldemirgil',
+  experience: 'intermediate'
+},
   {
-    id: 1,
+      id: 2,
     username: 'mark',
     email: 'mark@mark.com',
     password: 'mark123',
@@ -18,7 +31,7 @@ const userdata = [
     experience: 'junior'
   },
   {
-    id: 2,
+    id: 3,
     username: 'sarah',
     email: 'sarah@sarah.com',
     password: 'sarah123',

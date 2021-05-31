@@ -11,6 +11,20 @@ const profiledata = [
     portfolio: 'https://kemaldemirgil.github.io/kd-portfolio/',
     mainproject: 'https://kemaldemirgil.github.io/kd-portfolio/'
   },
+  {
+    id: 2,
+    userid: '2',
+    aboutme: 'I am a Jr Developer',
+    portfolio: 'https://github.com/elipapa/markdown-cv',
+    mainproject: 'https://github.com/elipapa/markdown-cv'
+  },
+  {
+    id: 3,
+    userid: '3',
+    aboutme: 'I am a Jr Developer',
+    portfolio: 'https://github.com/oklahomer/go-sarah',
+    mainproject: 'https://github.com/oklahomer/go-sarah'
+  },
 ];
 
 
