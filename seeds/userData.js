@@ -4,30 +4,43 @@ const { User } = require('../models');
 
 //Seeds............................................
 const userdata = [
+ 
+ { id: 1,
+  username: 'kemal',
+  email: 'kemal@kemal.com',
+  password: 'Admin123',
+  firstname: 'Kemal',
+  lastname: 'Demergil',
+  linkedin: 'kemallinedkin',
+  city: 'Ottawa',
+  country: 'Canada',
+  github: 'kemaldemirgil',
+  experience: 'intermediate'
+},
   {
-    id: 1,
+      id: 2,
     username: 'mark',
     email: 'mark@mark.com',
     password: 'mark123',
-    firstname: 'markfirstname',
-    lastname: 'marklastname',
+    firstname: 'Mark',
+    lastname: 'Dales',
     linkedin: 'marklinedkin',
-    city: 'ottawa',
-    country: 'canada',
-    github: 'mark',
+    city: 'Ottawa',
+    country: 'Canada',
+    github: 'elipapa/markdown-cv',
     experience: 'junior'
   },
   {
-    id: 2,
+    id: 3,
     username: 'sarah',
     email: 'sarah@sarah.com',
     password: 'sarah123',
-    firstname: 'sarah',
-    lastname: 'haras',
+    firstname: 'Sarah',
+    lastname: 'Haras',
     linkedin: 'sarah',
-    city: 'toronro',
-    country: 'canada',
-    github: 'sarah',
+    city: 'Toronto',
+    country: 'Canada',
+    github: 'oklahomer/go-sarah',
     experience: 'senior'
   },
 ];

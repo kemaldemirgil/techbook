@@ -22,6 +22,10 @@ Profile.init(
         key: 'id',
       },
     },
+    profilepic: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
     aboutme: {
       type: DataTypes.STRING,
       allowNull: true,

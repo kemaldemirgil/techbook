@@ -17,10 +17,10 @@ UserTechnology.init(
     name: {
       type: DataTypes.STRING,
       allowNull: false,
-      references: {
-        model: 'technology',
-        key: 'techname',
-      },
+//      references: {
+//      model: 'technology',
+//      key: 'techname',
+//      },
     },
     techid: {
       type: DataTypes.INTEGER,

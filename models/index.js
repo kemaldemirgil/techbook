@@ -17,9 +17,9 @@ Technology.hasMany(UserTechnology, {
     foreignKey: 'techid'
 });
 
-UserTechnology.belongsTo(User, {
-    foreignKey: 'userid'
-})
+//UserTechnology.belongsTo(User, {
+//  foreignKey: 'userid'
+//})
 
 Profile.belongsTo(User, {
     foreignKey: 'userid'
