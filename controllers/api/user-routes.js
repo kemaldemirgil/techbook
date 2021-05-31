@@ -78,17 +78,26 @@ router.put('/mainproject', (req, res) => {
       userid: req.session.user_id
     }
   })
-    .then(dbUserData => {
-      if (!dbUserData[0]) {
-        res.status(404).json({ message: 'No mainproject found..' });
-        return;
-      }
-      res.json(dbUserData);
-    })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  User.update({
+    usermainproject: req.body.usermainproject,
+    mainprojectname: req.body.mainproject
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+  .then(dbUserData => {
+    if (!dbUserData[0]) {
+      res.status(404).json({ message: 'No mainproject found..' });
+      return;
+    }
+    res.json(dbUserData);
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
 });
 
 //PUT//http://localhost:3001/api/users/portfolio

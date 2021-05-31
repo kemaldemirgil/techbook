@@ -10,12 +10,14 @@ const userdata = [
   email: 'kemal@kemal.com',
   password: 'Admin123',
   firstname: 'Kemal',
-  lastname: 'Demergil',
+  lastname: 'Kanok',
   linkedin: 'kemallinedkin',
   city: 'Ottawa',
   country: 'Canada',
-  github: 'kemalgithub',
-  experience: 'intermediate'
+  github: 'kemalkanok',
+  experience: 'intermediate',
+  usermainproject: 'https://github.com/kemalkanok/pic-dersi',
+  mainprojectname: 'pic-dersi'
   },
   {
       id: 2,
@@ -27,8 +29,10 @@ const userdata = [
     linkedin: 'marklinedkin',
     city: 'Ottawa',
     country: 'Canada',
-    github: 'elipapa/markdown-cv',
-    experience: 'junior'
+    github: 'elipapa',
+    experience: 'junior',
+    usermainproject: 'https://github.com/elipapa/markdown-cv',
+    mainprojectname: 'markdown-cv'
   },
   {
     id: 3,
@@ -40,8 +44,10 @@ const userdata = [
     linkedin: 'sarah',
     city: 'Toronto',
     country: 'Canada',
-    github: 'oklahomer/go-sarah',
-    experience: 'senior'
+    github: 'oklahomer',
+    experience: 'senior',
+    usermainproject: 'https://github.com/oklahomer/go-sarah',
+    mainprojectname: 'go-sarah'
   },
 ];
 

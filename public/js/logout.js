@@ -22,7 +22,7 @@ $( document ).ready(() => {
     $(badge).css("background-color", "green")
     $(badge).text("JR");
   }
-  if($(badge).text() === "Intermediate") {
+  if($(badge).text() === "intermediate") {
     $(badge).css("background-color", "blue")
     $(badge).text("INT");
   }

@@ -38,10 +38,13 @@ router.get("/home", async (req, res) => {
         username: req.session.username,
       },
     });
+    const mainProjectsDB = await User.findAll();
     const user = dbUserData.get({ plain: true })
+    const mainprojects = mainProjectsDB.map(project => project.get({ plain: true }));
+    console.log(mainprojects);
     console.log(user);
     res.status(200);
-    res.render('home', { user, loggedIn: req.session.loggedIn, title: 'home-page', layout: 'main' });
+    res.render('home', { user, mainprojects, loggedIn: req.session.loggedIn, title: 'home-page', layout: 'main' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -90,10 +93,10 @@ router.get("/profile", async (req, res) => {
     const usertechname = usertech.map(post => post.get({ plain: true }));
     const user = dbUserData.get({ plain: true });
     const technames = dbTechnames.map(post => post.get({ plain: true }));
-    console.log(userprofile);
-    console.log(usertechname);
-    console.log(technames);
-    console.log(user);
+    // console.log(userprofile);
+    // console.log(usertechname);
+    // console.log(technames);
+    // console.log(user);
     res.status(200);
     res.render('profile', { user, technames, usertechname, userprofile, title: 'profile-page', layout: 'main' });
   } catch (err) {

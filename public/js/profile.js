@@ -1,18 +1,19 @@
 var nameInputEl = document.querySelector('#username');
-var repoContainerEl = document.querySelector('#repos-container');
 var usersContainerEl = document.querySelector('.users-container');
 let navOption = document.querySelector(".nav-option");
 let myRepos = document.getElementById("myRepos");
+let userGithub = document.getElementById("usergithub");
 
 
 const mainProject = async () => {
   const mainproject = document.querySelector('#myRepos').value.trim();
+  const usermainproject = `${userGithub}/${mainproject}`;
   alert("updated mainproject")
   console.log(mainproject);
   if (mainproject) {
     const response2 = await fetch('/api/users/mainproject', {
       method: 'PUT',
-      body: JSON.stringify({ mainproject }),
+      body: JSON.stringify({ mainproject, usermainproject }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -113,20 +114,20 @@ $( document ).ready( () => {
   var username = nameInputEl.innerHTML.trim();
   if (username) {
     getUserRepos(username);
-    repoContainerEl.textContent = '';
     nameInputEl.value = '';
   } else {
     alert('Please enter a GitHub username');
   }
 });
 
-var getUserRepos = function (user) {
+var getUserRepos = async function (user) {
   var apiUrl = 'https://api.github.com/users/' + user + '/repos';
 
-  fetch(apiUrl)
+  await fetch(apiUrl)
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
+          console.log(data)
           displayRepos(data);
         });
       } else {
@@ -148,7 +149,7 @@ var displayRepos = function (repos) {
     var repoName = 'https://github.com/'+repos[i].owner.login + '/' + repos[i].name;
 
     var card = document.createElement('div');
-    card.classList.add("ui", "card", "four", "wide", "column")
+    card.classList.add("ui", "card")
 
     var content = document.createElement('div');
     content.classList.add("content")

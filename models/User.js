@@ -66,6 +66,14 @@ User.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
+    usermainproject: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    mainprojectname: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     hooks: {

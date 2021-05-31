@@ -5,22 +5,28 @@
     </div>
     <div class="three ui buttons">
         <button class="ui button"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></button>
-        <button class="ui button"><a href="https://github.com/{{user.github}}" target="_blank">Github</a></button>
+        <button class="ui button"><a id="usergithub" href="https://github.com/{{user.github}}" target="_blank">Github</a></button>
         <button class="ui button"><a href="{{userprofile.portfolio}}" target="_blank">Portfolio</a></button>
     </div>
     <div class="ui container center aligned">
-        My tools | languages | framworks
+        <h4 class="ui horizontal header divider" id="divider"><p>Tools | Languages | Framworks</p></h4>
         <div class="ui message">
             {{#each usertechname}}
             <div class="ui violet label">{{name}}</div>
             {{/each}}
         </div>
     </div>
-    <div class="ui message grey">
-        <div class="header">About me</div>
-        <p>{{userprofile.aboutme}}</p>
+    <div id="about-me-div">
+        <div class="ui vertical stripe segment">
+            <div class="ui text container">
+                <h4 class="ui horizontal header divider"><p>About me</p></h4>
+                <p>{{userprofile.aboutme}}</p>
+            </div>
+        </div>
     </div>
+    {{!--  --}}
     <button class="fluid ui button edit-profile-button black">Edit</button>
+    {{!--  --}}
 <div class="ui modal">
   <i class="close icon"></i>
   <div class="header">
@@ -85,18 +91,23 @@
     </div>
   </div>
 </div>
-<div id="repos-container"></div>
-<div class="ui icon message green">
-    <i class="inbox icon"></i>
-    <div class="content">
-        <div class="header">Current Main Project:
-            <a href="https://github.com/{{user.github}}/{{userprofile.mainproject}}" target="_blank"><span>{{userprofile.mainproject}}</span></a>
+<div id="aboutme-container">
+    <div class="ui icon message green">
+        <i class="inbox icon"></i>
+        <div class="content">
+            <div class="header">Current Main Project:
+                <a href="https://github.com/{{user.github}}/{{userprofile.mainproject}}" target="_blank"><span>{{userprofile.mainproject}}</span></a>
+            </div>
+        </div>
+        <small><span id="username">{{user.github}}</span></small>
         </div>
     </div>
-    <small><span id="username">{{user.github}}</span></small>
-    </div>
-    <div class="users-container ui grid"></div>
 </div>
+    <div class="ui grid repo-container">
+        <div class="ui cards users-container">
+
+        </div>
+    </div>
 
 
 <script src="/js/profile.js"></script>
