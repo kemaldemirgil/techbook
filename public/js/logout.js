@@ -13,8 +13,7 @@ const logout = async () => {
 document.querySelector('#logout').addEventListener('click', logout);
 
 $( document ).ready(() => {
-  let badge = $(".badge");
-  console.log(badge)
+  let badge = $(".userbadge");
   if($(badge).text() === "Recruiter") {
     $(badge).css("background-color", "purple")
     $(badge).text("R");
@@ -32,15 +31,3 @@ $( document ).ready(() => {
     $(badge).text("SR");
   }
 });
-
-///////////////////////////////////////////////////////////////////////
-
-
-
-const open = document.getElementById('open')
-const close = document.getElementById('close')
-const container = document.querySelector('.main-container')
-
-open.addEventListener('click', () => container.classList.add('show-nav'))
-
-close.addEventListener('click', () => container.classList.remove('show-nav'))

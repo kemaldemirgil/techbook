@@ -7,11 +7,9 @@ const profiledata = [
   {
     id: 1,
     userid: '1',
-    imagetype: 'sd',
-    imagename: 'ssd',
-    imagedata: 'ssd',
     aboutme: 'ssd',
-    contactme: "asdas@asdasd.com"
+    portfolio: 'https://kemaldemirgil.github.io/kd-portfolio/',
+    mainproject: 'https://kemaldemirgil.github.io/kd-portfolio/'
   },
 ];
 

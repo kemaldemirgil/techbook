@@ -1,6 +1,6 @@
 //Imports............................................
 const router = require("express").Router();
-const { User } = require('../models');
+const { User, Technology, UserTechnology, Profile } = require('../models');
 
 //HomeRoutes........................................
 
@@ -60,10 +60,42 @@ router.get("/profile", async (req, res) => {
         username: req.session.username,
       },
     });
-    const user = dbUserData.get({ plain: true })
+    const dbTechnames = await Technology.findAll({
+      attributes: [
+        'id',
+        'techname'
+      ]
+    });
+    const usertech = await UserTechnology.findAll({
+      where: {
+        userid: req.session.user_id
+      },
+      attributes: [
+        'techid',
+        'userid',
+        'name'
+      ],
+    });
+    const userprofileData = await Profile.findOne({
+      where: {
+        userid: req.session.user_id
+      },
+      attributes: [
+        'aboutme',
+        'portfolio',
+        'mainproject'
+      ],
+    });
+    const userprofile = userprofileData.get({ plain: true });
+    const usertechname = usertech.map(post => post.get({ plain: true }));
+    const user = dbUserData.get({ plain: true });
+    const technames = dbTechnames.map(post => post.get({ plain: true }));
+    console.log(userprofile);
+    console.log(usertechname);
+    console.log(technames);
     console.log(user);
     res.status(200);
-    res.render('profile', { user, title: 'profile-page', layout: 'main' });
+    res.render('profile', { user, technames, usertechname, userprofile, title: 'profile-page', layout: 'main' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

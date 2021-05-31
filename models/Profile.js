@@ -22,19 +22,15 @@ Profile.init(
         key: 'id',
       },
     },
-    imagetype: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    imagename: {
-      type: DataTypes.STRING,
-      allowNull: true,
-    },
-    imagedata: {
-      type: DataTypes.BLOB('long'),
-      allowNull: true,
-    },
     aboutme: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    portfolio: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    mainproject: {
       type: DataTypes.STRING,
       allowNull: true,
     },

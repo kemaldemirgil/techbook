@@ -1,42 +1,10 @@
-
-.content img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
 .content {
-  max-width: 1500px;
   margin: 0px auto;
 }
-
-.content h1 {
-  margin: 0;
-}
-
 
 .content .entry .location {
   color: #555;
   font-style: italic;
-}
-
-.content .social {
-  color: #333;
-  line-height: 1.5;
-  padding: 10px;
-  display: flex;
-  text-align: center;
-  background-color: #969696;
-}
-
-.content .social input, .content .social button{
-padding: 5px;
-margin: 3px 5px;
-}
-
-.content .social a{
-  margin: 0;
-  width: 100%;
-  display: flex;
 }
 
 .content .entry {
@@ -44,7 +12,6 @@ margin: 3px 5px;
   text-align: center;
   padding-bottom: 10px;
 }
-
 
 .fullname {
   text-align: center;
@@ -56,171 +23,23 @@ margin: 3px 5px;
   width: 80%;
 }
 
-.fullname .badge {
+.userbadge {
   top: -40px;
   right: 0px;
-  padding: 1%;
-  border-radius: 20px;
-  background-color: grey;
-  color: white;
-  font-size: 10px;
   position: relative;
-  letter-spacing: 1px;
-  font-weight: 200;
-  z-index: 1;
-  text-decoration: solid;
+  color: #fff;
 }
 
-.about {
-  background-color: #969696;
-}
-
-.about h3{
-  margin: 0%;
-  padding: 0 10%;
-  font-size: 26px;
-}
-
-.about p{
-  padding: 2% 5%;
-  margin: 0%;
-}
-
-.technologies {
-  background-color: #969696;
-}
-
-.technologies .tech {
-  display: flex;
-  padding: 0 5%;
-}
-
-.technologies h4{
-  margin: 0%;
-  padding: 10px 10%;
-  font-size: 26px;
-}
-
-.technologies span{
-  padding: 3px 5%;
-  background-color: #f4511e;
-  margin: 10px 5px;
-}
-
-#tech-input {
-  padding: 1%;
-  margin-left: 10px;
-}
-
-.users-container {
-  max-width: 100%;
-  align-items: center;
-  justify-content: center;
+.edit-profile-button {
+  margin-bottom: 30px;
 }
 
 
-.users-container div {
-  padding: 20px;
-  position: relative;
-  display: inline-block;
-  background-color:rgb(97, 97, 97);
-  color:#fff;
-  text-decoration: none;
-  margin: 5px;
-  min-width: 120px;
-  min-height: 120px;
-  border: 1px solid rgb(84, 84, 84);
-  border-radius: 20px;
-}
-
-.users-container div a {
-  padding: 20px;
-  position: relative;
-  display: flex;
-  background-color:rgb(97, 97, 97);
-  color:#fff;
-  text-decoration: none;
-  margin: 5px;
-}
-
-.users-container div a span {
-  text-align: center;
-  justify-content: center;
-  margin: auto 0;
-}
-
-
-/*  */
-
-.button {
+.main-project {
+  padding: 40px;
   display: block;
-  border-radius: 4px;
-  background-color: #f4511e;
-  border: none;
-  color: #FFFFFF;
   text-align: center;
-  font-size: 18px;
-  width: 100%;
-  transition: all 0.5s;
-  cursor: pointer;
-  min-width: 60px;
+  background-color:rgb(97, 97, 97);
+  color:#fff;
+  text-decoration: none;
 }
-
-
-.button span {
-  cursor: pointer;
-  display: inline-block;
-  position: relative;
-  transition: 0.5s;
-}
-
-.button span:after {
-  content: '\00bb';
-  position: absolute;
-  opacity: 0;
-  top: 0;
-  right: -20px;
-  transition: 0.5s;
-}
-
-.button:hover span {
-  padding-right: 25px;
-}
-
-.button:hover span:after {
-  opacity: 1;
-  right: 0;
-}
-
-
-
-
-
-
-
-
-
-
-
-@media only screen and (max-width: 960px) {
-  .button {
-    font-size: 18px;
-  
-  }
-}
-
-@media only screen and (max-width: 650px) {
-  .content .social {
-    display: flex;
-    flex-direction: column;
-  }
-
-}
-
-@media only screen and (max-width: 360px) {
-  .content .social * {
-    font-size: 16px;
-  }
-
-}
-

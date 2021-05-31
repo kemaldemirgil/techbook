@@ -16,6 +16,7 @@ Technology.init(
     },
     techname: {
       type: DataTypes.STRING,
+      unique: true,
       allowNull: false,
     },
   },

@@ -12,6 +12,22 @@ const technologyData = [
     id: 2,
     techname: 'css',
   },
+  {
+    id: 3,
+    techname: 'node.js',
+  },
+  {
+    id: 4,
+    techname: 'jquery',
+  },
+  {
+    id: 5,
+    techname: 'express.js',
+  },
+  {
+    id: 6,
+    techname: 'mysql',
+  },
 ];
 
 
