@@ -10,15 +10,24 @@ const logout = async () => {
     alert('Failed to log out.');
   }
 };
-
 document.querySelector('#logout').addEventListener('click', logout);
 
-///////////////////////////////////////////////////////////////////////
-
-const open = document.getElementById('open')
-const close = document.getElementById('close')
-const container = document.querySelector('.container')
-
-open.addEventListener('click', () => container.classList.add('show-nav'))
-
-close.addEventListener('click', () => container.classList.remove('show-nav'))
+$( document ).ready(() => {
+  let badge = $(".userbadge");
+  if($(badge).text() === "Recruiter") {
+    $(badge).css("background-color", "purple")
+    $(badge).text("R");
+  }
+  if($(badge).text() === "Junior") {
+    $(badge).css("background-color", "green")
+    $(badge).text("JR");
+  }
+  if($(badge).text() === "Intermediate") {
+    $(badge).css("background-color", "blue")
+    $(badge).text("INT");
+  }
+  if($(badge).text() === "Senior") {
+    $(badge).css("background-color", "red")
+    $(badge).text("SR");
+  }
+});

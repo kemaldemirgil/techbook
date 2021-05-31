@@ -1,0 +1,22 @@
+{
+  "base": "semantic\\",
+  "paths": {
+    "source": {
+      "config": "/public/semantic/src/theme.config",
+      "definitions": "/public/semantic/src/definitions/",
+      "site": "/public/semantic/src/site/",
+      "themes": "/public/semantic/src/themes/"
+    },
+    "output": {
+      "packaged": "/public/semantic/dist/",
+      "uncompressed": "/public/semantic/dist/components/",
+      "compressed": "/public/semantic/dist/components/",
+      "themes": "/public/semantic/dist/themes/"
+    },
+    "clean": "/public/semantic/dist/"
+  },
+  "permission": false,
+  "autoInstall": true,
+  "rtl": false,
+  "version": "2.8.7"
+}

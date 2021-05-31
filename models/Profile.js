@@ -26,8 +26,15 @@ Profile.init(
       type: DataTypes.STRING,
       allowNull: true,
     },
-  
     aboutme: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    portfolio: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
+    mainproject: {
       type: DataTypes.STRING,
       allowNull: true,
     },

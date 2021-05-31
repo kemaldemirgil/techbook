@@ -14,6 +14,14 @@ UserTechnology.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      references: {
+        model: 'technology',
+        key: 'techname',
+      },
+    },
     techid: {
       type: DataTypes.INTEGER,
       allowNull: false,

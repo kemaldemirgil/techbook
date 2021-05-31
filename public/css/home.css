@@ -1,23 +1,45 @@
-.content img {
-  max-width: 100%;
-  border-radius: 10px;
-}
-
 .content {
-  max-width: 1000px;
-  margin: 50px auto;
+  margin: 0px auto;
 }
 
-.content h1 {
-  margin: 0;
-}
-
-.content small {
+.content .entry .location {
   color: #555;
   font-style: italic;
 }
 
-.content p {
-  color: #333;
-  line-height: 1.5;
+.content .entry {
+  background-color: #ffffff;
+  text-align: center;
+  padding-bottom: 10px;
+}
+
+.fullname {
+  text-align: center;
+  font-size: 4rem;
+  font-weight: 700;
+  margin: auto;
+  justify-content: center;
+  background-color: #ffffff;
+  width: 80%;
+}
+
+.userbadge {
+  top: -40px;
+  right: 0px;
+  position: relative;
+  color: #fff;
+}
+
+.edit-profile-button {
+  margin-bottom: 30px;
+}
+
+
+.main-project {
+  padding: 40px;
+  display: block;
+  text-align: center;
+  background-color:rgb(97, 97, 97);
+  color:#fff;
+  text-decoration: none;
 }

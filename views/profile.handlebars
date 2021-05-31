@@ -1,21 +1,90 @@
 <div class="content">
-    <h1>Profile</h1>
-    <small>{{user.username}}</small>
-    <h2>{{user.firstname}} {{user.lastname}}</h2>
-    <h3>{{user.city}}/{{user.country}}</h3>
-    <p><a href="https://github.com/{{user.github}}" target="_blank">Github</a></p>
-    <p><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></p>
-    <h3>About me:</h3>
-    {{#if loggedInUser}}
-    <form action="/action_page.php">
-        <textarea id="aboutme-textarea" name="aboutme" rows="4" cols="50"></textarea>
-        <input type="submit" value="Submit">
-    </form>
-    {{else}}
-        <textarea id="aboutme-textarea" name="aboutme" rows="4" cols="50"></textarea>
-    {{/if}}
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere natus similique itaque dolor aut hic!</p>
-    <h4>Tools:</h4>
-    <h4>My repositories</h4>
+    <div class="entry">
+        <h2 class="fullname">{{user.firstname}} {{user.lastname}}<div class="ui label userbadge">{{user.experience}}</div></h2>
+        <small class="location">{{user.city}} / {{user.country}}</small>
     </div>
+    <div class="three ui buttons">
+        <button class="ui button"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></button>
+        <button class="ui button"><a href="https://github.com/{{user.github}}" target="_blank">Github</a></button>
+        <button class="ui button"><a href="{{userprofile.portfolio}}" target="_blank">Portfolio</a></button>
+    </div>
+    <div class="ui container center aligned">
+        My tools | languages | framworks
+        <div class="ui message">
+            {{#each usertechname}}
+            <div class="ui violet label">{{name}}</div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="ui message grey">
+        <div class="header">About me</div>
+        <p>{{userprofile.aboutme}}</p>
+    </div>
+    <button class="fluid ui button edit-profile-button black">Edit</button>
+        {{!-- Modal --}}
+        <div class="ui basic modal">
+            <div class="ui icon header">
+                <i class="user icon"></i>Edit Your Profile
+            </div>
+            <div class="content">
+                {{!--  --}}
+                <p>Add Portfolio</p>
+                <div class="ui labeled input">
+                    <div class="ui label">http://</div>
+                    <input type="text" id="portfolio-input" placeholder="mysite.com">
+                </div>
+                <div class="ui green ok inverted button" id="portfolio-button">
+                    <i class="add icon"></i>Add Portfolio
+                </div>
+                {{!--  --}}
+                <p>Couldn't find the technology to add? <span> Add one!</span></p>
+                <div class="ui input">
+                    <input type="text" id="tech-input" placeholder="something new...">
+                </div>
+                <div class="ui green ok inverted button" id="insert-tech-button">
+                    <i class="add icon"></i>Add New Technology
+                </div>
+                {{!--  --}}
+                <p>Add Technology</p>
+                <select class="ui dropdown" id="techs">
+                    {{#each technames}}
+                    <option>{{techname}}</option>
+                    {{/each}}
+                </select>
+                <div class="ui green ok inverted button" id="add-tech-button">
+                    <i class="add icon"></i>Add Technology
+                </div>
+                {{!--  --}}
+                <p>Select Main Project</p>
+                <select class="ui selection dropdown" id="myRepos">
+                </select>
+                <div class="ui green ok inverted button" id="main-project-button">
+                    <i class="hand pointer icon"></i>Select Project
+                </div>
+                {{!--  --}}
+                <div class="ui form">
+                    <div class="field eight wide column">
+                        <p>About me</p>
+                        <textarea id="about-me" rows="2"></textarea>
+                        <div class="ui green ok inverted button" id="about-me-button">
+                            <i class="edit icon"></i>Add About me
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <div id="repos-container"></div>
+    <div class="ui icon message green">
+        <i class="inbox icon"></i>
+        <div class="content">
+            <div class="header">
+                Current Main Project:
+                <a href="https://github.com/{{user.github}}/{{userprofile.mainproject}}" target="_blank"><span>{{userprofile.mainproject}}</span></a>
+            </div>
+        </div>
+        <small><span id="username">{{user.github}}</span></small>
+    </div>
+    <div class="users-container ui grid"></div>
 </div>
+  <script src="/js/profile.js"></script>
+

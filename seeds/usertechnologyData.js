@@ -8,6 +8,7 @@ const usertechnologyData = [
     id: 1,
     techid: '1',
     userid: '1',
+    name: 'javascript',
   },
   {
     id: 2,

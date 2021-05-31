@@ -225,7 +225,7 @@ input[type='range']::-moz-range-thumb {
   cursor: pointer;
 }
 
-/* IE */
+/* IE
 input[type='range']::-ms-track {
   background: purple;
   border-radius: 4px;
@@ -245,7 +245,7 @@ input[type='range']::-ms-thumb {
   cursor: pointer;
 }
 
-
+ */
 
 /* Media Queries */
 @media (max-width: 768px) {
