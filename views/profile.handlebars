@@ -21,70 +21,83 @@
         <p>{{userprofile.aboutme}}</p>
     </div>
     <button class="fluid ui button edit-profile-button black">Edit</button>
-        {{!-- Modal --}}
-        <div class="ui basic modal">
-            <div class="ui icon header">
-                <i class="user icon"></i>Edit Your Profile
-            </div>
-            <div class="content">
-                {{!--  --}}
-                <p>Add Portfolio</p>
-                <div class="ui labeled input">
-                    <div class="ui label">http://</div>
-                    <input type="text" id="portfolio-input" placeholder="mysite.com">
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    <i class="user icon"></i>Edit Your Profile
+  </div>
+  <div class="content">
+    <div class="description">
+        <div class="ui form">
+            <div class="fields">
+                <div class="eight wide field">
+                    <p>Add Portfolio</p>
+                    <div class="ui labeled input">
+                        <div class="ui label">http://</div>
+                        <input type="text" id="portfolio-input" placeholder="mysite.com">
+                    </div>
+                    <div class="ui green ok fluid button" id="portfolio-button">
+                        <i class="add icon"></i>Add Portfolio
+                    </div>
                 </div>
-                <div class="ui green ok inverted button" id="portfolio-button">
-                    <i class="add icon"></i>Add Portfolio
-                </div>
-                {{!--  --}}
-                <p>Couldn't find the technology to add? <span> Add one!</span></p>
-                <div class="ui input">
-                    <input type="text" id="tech-input" placeholder="something new...">
-                </div>
-                <div class="ui green ok inverted button" id="insert-tech-button">
-                    <i class="add icon"></i>Add New Technology
-                </div>
-                {{!--  --}}
-                <p>Add Technology</p>
-                <select class="ui dropdown" id="techs">
-                    {{#each technames}}
-                    <option>{{techname}}</option>
-                    {{/each}}
-                </select>
-                <div class="ui green ok inverted button" id="add-tech-button">
-                    <i class="add icon"></i>Add Technology
-                </div>
-                {{!--  --}}
-                <p>Select Main Project</p>
-                <select class="ui selection dropdown" id="myRepos">
-                </select>
-                <div class="ui green ok inverted button" id="main-project-button">
-                    <i class="hand pointer icon"></i>Select Project
-                </div>
-                {{!--  --}}
-                <div class="ui form">
-                    <div class="field eight wide column">
-                        <p>About me</p>
-                        <textarea id="about-me" rows="2"></textarea>
-                        <div class="ui green ok inverted button" id="about-me-button">
-                            <i class="edit icon"></i>Add About me
-                        </div>
+                <div class="eight wide field">
+                    <p>Select Main Project</p>
+                    <select class="ui selection dropdown" id="myRepos">
+                    </select>
+                    <div class="ui green ok fluid button" id="main-project-button">
+                        <i class="hand pointer icon"></i>Select Project
                     </div>
                 </div>
             </div>
         </div>
-    <div id="repos-container"></div>
-    <div class="ui icon message green">
-        <i class="inbox icon"></i>
-        <div class="content">
-            <div class="header">
-                Current Main Project:
-                <a href="https://github.com/{{user.github}}/{{userprofile.mainproject}}" target="_blank"><span>{{userprofile.mainproject}}</span></a>
+        <div class="ui form">
+            <div class="field fluid">
+                <p>About me</p>
+                <textarea id="about-me" rows="2"></textarea>
+                <div class="ui fluid green ok fluid button" id="about-me-button">
+                    <i class="edit icon"></i>Add About me
+                </div>
             </div>
         </div>
-        <small><span id="username">{{user.github}}</span></small>
+        <div class="ui form">
+            <div class="fields">
+                <div class="eight wide field">
+                    <p>Add Technology</p>
+                    <select class="ui dropdown" id="techs">
+                        {{#each technames}}
+                        <option>{{techname}}</option>
+                        {{/each}}
+                    </select>
+                    <div class="ui green ok fluid button" id="add-tech-button">
+                    <i class="add icon"></i>Add Technology</div>
+                </div>
+                <div class=" eight wide field">
+                    <p>Couldn't find the technology to add? <span> Add one!</span></p>
+                    <div class="ui input">
+                        <input type="text" id="tech-input" placeholder="something new...">
+                    </div>
+                    <div class="ui green ok fluid button" id="insert-tech-button">
+                        <i class="add icon"></i>Add New Technology
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+<div id="repos-container"></div>
+<div class="ui icon message green">
+    <i class="inbox icon"></i>
+    <div class="content">
+        <div class="header">Current Main Project:
+            <a href="https://github.com/{{user.github}}/{{userprofile.mainproject}}" target="_blank"><span>{{userprofile.mainproject}}</span></a>
+        </div>
+    </div>
+    <small><span id="username">{{user.github}}</span></small>
     </div>
     <div class="users-container ui grid"></div>
 </div>
-  <script src="/js/profile.js"></script>
+
+
+<script src="/js/profile.js"></script>
 

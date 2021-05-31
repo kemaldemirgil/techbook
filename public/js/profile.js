@@ -172,13 +172,17 @@ var displayRepos = function (repos) {
     content.appendChild(description);
     description.appendChild(desctext);
     usersContainerEl.appendChild(card);
+
+    let option = document.createElement('option');
+    option.textContent = repos[i].name;
+    myRepos.appendChild(option);
   }
 };
 
 
 
 $(".edit-profile-button").click(function() {
-  $('.ui.basic.modal').modal({
+  $('.ui.modal').modal({
     onHide: function(){
       console.log('hidden');
 
