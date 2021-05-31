@@ -111,13 +111,13 @@ range.addEventListener('input', (e) => {
     label.style.left = `${left}px`
 
     if (value >= 0 && value <= 33) {
-        value = "Junior"
+        value = "junior"
     }
     if (value > 33 && value <= 66) {
-        value = "Intermediate"
+        value = "intermediate"
     }
     if (value > 66 && value <= 100) {
-        value = "Senior"
+        value = "senior"
     }
     label.innerHTML = value
     sliderValue = value;

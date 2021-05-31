@@ -14,11 +14,11 @@ document.querySelector('#logout').addEventListener('click', logout);
 
 $( document ).ready(() => {
   let badge = $(".userbadge");
-  if($(badge).text() === "Recruiter") {
+  if($(badge).text() === "recruiter") {
     $(badge).css("background-color", "purple")
     $(badge).text("R");
   }
-  if($(badge).text() === "Junior") {
+  if($(badge).text() === "junior") {
     $(badge).css("background-color", "green")
     $(badge).text("JR");
   }
@@ -26,7 +26,7 @@ $( document ).ready(() => {
     $(badge).css("background-color", "blue")
     $(badge).text("INT");
   }
-  if($(badge).text() === "Senior") {
+  if($(badge).text() === "senior") {
     $(badge).css("background-color", "red")
     $(badge).text("SR");
   }

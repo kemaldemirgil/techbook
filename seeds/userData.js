@@ -14,9 +14,9 @@ const userdata = [
   linkedin: 'kemallinedkin',
   city: 'Ottawa',
   country: 'Canada',
-  github: 'kemaldemirgil',
+  github: 'kemalgithub',
   experience: 'intermediate'
-},
+  },
   {
       id: 2,
     username: 'mark',
