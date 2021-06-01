@@ -24,30 +24,76 @@
             </div>
         </div>
     </div>
+    {{#if userprofile.aboutme}}
+    {{else}}
+    <p id="aboutme-toast">1</p>
+    {{/if}}
     {{!--  --}}
     <button class="fluid ui button edit-profile-button black">Edit</button>
     {{!--  --}}
-<div class="ui modal">
-  <i class="close icon"></i>
-  <div class="header">
-    <i class="user icon"></i>Edit Your Profile
-  </div>
-  <div class="content">
-    <div class="description">
+    <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            <i class="user icon"></i>Edit Your Profile
+        </div>
+        <div class="content">
+            <div class="description">
+            <div class="ui form">
+            <div class="four fields">
+                <div class="field">
+                    <label>First name</label>
+                    <input type="text" placeholder="{{user.firstname}}" id="first-name-input">
+                    <button class="fluid green ui button" id="first-name-button"><i class="edit icon"></i>Update First name</button>
+                </div>
+                <div class="field">
+                    <label>Last name</label>
+                    <input type="text" placeholder="{{user.lastname}}" id="last-name-input">
+                    <button class="fluid green ui button" id="last-name-button"><i class="edit icon"></i>Update Last name</button>
+                </div>
+                <div class="field">
+                    <label>City</label>
+                    <input type="text" placeholder="{{user.city}}" id="city-input">
+                    <button class="fluid green ui button" id="city-button"><i class="edit icon"></i>Update City</button>
+                </div>
+                <div class="field">
+                    <label>Country</label>
+                    <input type="text" placeholder="{{user.country}}" id="country-input">
+                    <button class="fluid green ui button" id="country-button"><i class="edit icon"></i>Update Country</button>
+                </div>
+                </div>
+                    <div class="three fields">
+                <div class="field">
+                    <label>Email Address</label>
+                    <input type="text" placeholder="{{user.email}}" id="email-input">
+                    <button class="fluid green ui button" id="email-button"><i class="edit icon"></i>Update Email</button>
+                </div>
+                <div class="field">
+                    <label>Linkedin Username</label>
+                    <input type="text" placeholder="{{user.linkedin}}" id="linkedin-input">
+                    <button class="fluid green ui button" id="linkedin-button"><i class="edit icon"></i>Update Linkedin</button>
+                </div>
+                <div class="field">
+                    <label>Github Username</label>
+                    <input type="text" placeholder="{{user.github}}" id="github-input">
+                    <button class="fluid green ui button" id="github-button"><i class="edit icon"></i>Update Github</button>
+                </div>
+            </div>
+        </div>
+        <h4 class="ui horizontal header divider"></h4>
         <div class="ui form">
             <div class="fields">
                 <div class="eight wide field">
-                    <p>Add Portfolio</p>
+                    <label>Add Portfolio</label>
                     <div class="ui labeled input">
                         <div class="ui label">http://</div>
-                        <input type="text" id="portfolio-input" placeholder="mysite.com">
+                        <input type="text" id="portfolio-input" placeholder="{{userprofile.portfolio}}">
                     </div>
                     <div class="ui green ok fluid button" id="portfolio-button">
                         <i class="add icon"></i>Add Portfolio
                     </div>
                 </div>
                 <div class="eight wide field">
-                    <p>Select Main Project</p>
+                    <label>Select Main Project</label>
                     <select class="ui selection dropdown" id="myRepos">
                     </select>
                     <div class="ui green ok fluid button" id="main-project-button">
@@ -58,17 +104,18 @@
         </div>
         <div class="ui form">
             <div class="field fluid">
-                <p>About me</p>
-                <textarea id="about-me" rows="2"></textarea>
+                <label>About me</label>
+                <textarea id="about-me" rows="2" placeholder="{{userprofile.aboutme}}"></textarea>
                 <div class="ui fluid green ok fluid button" id="about-me-button">
                     <i class="edit icon"></i>Add About me
                 </div>
             </div>
         </div>
+        <h4 class="ui horizontal header divider"></h4>
         <div class="ui form">
             <div class="fields">
                 <div class="eight wide field">
-                    <p>Add Technology</p>
+                    <label>Add Technology</label>
                     <select class="ui dropdown" id="techs">
                         {{#each technames}}
                         <option>{{techname}}</option>
@@ -78,7 +125,7 @@
                     <i class="add icon"></i>Add Technology</div>
                 </div>
                 <div class=" eight wide field">
-                    <p>Couldn't find the technology to add? <span> Add one!</span></p>
+                    <label>Couldn't find the technology to add? <span> Add one!</span></label>
                     <div class="ui input">
                         <input type="text" id="tech-input" placeholder="something new...">
                     </div>
@@ -108,7 +155,6 @@
 
         </div>
     </div>
-
-
+    <div class="footer-padding2"></div>
 <script src="/js/profile.js"></script>
 

@@ -1,6 +1,8 @@
 //Imports............................................
 const router = require("express").Router();
 const { User, Technology, UserTechnology, Profile } = require('../models');
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 //HomeRoutes........................................
 
@@ -38,13 +40,18 @@ router.get("/home", async (req, res) => {
         username: req.session.username,
       },
     });
-    const mainProjectsDB = await User.findAll();
+    const mainProjectsDB = await User.findAll({
+      where: {
+        [Op.or]: [{experience: 'junior'}, {experience: 'intermediate'}, {experience: 'senior'}]
+      }
+    });
     const user = dbUserData.get({ plain: true })
     const mainprojects = mainProjectsDB.map(project => project.get({ plain: true }));
     console.log(mainprojects);
     console.log(user);
     res.status(200);
-    res.render('home', { user, mainprojects, loggedIn: req.session.loggedIn, title: 'home-page', layout: 'main' });
+    res.render('home', { user, mainprojects, loggedIn: req.session.loggedIn, firstLog: req.session.firstlog, title: 'home-page', layout: 'main' });
+    req.session.firstlog = false;
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -58,47 +65,67 @@ router.get("/profile", async (req, res) => {
       res.redirect('/login');
       return;
     }
-    const dbUserData = await User.findOne({
-      where: {
-        username: req.session.username,
-      },
-    });
-    const dbTechnames = await Technology.findAll({
-      attributes: [
-        'id',
-        'techname'
-      ]
-    });
-    const usertech = await UserTechnology.findAll({
-      where: {
-        userid: req.session.user_id
-      },
-      attributes: [
-        'techid',
-        'userid',
-        'name'
-      ],
-    });
-    const userprofileData = await Profile.findOne({
-      where: {
-        userid: req.session.user_id
-      },
-      attributes: [
-        'aboutme',
-        'portfolio',
-        'mainproject'
-      ],
-    });
-    const userprofile = userprofileData.get({ plain: true });
-    const usertechname = usertech.map(post => post.get({ plain: true }));
-    const user = dbUserData.get({ plain: true });
-    const technames = dbTechnames.map(post => post.get({ plain: true }));
-    // console.log(userprofile);
-    // console.log(usertechname);
-    // console.log(technames);
-    // console.log(user);
-    res.status(200);
-    res.render('profile', { user, technames, usertechname, userprofile, title: 'profile-page', layout: 'main' });
+    if (req.session.experience === "recruiter") {
+      const dbUserData = await User.findOne({
+        where: {
+          username: req.session.username,
+        },
+      });
+      const userprofileData = await Profile.findOne({
+        where: {
+          userid: req.session.user_id
+        },
+        attributes: ['aboutme'],
+      });
+      const userprofile = userprofileData.get({ plain: true });
+      const user = dbUserData.get({ plain: true });
+      // console.log(userprofile);
+      // console.log(user);
+      res.status(200);
+      res.render('recruiterprofile', { user, userprofile, title: 'recruiter-profile-page', layout: 'main' });
+    } else {
+      const dbUserData = await User.findOne({
+        where: {
+          username: req.session.username,
+        },
+      });
+      const dbTechnames = await Technology.findAll({
+        attributes: [
+          'id',
+          'techname'
+        ]
+      });
+      const usertech = await UserTechnology.findAll({
+        where: {
+          userid: req.session.user_id
+        },
+        attributes: [
+          'techid',
+          'userid',
+          'name'
+        ],
+      });
+      const userprofileData = await Profile.findOne({
+        where: {
+          userid: req.session.user_id
+        },
+        attributes: [
+          'aboutme',
+          'portfolio',
+          'mainproject'
+        ],
+      });
+      const userprofile = userprofileData.get({ plain: true });
+      const usertechname = usertech.map(post => post.get({ plain: true }));
+      const user = dbUserData.get({ plain: true });
+      const technames = dbTechnames.map(post => post.get({ plain: true }));
+      // console.log(userprofile);
+      // console.log(usertechname);
+      // console.log(technames);
+      // console.log(user);
+      res.status(200);
+      res.render('profile', { user, technames, usertechname, userprofile, title: 'profile-page', layout: 'main' });
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

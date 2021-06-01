@@ -1,11 +1,11 @@
 <div class="pusher">
   <div class="ui inverted vertical masthead aligned segment">
-    <div class="ui text container">
+    <div class="ui text container entry">
       <h4 class="ui horizontal header divider"></h4>
-      <h1 class="ui inverted header">Techbook</h1>
-      <h3>> Techbook allows people from the tech industry to connect with each other</h3>
-      <h3>> Gives recruiters the ability to connect and interact with people</h3>
-      <h3>> Enables students to improve their work</h3>
+      <h1 class="ui inverted header-h1-title">Techbook</h1>
+      <h3><i class="caret square right outline icon"></i> Techbook allows people from the tech industry to connect with others</h3>
+      <h3><i class="caret square right outline icon"></i> Gives recruiters the ability to connect and interact with people</h3>
+      <h3><i class="caret square right outline icon"></i> Enables students to improve their work</h3>
       <a href="/search">
         <div class="ui animated fade button" tabindex="0">
             <div class="visible content">Connect with people</div>
@@ -38,11 +38,11 @@
     <div class="ui equal width stackable internally celled grid">
         <div class="center aligned row">
         <div class="column">
-            <h3>"Easy to Connect"</h3>
+            <h3 class="reviewtext">"Easy to Connect"</h3>
             <p><b>Alexandra</b> Human Resources</p>
         </div>
         <div class="column">
-            <h3>"One stop for all information, find everything you want."</h3>
+            <h3 class="reviewtext">"One stop for all information, find everything you want."</h3>
             <p><b>Steven</b> Recruiter</p>
         </div>
         </div>
@@ -103,3 +103,23 @@
         </div>
     </div>
 </div>
+{{#if firstLog}}
+<div class="ui basic modal">
+  <div class="ui icon header">
+    <i class="user icon"></i>
+    Hello There!
+  </div>
+  <div class="content">
+    <p>We see that you created an account with us!<br>
+    Before browsing new oppurtunities, don't forget to fill in your profile and select your main project.<br>
+    This is essential on becoming employer competitive.<br>
+    If any questions or issus, please contact us at <b>www.techbook.me@gmail.com</b></p>
+  </div>
+  <div class="actions">
+    <div class="ui green ok inverted button">
+      <i class="checkmark icon"></i>
+      Ok
+    </div>
+  </div>
+</div>
+{{/if}}

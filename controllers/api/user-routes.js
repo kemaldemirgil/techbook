@@ -30,6 +30,8 @@ router.post('/', async (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
+      req.session.experience = dbUserData.experience;
+      req.session.firstlog = true;
       res.status(200).json(dbUserData);
     });
   } catch (err) {
@@ -60,6 +62,7 @@ router.post('/login', async (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
+      req.session.experience = dbUserData.experience;
     });
   } catch (err) {
     console.log(err);
@@ -124,6 +127,173 @@ router.put('/portfolio', (req, res) => {
     });
 });
 
+//PUT//http://localhost:3001/api/users/firstname
+router.put('/firstname', (req, res) => {
+  User.update({
+    firstname: req.body.firstname,
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No firstname found..' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+//PUT//http://localhost:3001/api/users/lastname
+router.put('/lastname', (req, res) => {
+  User.update({
+    lastname: req.body.lastname,
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No lastname found..' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+//PUT//http://localhost:3001/api/users/city
+router.put('/city', (req, res) => {
+  User.update({
+    city: req.body.city,
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No city found..' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+//PUT//http://localhost:3001/api/users/country
+router.put('/country', (req, res) => {
+  User.update({
+    country: req.body.country,
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No country found..' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+//PUT//http://localhost:3001/api/users/email
+router.put('/email', (req, res) => {
+  User.update({
+    email: req.body.email,
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No email found..' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+//PUT//http://localhost:3001/api/users/linkedin
+router.put('/linkedin', (req, res) => {
+  User.update({
+    linkedin: req.body.linkedin,
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No linkedin found..' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
+//PUT//http://localhost:3001/api/users/github
+router.put('/github', (req, res) => {
+  User.update({
+    github: req.body.github,
+  },
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+    .then(dbUserData => {
+      if (!dbUserData[0]) {
+        res.status(404).json({ message: 'No github found..' });
+        return;
+      }
+      res.json(dbUserData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
 //PUT//http://localhost:3001/api/users/aboutme
 router.put('/aboutme', (req, res) => {
   Profile.update({
@@ -160,6 +330,7 @@ router.post('/tech', async (req, res) => {
         res.status(400).json({ message: 'Tech already exists' });
         return;
       } else if (!techData) {
+        res.status(200);
         Technology.create({
           techname: req.body.tech
         });

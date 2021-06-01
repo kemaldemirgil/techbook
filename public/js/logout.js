@@ -31,3 +31,7 @@ $( document ).ready(() => {
     $(badge).text("SR");
   }
 });
+
+$('.ui.basic.modal')
+  .modal('show')
+;

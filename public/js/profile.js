@@ -1,14 +1,193 @@
 var nameInputEl = document.querySelector('#username');
 var usersContainerEl = document.querySelector('.users-container');
-let navOption = document.querySelector(".nav-option");
 let myRepos = document.getElementById("myRepos");
 let userGithub = document.getElementById("usergithub");
+
+const firstNameUpdate = async () => {
+  const firstname = document.querySelector('#first-name-input').value;
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your first name has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (firstname) {
+    const response = await fetch('/api/users/firstname', {
+      method: 'PUT',
+      body: JSON.stringify({ firstname }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.statusText === 200) {
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+    }
+  }
+}
+
+const lastNameUpdate = async () => {
+  const lastname = document.querySelector('#last-name-input').value;
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your lsat name has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (lastname) {
+    const response = await fetch('/api/users/lastname', {
+      method: 'PUT',
+      body: JSON.stringify({ lastname }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.statusText === 200) {
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+    }
+  }
+}
+
+
+const cityUpdate = async () => {
+  const city = document.querySelector('#city-input').value;
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your city has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (city) {
+    const response = await fetch('/api/users/city', {
+      method: 'PUT',
+      body: JSON.stringify({ city }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.statusText === 200) {
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+    }
+  }
+}
+
+
+const countryUpdate = async () => {
+  const country = document.querySelector('#country-input').value;
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your country has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (country) {
+    const response = await fetch('/api/users/country', {
+      method: 'PUT',
+      body: JSON.stringify({ country }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.statusText === 200) {
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+    }
+  }
+}
+
+
+const emailUpdate = async () => {
+  const email = document.querySelector('#email-input').value;
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your email has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (email) {
+    const response = await fetch('/api/users/email', {
+      method: 'PUT',
+      body: JSON.stringify({ email }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.statusText === 200) {
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+    }
+  }
+}
+
+
+const linkedinUpdate = async () => {
+  const linkedin = document.querySelector('#linkedin-input').value;
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your linkedin has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (linkedin) {
+    const response = await fetch('/api/users/linkedin', {
+      method: 'PUT',
+      body: JSON.stringify({ linkedin }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.statusText === 200) {
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+    }
+  }
+}
+
+
+const githubUpdate = async () => {
+  const github = document.querySelector('#github-input').value;
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your github has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (github) {
+    const response = await fetch('/api/users/github', {
+      method: 'PUT',
+      body: JSON.stringify({ github }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.statusText === 200) {
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+    }
+  }
+}
+
 
 
 const mainProject = async () => {
   const mainproject = document.querySelector('#myRepos').value.trim();
   const usermainproject = `${userGithub}/${mainproject}`;
-  alert("updated mainproject")
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your main project has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
   console.log(mainproject);
   if (mainproject) {
     const response2 = await fetch('/api/users/mainproject', {
@@ -28,7 +207,13 @@ const mainProject = async () => {
 
 const portfolioUpdate = async () => {
   const portfolio = document.querySelector('#portfolio-input').value;
-  alert("updated portfolio")
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your portfolio has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
   console.log(portfolio);
   if (portfolio) {
     const response = await fetch('/api/users/portfolio', {
@@ -47,7 +232,13 @@ const portfolioUpdate = async () => {
 
 const aboutmeUpdate = async () => {
   const aboutme = document.querySelector('#about-me').value;
-  alert("updated aboutme")
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your about me has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
   console.log(aboutme);
   if (aboutme) {
     const response = await fetch('/api/users/aboutme', {
@@ -67,21 +258,27 @@ const aboutmeUpdate = async () => {
 
 const insertTech = async () => {
   const tech = document.querySelector('#tech-input').value.trim().toLowerCase();
-  alert("inserting tech");
   console.log(tech);
   if (tech) {
+    $('body')
+    .toast({
+      title: 'SUCCESS',
+      message: 'A new technology been added!',
+      showProgress: 'bottom',
+      class: 'success',
+    });
     const response = await fetch('/api/users/tech', {
       method: 'POST',
       body: JSON.stringify({ tech }),
       headers: { 'Content-Type': 'application/json' },
     });
-    if (response.status === 400) {
-      alert("Tech Already Exists");
-    } 
-    if (response.ok) {
-      document.location.reload();
-    } else {
-      console.log(response);
+    console.log(response)
+    if (response.status === 400 ) {
+      $('body')
+      .toast({
+      class: 'error',
+      message: `Tech Already Exists`
+      });
     }
   }
 };
@@ -89,7 +286,13 @@ const insertTech = async () => {
 
 const addTech = async () => {
   const tech = document.querySelector('#techs').value;
-  alert("adding tech");
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Technology has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
   console.log(tech);
   if (tech) {
     const response = await fetch('/api/users/mytech', {
@@ -113,7 +316,11 @@ $( document ).ready( () => {
     getUserRepos(username);
     nameInputEl.value = '';
   } else {
-    alert('Please enter a GitHub username');
+    $('body')
+    .toast({
+    class: 'error',
+    message: `An error occured !`
+  });
   }
 });
 
@@ -128,17 +335,24 @@ var getUserRepos = async function (user) {
           displayRepos(data);
         });
       } else {
-        alert('Error: ' + response.statusText);
+        $('body').toast({
+        class: 'error',
+        message: `An error occured !`
+        });
       }
     })
   .catch(function (error) {
-    alert(error);
+    $('body')
+    .toast({
+      class: 'error',
+      message: `An error occured !`
+    });
   });
 };
 
 var displayRepos = function (repos) {
   if (repos.length === 0) {
-    repoContainerEl.textContent = 'No repositories found.';
+    usersContainerEl.textContent = 'No repositories found.';
     return;
   }
   for (var i = 0; i < repos.length; i++) {
@@ -196,6 +410,22 @@ $(".edit-profile-button").click(function() {
   .modal('show');
 });
 
+$('.dropdown')
+  .dropdown()
+;
+
+if ($("#aboutme-toast").text() === "1") {
+  $('body')
+    .toast({
+      class: 'warning',
+      displayTime: 0,
+      closeIcon: true,
+      message: 'Please fill in your about me section'
+    })
+  ;
+
+}
+
 
 
 document.querySelector('#add-tech-button').addEventListener('click', addTech);
@@ -203,4 +433,11 @@ document.querySelector('#insert-tech-button').addEventListener('click', insertTe
 document.querySelector('#about-me-button').addEventListener('click', aboutmeUpdate);
 document.querySelector('#main-project-button').addEventListener('click', mainProject);
 document.querySelector('#portfolio-button').addEventListener('click', portfolioUpdate);
+document.querySelector('#first-name-button').addEventListener('click', firstNameUpdate);
+document.querySelector('#last-name-button').addEventListener('click', lastNameUpdate);
+document.querySelector('#city-button').addEventListener('click', cityUpdate);
+document.querySelector('#country-button').addEventListener('click', countryUpdate);
+document.querySelector('#email-button').addEventListener('click', emailUpdate);
+document.querySelector('#linkedin-button').addEventListener('click', linkedinUpdate);
+document.querySelector('#github-button').addEventListener('click', githubUpdate);
 

@@ -1,4 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Kalam&family=Kanit&family=Share&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+:root {
+  --kalam: 'Kalam', arial;
+  --kanit: 'Kanit', sans-serif;
+  --ubuntu: 'Ubuntu Mono', monospace;
+  --share: 'Share', arial;
+  --audio: 'Audiowide', arial;
+  --rubik: 'Rubik', sans-serif;
+}
 
+* {
+  font-family: var(--rubik);
+}
+
+.header-h1-title {
+  font-family: var(--audio);
+}
+
+.entry h3 {
+  font-family: var(--ubuntu);
+}
 
 .content .entry .location {
   color: #555;
@@ -50,9 +71,10 @@
   margin: 60px;
 }
 
-.repo-container {
-  margin: 60px;
+#aboutme-toast {
+  display: none;
 }
+
 
 #footer {
   margin-top: 40px;
@@ -76,4 +98,16 @@
 
 #user-id {
   display: none;
+}
+
+.footer-padding {
+  padding: 20%;
+}
+
+.footer-padding2 {
+  padding: 5%;
+}
+
+.reviewtext {
+  font-family: var(--kalam);
 }

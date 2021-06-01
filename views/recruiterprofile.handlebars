@@ -1,0 +1,76 @@
+<div class="content">
+    <div class="entry">
+        <h2 class="fullname">{{user.firstname}} {{user.lastname}}<div class="ui label userbadge">{{user.experience}}</div></h2>
+        <small class="location">{{user.city}} / {{user.country}}</small>
+    </div>
+    <button class="ui fluid button"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></button>
+    <div id="about-me-div">
+        <div class="ui vertical stripe segment">
+            <div class="ui text container">
+                <h4 class="ui horizontal header divider"><p>About me</p></h4>
+                <p>{{userprofile.aboutme}}</p>
+            </div>
+        </div>
+    </div>
+    {{!--  --}}
+    <button class="fluid ui button edit-profile-button black">Edit</button>
+    {{!--  --}}
+    <div class="ui modal">
+        <i class="close icon"></i>
+        <div class="header">
+            <i class="user icon"></i>Edit Your Profile
+        </div>
+        <div class="content">
+            <div class="description">
+            <div class="ui form">
+            <div class="four fields">
+                <div class="field">
+                    <label>First name</label>
+                    <input type="text" placeholder="First Name" id="first-name-input">
+                    <button class="fluid green ui button" id="first-name-button"><i class="edit icon"></i>Update First name</button>
+                </div>
+                <div class="field">
+                    <label>Last name</label>
+                    <input type="text" placeholder="Last Name" id="last-name-input">
+                    <button class="fluid green ui button" id="last-name-button"><i class="edit icon"></i>Update Last name</button>
+                </div>
+                <div class="field">
+                    <label>City</label>
+                    <input type="text" placeholder="City Name" id="city-input">
+                    <button class="fluid green ui button" id="city-button"><i class="edit icon"></i>Update City</button>
+                </div>
+                <div class="field">
+                    <label>Country</label>
+                    <input type="text" placeholder="Country Name" id="country-input">
+                    <button class="fluid green ui button" id="country-button"><i class="edit icon"></i>Update Country</button>
+                </div>
+                </div>
+                    <div class="three fields">
+                <div class="field">
+                    <label>Email Address</label>
+                    <input type="text" placeholder="Email Address" id="email-input">
+                    <button class="fluid green ui button" id="email-button"><i class="edit icon"></i>Update Email</button>
+                </div>
+                <div class="field">
+                    <label>Linkedin Username</label>
+                    <input type="text" placeholder="Linkedin Username" id="linkedin-input">
+                    <button class="fluid green ui button" id="linkedin-button"><i class="edit icon"></i>Update Linkedin</button>
+                </div>
+            </div>
+        </div>
+        <div class="ui form">
+            <div class="field fluid">
+                <label>About me</label>
+                <textarea id="about-me" rows="2"></textarea>
+                <div class="ui fluid green ok fluid button" id="about-me-button">
+                    <i class="edit icon"></i>Add About me
+                </div>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>
+    <div class="footer-padding"></div>
+
+<script src="/js/recruiterprofile.js"></script>
+
