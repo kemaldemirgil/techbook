@@ -59,16 +59,8 @@
   display: block;
   text-align: center;
   background-color:rgb(97, 97, 97);
-  color:#fff;
+  color:#ffffff;
   text-decoration: none;
-}
-
-.users-container {
-  background-color: #f2f2f2;
-}
-
-.main-project-container {
-  margin: 60px;
 }
 
 #aboutme-toast {
@@ -106,6 +98,10 @@
 
 .footer-padding2 {
   padding: 5%;
+}
+
+.footer-padding3 {
+  padding: 15%;
 }
 
 .reviewtext {

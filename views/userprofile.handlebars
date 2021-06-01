@@ -4,9 +4,12 @@
         <small class="location">{{user.city}} / {{user.country}}</small>
     </div>
     <div class="three ui buttons">
-        <button class="ui button"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></button>
-        <button class="ui button"><a id="usergithub" href="https://github.com/{{user.github}}" target="_blank">Github</a></button>
-        <button class="ui button"><a href="{{userprofile.portfolio}}" target="_blank">Portfolio</a></button>
+        <button class="ui button"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">
+        <i class="linkedin icon"></i>Linkedin</a></button>
+        <button class="ui button"><a id="usergithub" href="https://github.com/{{user.github}}" target="_blank">
+        <i class="github icon"></i>Github</a></button>
+        <button class="ui button"><a href="{{userprofile.portfolio}}" target="_blank">
+        <i class="address card outline icon"></i>Portfolio</a></button>
     </div>
     <div class="ui container center aligned">
         <h4 class="ui horizontal header divider" id="divider"><p>Tools | Languages | Framworks</p></h4>
@@ -42,7 +45,7 @@
         </div>
     </div>
     <h4 class="ui horizontal header divider"></h4>
-    <h4 class="ui horizontal header divider"><p>Contact Me</p></h4>
+    <h4 class="ui horizontal header divider"><p><i class="envelope icon"></i>Contact Me</p></h4>
     <div class="ui text container center aligned">
         <a href="mailto:{{user.email}}">{{user.email}}</a>
     </div>

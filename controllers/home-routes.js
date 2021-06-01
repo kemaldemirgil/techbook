@@ -205,7 +205,7 @@ router.get("/search", async (req, res) => {
     const technames = Technames.map(post => post.get({ plain: true }));
     console.log(user);
     res.status(200);
-    res.render('search', { user,technames,loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    res.render('search', { user, technames ,loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

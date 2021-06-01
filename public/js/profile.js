@@ -32,7 +32,7 @@ const lastNameUpdate = async () => {
   $('body')
   .toast({
     title: 'SUCCESS',
-    message: 'Your lsat name has been updated!',
+    message: 'Your last name has been updated!',
     showProgress: 'bottom',
     class: 'success',
   });
