@@ -4,8 +4,6 @@ const express = require('express');
 const session = require('express-session');
 const exphbs = require('express-handlebars');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
-const seedAll = require('./seeds/seedScript');
-
 // const fileUpload = require('express-fileupload');
 
 
@@ -43,10 +41,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(routes);
 
-if (process.env.JAWSDB_URL) {
-   seedAll()
-} 
-  
+
+
 // Listener.................................................
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log(`Now listening on PORT : ${PORT}`));
