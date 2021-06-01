@@ -1,4 +1,4 @@
-//Imports............................................
+1//Imports............................................
 const router = require("express").Router();
 const { User, Technology, UserTechnology, Profile } = require('../models');
 const Sequelize = require('sequelize');
@@ -185,6 +185,36 @@ router.get("/profile/:id", async (req, res) => {
 
 //GET//http://localhost:3001/search
 router.get("/search", async (req, res) => {
+  try {
+    if (!req.session.loggedIn) {
+      res.redirect('/login');
+      return;
+    }
+    const dbUserData = await User.findOne({
+      where: {
+        username: req.session.username,
+      },
+    });
+    const Technames = await Technology.findAll({
+      attributes: [
+        'id',
+        'techname'
+      ]
+    });
+    const user = dbUserData.get({ plain: true })
+    const technames = Technames.map(post => post.get({ plain: true }));
+    console.log(user);
+    res.status(200);
+    res.render('search', { user, technames ,loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+
+//GET//http://localhost:3001/search/user
+router.get("/search/users", async (req, res) => {
   try {
     if (!req.session.loggedIn) {
       res.redirect('/login');
