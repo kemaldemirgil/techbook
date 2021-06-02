@@ -309,6 +309,36 @@ const addTech = async () => {
   }
 };
 
+const addAvatar = async () => {
+
+  const avatar = document.querySelector('#avatar-input').value;
+  console.log(`Avatar => ${avatar}`);
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Technology has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (avatar) {
+    const response = await fetch('/api/users/avatar', {
+      method: 'PUT',
+      body: JSON.stringify({ avatar }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.status === 200) {
+      location.reload();
+    } else {
+      $('body')
+      .toast({
+      class: 'error',
+      message: `An error occured !`
+    });
+    }
+  }
+};
+
 
 $( document ).ready( () => {
   var username = nameInputEl.innerHTML.trim();
@@ -427,7 +457,7 @@ if ($("#aboutme-toast").text() === "1") {
 }
 
 
-
+document.querySelector('#avatar-button').addEventListener('click', addAvatar);
 document.querySelector('#add-tech-button').addEventListener('click', addTech);
 document.querySelector('#insert-tech-button').addEventListener('click', insertTech);
 document.querySelector('#about-me-button').addEventListener('click', aboutmeUpdate);

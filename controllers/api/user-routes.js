@@ -378,6 +378,30 @@ router.put('/mytech', async (req, res) => {
 });
 
 
+//PUT//http://localhost:3001/api/users/mytech
+router.put('/avatar', async (req, res) => {
+    User.update ({
+      avatar: req.body.avatar,
+    },
+    {
+      where: {
+        id: req.session.user_id
+      }
+    })
+  .then(dbAvatarData => {
+      if (!dbAvatarData[0]) {
+        res.status(404).json({ message: 'No firstname found..' });
+        return;
+      }
+      res.json(dbAvatarData);
+    })
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+
 //POST//http://localhost:3001/api/users/
 router.post('/', async (req, res) => {
   try {

@@ -1,0 +1,30 @@
+<h4 class="ui horizontal header divider"><p><i class="users icon"></i>Users</p></h4>
+<div class="sad">
+    <div class="ui container grid">
+        <div class="ui cards" id="asd">
+            {{#each userz as |user|}}
+                <div class="ui card purple">
+                    <div class="content">
+                        <a href="/profile/{{user.id}}" class="header">{{user.firstname}} {{user.lastname}}</a>
+                        <div class="meta">
+                            <span class="category">{{user.github}}</span>
+                        </div>
+                        <div class="description">
+                            <a id="user-profile" href="https://www.linkedin.com/in/{{user.linkedin}}">{{user.linkedin}}</a>
+                        </div>
+                    </div>
+                    <div class="extra content">
+                        <div class="right floated author">
+                            <p class="user-badge-home">{{user.experience}}</p>
+                        </div>
+                        <div class="left floated author">
+                            {{user.country}} / {{user.city}}
+                        </div>
+                        <small id="user-id">{{user.id}}</small>
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+</div>
+<div class="footer-padding"></div>
