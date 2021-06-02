@@ -450,7 +450,29 @@ if ($("#aboutme-toast").text() === "1") {
       class: 'warning',
       displayTime: 0,
       closeIcon: true,
-      message: 'Please fill in your about me section'
+      message: 'Please fill in your about me...'
+    })
+  ;
+
+}
+if ($("#portfolio-toast").text() === "1") {
+  $('body')
+    .toast({
+      class: 'warning',
+      displayTime: 0,
+      closeIcon: true,
+      message: 'Please upload your portfolio...'
+    })
+  ;
+
+}
+if ($("#mainproject-toast").text() === "1") {
+  $('body')
+    .toast({
+      class: 'warning',
+      displayTime: 0,
+      closeIcon: true,
+      message: 'Please select a main project...'
     })
   ;
 

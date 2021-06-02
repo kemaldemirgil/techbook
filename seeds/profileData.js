@@ -7,14 +7,14 @@ const profiledata = [
   {
     id: 1,
     userid: '1',
-    aboutme: 'Hello! Im admin!',
+    aboutme: 'Hello!',
     portfolio: 'https://kemaldemirgil.github.io/kd-portfolio/',
     mainproject: 'kd-portfolio'
   },
   {
     id: 2,
     userid: '2',
-    aboutme: 'I am a Jr Developer',
+    aboutme: 'Hello there! ',
     portfolio: 'https://github.com/elipapa/markdown-cv',
     mainproject: 'markdown-cv'
   },
@@ -28,7 +28,7 @@ const profiledata = [
   {
     id: 4,
     userid: '4',
-    aboutme: 'I am a int Developer',
+    aboutme: 'I am a sr Developer',
     portfolio: 'https://github.com/denis/jbuilder',
     mainproject: 'jbuilder'
   },

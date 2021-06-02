@@ -416,6 +416,7 @@ router.post('/', async (req, res) => {
       github: req.body.github,
       linkedin: req.body.linkedin,
       experience: req.body.experience,
+      avatar: "Aang"
     });
     await Profile.create({
       userid: dbUserData.id,
@@ -428,6 +429,7 @@ router.post('/', async (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
+      req.seesion.avatar = dbUserData.avatar;
       res.status(200).json(dbUserData);
     });
   } catch (err) {

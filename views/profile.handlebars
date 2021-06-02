@@ -1,3 +1,7 @@
+<div class="reference-avatar">
+<small>avatars from: <b>flaticon.com</b></small>
+</div>
+
 <div class="content">
     <div class="entry">
         <img class="ui centered medium circular image" src="/avatars/{{user.avatar}}.png">
@@ -32,6 +36,14 @@
     {{#if userprofile.aboutme}}
     {{else}}
     <p id="aboutme-toast">1</p>
+    {{/if}}
+    {{#if userprofile.portfolio}}
+    {{else}}
+    <p id="portfolio-toast">1</p>
+    {{/if}}
+    {{#if userprofile.mainproject}}
+    {{else}}
+    <p id="mainproject-toast">1</p>
     {{/if}}
     {{!--  --}}
     <div class="ui animated fade button blue fluid edit-profile-button" tabindex="0">
