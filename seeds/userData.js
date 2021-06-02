@@ -34,7 +34,7 @@ const userdata = [
     experience: 'junior',
     usermainproject: 'https://github.com/elipapa/markdown-cv',
     mainprojectname: 'markdown-cv',
-    avatar: 'Aang'
+    avatar: 'Zhao'
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ const userdata = [
     experience: 'senior',
     usermainproject: 'https://github.com/oklahomer/go-sarah',
     mainprojectname: 'go-sarah',
-    avatar: 'Aang'
+    avatar: 'Katara'
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ const userdata = [
     experience: 'senior',
     usermainproject: 'https://github.com/denis/jbuilder',
     mainprojectname: 'jbuilder',
-    avatar: 'Aang'
+    avatar: 'Hakoda'
   },
   {
     id: 5,
@@ -82,7 +82,7 @@ const userdata = [
     experience: 'intermediate',
     usermainproject: 'https://github.com/kim/picky-rs',
     mainprojectname: 'picky-rs',
-    avatar: 'Aang'
+    avatar: 'Zuko'
   },
   {
     id: 6,
@@ -98,7 +98,7 @@ const userdata = [
     experience: 'senior',
     usermainproject: 'https://github.com/tom/node-deploy-app',
     mainprojectname: 'node-deploy-app',
-    avatar: 'Aang'
+    avatar: 'Ozai'
   },
   {
     id: 7,
@@ -114,7 +114,7 @@ const userdata = [
     experience: 'senior',
     usermainproject: 'https://github.com/stephanie/travel-bot',
     mainprojectname: 'travel-bot',
-    avatar: 'Aang'
+    avatar: 'Katara'
   }
 ];
 

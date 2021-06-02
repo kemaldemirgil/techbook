@@ -148,7 +148,8 @@ router.get("/profile/:id", async (req, res) => {
       'github',
       'experience',
       'usermainproject',
-      'mainprojectname'
+      'mainprojectname',
+      'avatar'
     ],
   });
   const techData = await UserTechnology.findAll({
