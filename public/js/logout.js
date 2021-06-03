@@ -11,3 +11,8 @@ const myLogout = async () => {
   }
 };
 document.querySelector('.logout-button').addEventListener('click', myLogout);
+
+
+$('.ui.basic.modal')
+  .modal('show')
+;
