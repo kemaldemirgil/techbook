@@ -4,6 +4,7 @@
 ![GitHub](https://img.shields.io/github/license/Techbook-Organization/techbook?color=pink&label=License&logo=github&logoColor=pink)
 ![GitHub contributors](https://img.shields.io/github/contributors/Techbook-Organization/techbook?color=yellow&label=Contributors&logo=git&logoColor=yellow)
 # Techbook
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://my-techbook.herokuapp.com)\
 
 ## Table of Contents 
   - [Techbook](#techbook)
@@ -11,7 +12,8 @@
   - [Description](#description)
   - [Installation](#installation)
   - [Usage](#usage)
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://my-techbook.herokuapp.com)\
+  - [Credits](#credits)
+  - [License](#lisence)
 Techbook allows people from the Tech industry to connect with each other, gives recruiters the ability to connect and interact with people, enables students to improve their work. 
 ![techbook_team](https://user-images.githubusercontent.com/75903418/119923658-14a37180-bf40-11eb-9f97-b3afff81a636.PNG)
 ![techbook_mvp](https://user-images.githubusercontent.com/75903418/119923665-166d3500-bf40-11eb-9202-94110318dae1.PNG)
@@ -39,9 +41,13 @@ The last page is the Seach by page. The Recruiter can search out desired candica
 
 ## Credits 
 <a href="https://github.com/NathanWichmann/">GitHub Link For Nathan Wichmann</a>
+
 <a href="https://github.com/kemaldemirgil/">GitHub Link For Kemal Emirgil</a>
+
 <a href="https://github.com/colleencollins8/">GitHub Link For Collen Collins</a>
+
 <a href="https://github.com/Ashiemotto/">GitHub Link For Ashton Headley</a>
+
 <a href="https://github.com/ToddKelly">GitHub Link For Todd Kelly</a>
 
 
