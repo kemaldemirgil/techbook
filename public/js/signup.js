@@ -10,11 +10,12 @@ const signupFormHandler = async (event) => {
         const lastname = document.querySelector('#lastname-recruiter-signup').value.trim();
         const city = document.querySelector('#city-recruiter-signup').value.trim();
         const country = document.querySelector('#country-recruiter-signup').value.trim();
-        const linkedin = document.querySelector('#linkedin-recruiter-signup').value.trim();
+        const linkedin = document.querySelector('#linkedin-recruiter-signup').value.trim()
+        const avatar = "Zuko"
         if (username && email && password && firstname && lastname && city && country) {
             const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ username, email, password, firstname, lastname, city, country, linkedin, experience }),
+            body: JSON.stringify({ username, email, password, firstname, lastname, city, country, linkedin, experience, avatar }),
             headers: { 'Content-Type': 'application/json' },
             });
             if (response.status === 200) {
@@ -35,10 +36,11 @@ const signupFormHandler = async (event) => {
         const country = document.querySelector('#country-developer-signup').value.trim();
         const github = document.querySelector('#github-developer-signup').value.trim();
         const linkedin = document.querySelector('#linkedin-developer-signup').value.trim();
+        const avatar = "Zuko"
         if (username && email && password && firstname && lastname && city && country && github && experience) {
             const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ username, email, password, firstname, lastname, city, country, linkedin, github, experience }),
+            body: JSON.stringify({ username, email, password, firstname, lastname, city, country, linkedin, github, experience, avatar }),
             headers: { 'Content-Type': 'application/json' },
             });
             if (response.status === 200) {

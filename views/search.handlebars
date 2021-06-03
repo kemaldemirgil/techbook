@@ -1,78 +1,53 @@
-
-<div class="content">
-    <h1>Search Page</h1>
-    <h2>Search by </h2>
-    {{!-- seach by city --}}
-    <form class="ui form">
-        <div class="field">
-            <label>City</label>
-            <input type="text" id="location-city" placeholder="Type City Name">  
-        </div>
-{{!-- search by country --}}
-    <div class="field">
-    <label>Country</label>
-    <input type="text" id="location-country" placeholder="Insert Country Name">
-     </div>
-{{!-- search technologies --}}
-   
-    <div class="field">
-        <label>Technologies</label>
-        <select class="ui dropdown" id="technology">
-            {{!-- <option value="">Technologies</option> --}}
-                {{#each technames}}
-            <option>{{techname}}</option>
-            {{/each}}
-        </select>
-   
-    </div>
-{{!-- search experiance --}}
-    
-        <div class="field">
-            <label>Experiance</label>
-            <select class="ui search dropdown" id="experiance">
-                <option value="">xp</option>
-                <option value="junior">Junior</option>
-                <option value="intermediate">Intermediate</option>
-                <option value="senior">Senior</option>
-            </select>       
-        </div>
-    
-</div>
-
-<button class="ui button" >Search</button>
-</form>
-</div>
-
-{{!-- create space to display searched users --}}
-
-
-<div class="search-container">
-    <div class="ui container grid">
-        <div class="ui cards">
-            {{#each mainprojects}}
-            <div class=" ui card purple">
-                <div class="content">
-                    <a href="{{usermainproject}}" class="header">{{mainprojectname}}</a>
-                    <div class="meta">
-                        <span class="category">{{github}}</span>
-                    </div>
-                    <div class="description">
-                        <a id="user-profile" href="/profile/{{id}}">{{firstname}} {{lastname}}</a>
-                    </div>
-                </div>
-                <div class="extra content">
-                    <div class="right floated author">
-                        <p class="user-badge-home">{{experience}}</p>
-                    </div>
-                    <div class="left floated author">
-                        {{country}} / {{city}}
-                    </div>
-                    <small id="user-id">{{id}}</small>
-                </div>
+<div class="ui vertical stripe segment">
+    <div class="ui middle aligned stackable grid container">
+        <div class="column" id="search-bar-dark">
+            <div class="ui inverted segment">
+                <h4 class="ui horizontal header divider red text"><p>Search Users</p></h4>
             </div>
-            {{/each}}
+            <form class="ui form">
+                <div class="two fields">
+                    <div class="field">
+                        <label>City</label>
+                        <input type="text" id="location-city" placeholder="Type City Name">  
+                    </div>
+                    <div class="field">
+                        <label>Country</label>
+                        <input type="text" id="location-country" placeholder="Insert Country Name">
+                    </div>
+                </div>
+                <div class="two fields">
+                    <div class="field">
+                        <label>Technologies</label>
+                        <select class="ui dropdown" id="technology">
+                            <option></option>
+                            {{#each technames}}
+                            <option>{{techname}}</option>
+                            {{/each}}
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Experience</label>
+                        <select class="ui search dropdown" id="experience">
+                            <option></option>
+                            <option value="junior">Junior</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="senior">Senior</option>
+                        </select>       
+                    </div>
+                </div>
+                <div class="middle aligned">
+                    <div class="ui animated fade fluid button green" id="search-user-button" tabindex="0">
+                        <div class="visible content">Search</div>
+                        <div class="hidden content">
+                            <i class="search icon"></i>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </form>
         </div>
     </div>
 </div>
-
+<div class="footer-padding3"></div>
+{{!-- create space to display searched users --}}
 <script src="./js/search.js"></script>

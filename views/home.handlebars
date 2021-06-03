@@ -3,11 +3,11 @@
     <div class="ui text container entry">
       <h4 class="ui horizontal header divider"></h4>
       <h1 class="ui inverted header-h1-title">Techbook</h1>
-      <h3><i class="caret square right outline icon"></i> Techbook allows people from the tech industry to connect with others</h3>
-      <h3><i class="caret square right outline icon"></i> Gives recruiters the ability to connect and interact with people</h3>
-      <h3><i class="caret square right outline icon"></i> Enables students to improve their work</h3>
+      <h3><i class="share alternate icon"></i> Techbook allows people from the tech industry to connect with others</h3>
+      <h3><i class="user plus icon"></i> Gives recruiters the ability to connect and interact with people</h3>
+      <h3><i class="user graduate icon"></i> Enables students to improve their work</h3>
       <a href="/search">
-        <div class="ui animated fade button" tabindex="0">
+        <div class="ui animated fade button purple" tabindex="0">
             <div class="visible content">Connect with people</div>
                 <div class="hidden content">Search for users</div>
             </div>
@@ -21,11 +21,11 @@
     <div class="ui middle aligned stackable grid container">
     <div class="row">
     <div class="eight wide column">
-        <h3 class="ui header">We Help Developers Find Jobs</h3>
+        <h3 class="ui header inverted black text">We Help Developers Find Jobs</h3>
         <p>Build your profile, add an about me section and insert your tools. 
             These are very important when potential recruiters are looking for you. 
             Dont forget to add your portfolio link as well!</p>
-        <h3 class="ui header">We Help Recruiters Find Developers</h3>
+        <h3 class="ui header inverted black text">We Help Recruiters Find Developers</h3>
         <p>Yes that's right, head over to the search section to look for the ideal candidate, or simply browse main projects and catch the developer!</p>
     </div>
     <div class="six wide right floated column">
@@ -52,13 +52,13 @@
 <h4 class="ui horizontal header divider"></h4>
 <div class="ui vertical stripe segment">
     <div class="ui text container">
-        <h3 class="ui header">We Noticed Portfolio's Matter a Lot</h3>
-        <p>Especially in this industry, people who are self thought know the importance of a portfolio, it is the first thing employers look at. 
+        <h3 class="ui header text blue">We Noticed Portfolio's Matter a Lot</h3>
+        <p>Especially in this industry, people who are self taught know the importance of a portfolio, it is the first thing employers look at. 
             We decided to add developer portfolio links to their profile! This way portential empoloyers will navigate through your work in just one stop!</p>
-            <p>Here is some more information about building impressive protfolios</p>
+            <p>Here is some more information about building impressive protfolios.</p>
         <a class="ui medium button" href="https://medium.com/bridge-collection/5-dos-and-don-ts-for-your-design-portfolio-80292583ace1">Read More</a>
-        <h4 class="ui horizontal header divider"><p>Better Profile</p></h4>
-        <h3 class="ui header">Importance Of Social Presence</h3>
+        <h4 class="ui horizontal header divider"><p><i class="thumbs up icon"></i>Better Profile</p></h4>
+        <h3 class="ui header text blue">Importance Of Social Presence</h3>
         <p>According to another survey conducted by <b>Harris Poll</b> on behalf of CareerBuilder, 70% of employers check the social media profiles of candidates, with 57% being less likely to interview a candidate with no online presence and 54% failing to hire a candidate because of the candidate’s social media profiles.</p>
         <a class="ui medium button" href="https://www.cleverism.com/job-seekers-social-media-is-even-more-important-than-you-thought/">Learn More</a>
         <h4 class="ui horizontal header divider"></h4>
@@ -67,33 +67,35 @@
 <div class="ui vertical stripe segment">
     <div class="ui middle aligned stackable grid container">
         <div class="column">
-            <h3 class="ui header"><p>Your Main Project Will Appear at the Homepage!</p></h3>
+            <h3 class="ui header text purple"><p>Your Main Project Will Appear at the Homepage!</p></h3>
             <p>Select your main project from your profile, it can be any of your current repositories posted on your github account.</p>
         </div>
         </div>
     </div>
 </div>
 <h4 class="ui horizontal header divider"></h4>
-<h4 class="ui horizontal header divider"><p>Main Projects</p></h4>
+<h4 class="ui horizontal header divider"><p><i class="project diagram icon"></i>Main Projects</p></h4>
+<h4 class="ui horizontal header divider"></h4>
 <div class="main-project-container">
     <div class="ui container grid">
         <div class="ui cards">
             {{#each mainprojects}}
             <div class=" ui card purple">
                 <div class="content">
-                    <a href="{{usermainproject}}" class="header">{{mainprojectname}}</a>
+                    <a href="{{usermainproject}}" class="header"><i class="gem outline icon"></i>  {{mainprojectname}}</a>
                     <div class="meta">
                         <span class="category">{{github}}</span>
                     </div>
                     <div class="description">
-                        <a id="user-profile" href="/profile/{{id}}">{{firstname}} {{lastname}}</a>
+                        <a id="user-profile" href="/profile/{{id}}"><i class="user circle outline icon"></i>{{firstname}} {{lastname}}</a>
                     </div>
                 </div>
                 <div class="extra content">
                     <div class="right floated author">
-                        <p class="user-badge-home">{{experience}}</p>
+                        <p class="user-badge-home">{{experience}} <i class="star icon"></i></p>
                     </div>
                     <div class="left floated author">
+                        <i class="location arrow icon"></i>
                         {{country}} / {{city}}
                     </div>
                     <small id="user-id">{{id}}</small>
@@ -123,3 +125,5 @@
   </div>
 </div>
 {{/if}}
+
+<script src="/js/home.js"></script>

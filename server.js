@@ -20,7 +20,7 @@ const PORT = process.env.PORT || 3001;
 // Sessions..................................................
 const sess = {
   secret: 'Super secret secret',
-  cookie: {expires : 100 * 60 * 1000 },
+  cookie: {expires : 10 * 60 * 1000 },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({ db: sequelize }),
@@ -40,6 +40,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(path.join(__dirname, '/public/upload')));
 
 app.use(routes);
+
+
 
 // Listener.................................................
 sequelize.sync({ force: false }).then(() => {

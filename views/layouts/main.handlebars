@@ -21,14 +21,15 @@
   <link rel="stylesheet" type="text/css" href="/css/home.css">
 </head>
 <body>
-<div class="ui stackable menu">
+<div id="nav" class="ui stackable menu">
   <div class="item">
     <img src="/images/techbook-icon2.PNG">
   </div>
-  <a class="item" href="/home">Home</a>
-  <a class="item" href="/profile">Profile</a>
-  <a class="item" href="/search">Search</a>
-  <a class="right item" href="#" id="logout">Logout</a>
+  <a class="item" href="/home"><i class="home icon"></i>Home</a>
+  <a class="item" href="/profile"><i class="user icon"></i>Profile</a>
+  <a class="item" href="/search"><i class="search icon"></i>Search</a>
+  <a class="item right logout-button"><i class="sign out alternate icon"></i>Logout</a>
+  <button class="ui icon button toggle" onclick="theme()"><i class="moon icon"></i></button>
 </div>
   {{{body}}}
   <div id="footer">

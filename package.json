@@ -26,7 +26,8 @@
   },
   "scripts": {
     "test": "error",
-    "start": "node server.js",
+    "start": "npm run seed && node server.js",
+    "app": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/index.js"
   },

@@ -1,9 +1,17 @@
+<div class="reference-avatar">
+<small>avatars from: <b>flaticon.com</b></small>
+</div>
+
 <div class="content">
     <div class="entry">
-        <h2 class="fullname">{{user.firstname}} {{user.lastname}}<div class="ui label userbadge">{{user.experience}}</div></h2>
-        <small class="location">{{user.city}} / {{user.country}}</small>
+        <div class="user-background">
+            <img class="ui centered medium circular image" src="/avatars/{{user.avatar}}.png">
+            <h2 class="fullname">{{user.firstname}} {{user.lastname}}<div class="ui label userbadge text white">{{user.experience}}</div></h2>
+            <small class="location">{{user.city}} / {{user.country}}</small>
+        </div>
     </div>
-    <button class="ui fluid button"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">Linkedin</a></button>
+    <button class="ui fluid blue inverted button"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">
+    <i class="linkedin icon"></i>Linkedin</a></button>
     <div id="about-me-div">
         <div class="ui vertical stripe segment">
             <div class="ui text container">
@@ -12,8 +20,15 @@
             </div>
         </div>
     </div>
+    {{#if userprofile.aboutme}}
+    {{else}}
+    <p id="aboutme-toast">1</p>
+    {{/if}}
     {{!--  --}}
-    <button class="fluid ui button edit-profile-button black">Edit</button>
+    <div class="ui animated fade button blue fluid edit-profile-button" tabindex="0">
+        <div class="visible content">Edit Profile</div>
+        <div class="hidden content"><i class="edit icon"></i></div>
+    </div>
     {{!--  --}}
     <div class="ui modal">
         <i class="close icon"></i>
@@ -26,42 +41,64 @@
             <div class="four fields">
                 <div class="field">
                     <label>First name</label>
-                    <input type="text" placeholder="First Name" id="first-name-input">
+                    <input type="text" placeholder="{{user.firstname}}" id="first-name-input">
                     <button class="fluid green ui button" id="first-name-button"><i class="edit icon"></i>Update First name</button>
                 </div>
                 <div class="field">
                     <label>Last name</label>
-                    <input type="text" placeholder="Last Name" id="last-name-input">
+                    <input type="text" placeholder="{{user.lastname}}" id="last-name-input">
                     <button class="fluid green ui button" id="last-name-button"><i class="edit icon"></i>Update Last name</button>
                 </div>
                 <div class="field">
                     <label>City</label>
-                    <input type="text" placeholder="City Name" id="city-input">
+                    <input type="text" placeholder="{{user.city}}" id="city-input">
                     <button class="fluid green ui button" id="city-button"><i class="edit icon"></i>Update City</button>
                 </div>
                 <div class="field">
                     <label>Country</label>
-                    <input type="text" placeholder="Country Name" id="country-input">
+                    <input type="text" placeholder="{{user.country}}" id="country-input">
                     <button class="fluid green ui button" id="country-button"><i class="edit icon"></i>Update Country</button>
                 </div>
                 </div>
                     <div class="three fields">
                 <div class="field">
                     <label>Email Address</label>
-                    <input type="text" placeholder="Email Address" id="email-input">
+                    <input type="text" placeholder="{{user.email}}" id="email-input">
                     <button class="fluid green ui button" id="email-button"><i class="edit icon"></i>Update Email</button>
                 </div>
                 <div class="field">
                     <label>Linkedin Username</label>
-                    <input type="text" placeholder="Linkedin Username" id="linkedin-input">
+                    <input type="text" placeholder="{{user.linkedin}}" id="linkedin-input">
                     <button class="fluid green ui button" id="linkedin-button"><i class="edit icon"></i>Update Linkedin</button>
+                </div>
+                <div class="field">
+                    <label>Select Avatar</label>
+                    <div class="ui fluid selection dropdown">
+                        <input type="hidden" name="user" id="avatar-input">
+                        <i class="dropdown icon"></i>
+                        <div class="default text" id="avatar-input-div">Choose your avatar</div>
+                        <div class="menu" id="data-menu">
+                            <div class="item" data-value="Aang"> <img class="ui mini avatar image" src="/avatars/Aang.png">Aang</div>
+                            <div class="item" data-value="Hakoda"><img class="ui mini avatar image" src="/avatars/Hakoda.png">Hakoda</div>
+                            <div class="item" data-value="Iroh"><img class="ui mini avatar image" src="/avatars/Iroh.png">Iroh</div>
+                            <div class="item" data-value="Katara"><img class="ui mini avatar image" src="/avatars/Katara.png">Katara</div>
+                            <div class="item" data-value="Zhao"><img class="ui mini avatar image" src="/avatars/Zhao.png">Zhao</div>
+                            <div class="item" data-value="Suki"><img class="ui mini avatar image" src="/avatars/Suki.png">Suki</div>
+                            <div class="item" data-value="Ozai"><img class="ui mini avatar image" src="/avatars/Ozai.png">Ozai</div>
+                            <div class="item" data-value="Sokka"><img class="ui mini avatar image" src="/avatars/Sokka.png">Sokka</div>
+                            <div class="item" data-value="Zuko"><img class="ui mini avatar image" src="/avatars/Zuko.png">Zuko</div>
+                        </div>
+                        </div>
+                        <div class="ui green ok fluid button" id="avatar-button">
+                        <i class="user icon"></i>Select Avatar
+                    </div>
                 </div>
             </div>
         </div>
         <div class="ui form">
             <div class="field fluid">
                 <label>About me</label>
-                <textarea id="about-me" rows="2"></textarea>
+                <textarea id="about-me" rows="2" placeholder="{{userprofile.aboutme}}"></textarea>
                 <div class="ui fluid green ok fluid button" id="about-me-button">
                     <i class="edit icon"></i>Add About me
                 </div>
@@ -70,7 +107,11 @@
     </div>
   </div>
 </div>
-    <div class="footer-padding"></div>
+    <div class="ui grid repo-container">
+        <div class="ui cards users-container">
 
+        </div>
+    </div>
+    <div class="footer-padding2"></div>
 <script src="/js/recruiterprofile.js"></script>
 

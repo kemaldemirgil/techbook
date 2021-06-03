@@ -11,21 +11,20 @@ const seedAll = async () => {
 
   await sequelize.sync({ force: true });
   console.log('\n----- DATABASE SYNCED -----\n');
-
+  
   await seedUsers();
   console.log('\n----- USERS SYNCED -----\n');
-
+  
   await seedProfiles();
   console.log('\n----- PROFILES SYNCED -----\n');
-
+  
   await seedTechnologies();
   console.log('\n----- TECHNOLOGIES SYNCED -----\n');
-
+  
   await seedUserTechnologies();
   console.log('\n----- USERTECHNOLOGIES SYNCED -----\n');
   
   process.exit(0);
 };
 
-//StartSeeding.......................................
-seedAll();
+seedAll()

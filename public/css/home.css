@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Kalam&family=Kanit&family=Share&family=Ubuntu+Mono&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
 :root {
   --kalam: 'Kalam', arial;
   --kanit: 'Kanit', sans-serif;
@@ -12,6 +11,27 @@
 * {
   font-family: var(--rubik);
 }
+
+
+.dark-mode {
+  background-color: #151515;
+  color: #679ded;
+}
+
+.background {
+  background-color: rgb(38, 38, 38);
+}
+
+
+
+.reference-avatar {
+  display: flex;
+  justify-content: right;
+  color: rgb(150, 150, 150);
+  font-style: italic;
+  font-size: 12px;
+}
+
 
 .header-h1-title {
   font-family: var(--audio);
@@ -29,7 +49,6 @@
 .content .entry {
   background-color: #ffffff;
   text-align: center;
-  padding-bottom: 10px;
 }
 
 .fullname {
@@ -38,7 +57,6 @@
   font-weight: 700;
   margin: auto;
   justify-content: center;
-  background-color: #ffffff;
   width: 80%;
 }
 
@@ -59,19 +77,11 @@
   display: block;
   text-align: center;
   background-color:rgb(97, 97, 97);
-  color:#fff;
+  color:#ffffff;
   text-decoration: none;
 }
 
-.users-container {
-  background-color: #f2f2f2;
-}
-
-.main-project-container {
-  margin: 60px;
-}
-
-#aboutme-toast {
+#aboutme-toast, #portfolio-toast, #mainproject-toast  {
   display: none;
 }
 
@@ -93,7 +103,7 @@
 }
 
 .segment1 {
-  background-color: #f2f2f2;
+  background-color: #000000;
 }
 
 #user-id {
@@ -106,6 +116,10 @@
 
 .footer-padding2 {
   padding: 5%;
+}
+
+.footer-padding3 {
+  padding: 15%;
 }
 
 .reviewtext {
