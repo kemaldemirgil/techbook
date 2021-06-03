@@ -4,21 +4,23 @@
 
 <div class="content">
     <div class="entry">
-        <img class="ui centered medium circular image" src="/avatars/{{user.avatar}}.png">
-        <h2 class="fullname">{{user.firstname}} {{user.lastname}}<div class="ui label userbadge">{{user.experience}}</div></h2>
-        <small class="location">{{user.city}} / {{user.country}}</small>
+        <div class="user-background">
+            <img class="ui centered medium circular image" src="/avatars/{{user.avatar}}.png">
+            <h2 class="fullname">{{user.firstname}} {{user.lastname}}<div class="ui label userbadge">{{user.experience}}</div></h2>
+            <small class="location">{{user.city}} / {{user.country}}</small>
+        </div>
     </div>
     <div class="three ui buttons">
-        <button class="ui button"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">
+        <button class="ui button blue inverted"><a href="https://www.linkedin.com/in/{{user.linkedin}}" target="_blank">
         <i class="linkedin icon"></i>Linkedin</a></button>
-        <button class="ui button"><a id="usergithub" href="https://github.com/{{user.github}}" target="_blank">
+        <button class="ui button blue inverted"><a id="usergithub" href="https://github.com/{{user.github}}" target="_blank">
         <i class="github icon"></i>Github</a></button>
-        <button class="ui button"><a href="{{userprofile.portfolio}}" target="_blank">
+        <button class="ui button blue inverted"><a href="{{userprofile.portfolio}}" target="_blank">
         <i class="address card outline icon"></i>Portfolio</a></button>
     </div>
     <div class="ui container center aligned">
         <h4 class="ui horizontal header divider" id="divider"><p>Tools | Languages | Framworks</p></h4>
-        <div class="ui message">
+        <div class="ui message" id="night-tech">
             {{#each usertechname}}
             <div class="ui violet label">{{name}}</div>
             {{/each}}

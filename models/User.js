@@ -77,6 +77,7 @@ User.init(
     avatar: {
       type: DataTypes.STRING,
       allowNull: true,
+      defaultValue: "Zuko"
     }
   },
   {

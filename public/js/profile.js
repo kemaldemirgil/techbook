@@ -277,7 +277,7 @@ const insertTech = async () => {
       $('body')
       .toast({
       class: 'error',
-      message: `Tech Already Exists`
+      message: `Tech already exists ! `
       });
     }
   }
@@ -333,26 +333,12 @@ const addAvatar = async () => {
       $('body')
       .toast({
       class: 'error',
-      message: `An error occured !`
+      message: `Select an avatar !  !`
     });
     }
   }
 };
 
-
-$( document ).ready( () => {
-  var username = nameInputEl.innerHTML.trim();
-  if (username) {
-    getUserRepos(username);
-    nameInputEl.value = '';
-  } else {
-    $('body')
-    .toast({
-    class: 'error',
-    message: `An error occured !`
-  });
-  }
-});
 
 var getUserRepos = async function (user) {
   var apiUrl = 'https://api.github.com/users/' + user + '/repos';
@@ -461,7 +447,7 @@ if ($("#portfolio-toast").text() === "1") {
       class: 'warning',
       displayTime: 0,
       closeIcon: true,
-      message: 'Please upload your portfolio...'
+      message: 'Please link your portfolio...'
     })
   ;
 
@@ -477,6 +463,53 @@ if ($("#mainproject-toast").text() === "1") {
   ;
 
 }
+
+const theme = () => {
+  var userbackground = document.querySelector(".user-background");
+  userbackground.classList.toggle("background");
+  var profiletech = document.querySelector("#night-tech");
+  profiletech.classList.toggle("inverted");
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+  var nav = document.querySelector("#nav");
+  nav.classList.toggle("inverted");
+}
+
+$( document ).ready( () => {
+  var username = nameInputEl.innerHTML.trim();
+  if (username) {
+    getUserRepos(username);
+    nameInputEl.value = '';
+  } else {
+    $('body')
+    .toast({
+    class: 'error',
+    message: `No github under this name !`
+  });
+  }
+});
+
+
+$( document ).ready(() => {
+  let badge = $(".userbadge");
+  $(badge).css("border", "2px solid grey");
+  if($(badge).text() === "recruiter") {
+    $(badge).css("background-color", "#d589fc")
+    $(badge).text("R");
+  }
+  if($(badge).text() === "junior") {
+    $(badge).css("background-color", "#aafc89")
+    $(badge).text("JR");
+  }
+  if($(badge).text() === "intermediate") {
+    $(badge).css("background-color", "#89aafc")
+    $(badge).text("INT");
+  }
+  if($(badge).text() === "senior") {
+    $(badge).css("background-color", "#fc8989")
+    $(badge).text("SR");
+  }
+});
 
 
 document.querySelector('#avatar-button').addEventListener('click', addAvatar);
