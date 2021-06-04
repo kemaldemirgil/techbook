@@ -35,6 +35,7 @@ router.post('/', async (req, res) => {
       req.session.firstlog = true;
       res.status(200).json(dbUserData);
       req.session.star = false;
+      req.session.experience = dbUserData.experience;
     });
   } catch (err) {
     console.log(err);
