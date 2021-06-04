@@ -434,7 +434,7 @@ $('.dropdown')
 if ($("#aboutme-toast").text() === "1") {
   $('body')
     .toast({
-      class: 'warning',
+      class: 'purple',
       displayTime: 0,
       closeIcon: true,
       message: 'Please fill in your about me...'
@@ -445,7 +445,7 @@ if ($("#aboutme-toast").text() === "1") {
 if ($("#portfolio-toast").text() === "1") {
   $('body')
     .toast({
-      class: 'warning',
+      class: 'blue',
       displayTime: 0,
       closeIcon: true,
       message: 'Please link your portfolio...'
@@ -456,7 +456,7 @@ if ($("#portfolio-toast").text() === "1") {
 if ($("#mainproject-toast").text() === "1") {
   $('body')
     .toast({
-      class: 'warning',
+      class: 'orange',
       displayTime: 0,
       closeIcon: true,
       message: 'Please select a main project...'

@@ -78,7 +78,7 @@ User.init(
     avatar: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "Zuko",
+      defaultValue: "Hakoda",
     },
     stars: {
       type: DataTypes.INTEGER,

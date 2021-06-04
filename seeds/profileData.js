@@ -8,8 +8,8 @@ const profiledata = [
     id: 1,
     userid: '1',
     aboutme: 'Hello!',
-    portfolio: 'https://kemaldemirgil.github.io/kd-portfolio/',
-    mainproject: 'kd-portfolio'
+    portfolio: 'micahol.com',
+    mainproject: 'RStartHere'
   },
   {
     id: 2,

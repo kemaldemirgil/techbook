@@ -104,7 +104,7 @@ const usertechnologyData = [
     id: 17,
     techid: '2',
     userid: '3',
-    name: 'CSS',
+    name: 'C',
   },
   {
     id: 18,
@@ -140,7 +140,7 @@ const usertechnologyData = [
     id: 23,
     techid: '3',
     userid: '4',
-    name: 'HTML',
+    name: 'C#',
   },
   {
     id: 24,
@@ -368,7 +368,7 @@ const usertechnologyData = [
     id: 61,
     techid: '2',
     userid: '15',
-    name: 'CSS',
+    name: 'C',
   },
   {
     id: 62,

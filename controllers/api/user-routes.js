@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
       github: req.body.github,
       linkedin: req.body.linkedin,
       experience: req.body.experience,
-      avatar: "Aang"
+      avatar: "Hakota"
     });
     await Profile.create({
       userid: dbUserData.id,
@@ -63,14 +63,12 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-    req.session.save(() => {
-      req.session.loggedIn = true;
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
-      req.session.experience = dbUserData.experience;
-      req.session.star = false;
-    });
+        req.session.loggedIn = true;
+        req.session.user_id = dbUserData.id;
+        req.session.username = dbUserData.username;
+        req.session.experience = dbUserData.experience;
+        req.session.star = false;
+        res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
