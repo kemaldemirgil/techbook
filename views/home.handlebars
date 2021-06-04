@@ -38,11 +38,11 @@
     <div class="ui equal width stackable internally celled grid">
         <div class="center aligned row">
         <div class="column">
-            <h3 class="reviewtext">"Easy to Connect"</h3>
+            <h3 class="reviewtext" id="text1"></h3>
             <p><b>Alexandra</b> Human Resources</p>
         </div>
         <div class="column">
-            <h3 class="reviewtext">"One stop for all information, find everything you want."</h3>
+            <h3 class="reviewtext" id="text2"></h3>
             <p><b>Steven</b> Recruiter</p>
         </div>
         </div>
@@ -82,7 +82,11 @@
             {{#each mainprojects}}
             <div class=" ui card purple">
                 <div class="content">
-                    <a href="{{usermainproject}}" class="header"><i class="gem outline icon"></i>  {{mainprojectname}}</a>
+                    <a href="{{usermainproject}}" class="header"><i class="gem outline icon"></i>  {{mainprojectname}}
+                        <span class="right floated">
+                            <img class="ui avatar image" src="/avatars/{{avatar}}.png">
+                        </span>
+                    </a>
                     <div class="meta">
                         <span class="category">{{github}}</span>
                     </div>

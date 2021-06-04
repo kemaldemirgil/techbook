@@ -5,7 +5,11 @@
             {{#each user as |user|}}
                 <div class="ui card purple">
                     <div class="content">
-                        <a href="/profile/{{user.id}}" class="header">{{user.firstname}} {{user.lastname}}</a>
+                        <a href="/profile/{{user.id}}" class="header">{{user.firstname}} {{user.lastname}}
+                            <span class="right floated">
+                            <img class="ui avatar image" src="/avatars/{{avatar}}.png">
+                            </span>
+                        </a>
                         <div class="meta">
                             <span class="category">{{user.github}}</span>
                         </div>

@@ -19,3 +19,18 @@ const loginFormHandler = async (event) => {
 };
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
+////////////////////////////BACKGROUND-BLUR////////////////////////////
+const password = document.getElementById('password-login')
+const background = document.querySelector('.imgBx')
+
+password.addEventListener('input', (e) => {
+  const input = e.target.value
+  const length = input.length
+  const blurValue = 5 - length * 0.5
+  background.style.filter = `blur(${blurValue}px)`
+})
+
+$( document ).ready( () => {
+  background.style.filter = `blur(5px)`
+});

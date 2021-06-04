@@ -255,6 +255,9 @@ router.get("/topstars", async (req, res) => {
       return;
     }
     const dbUserData = await User.findAll({
+      where: {
+        [Op.or]: [{experience: 'New Star'}, {experience: 'Bright Star'}, {experience: 'Super Star'}]
+      },
       order: [
         ['stars', 'DESC'],
       ],

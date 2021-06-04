@@ -4,14 +4,16 @@
   --kalam: 'Kalam', cursive;
   --kanit: 'Kanit', sans-serif;
   --ubuntu: 'Ubuntu Mono', monospace;
+  --rubik: 'Rubik', sans-serif;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: var(--ubuntu)
+  font-family: var(--rubik)
 }
+
 
 section {
   position: relative;

@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
       github: req.body.github,
       linkedin: req.body.linkedin,
       experience: req.body.experience,
-      avatar: "Hakota"
+      avatar: "Hakoda"
     });
     await Profile.create({
       userid: dbUserData.id,
@@ -422,6 +422,40 @@ router.put('/star-user', async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+//DELETE//http://localhost:3001/api/users/delete
+router.delete('/delete', async (req, res) => {
+  await User.destroy (
+  {
+    where: {
+      id: req.session.user_id
+    }
+  })
+  await Profile.destroy (
+  {
+    where: {
+      userid: req.session.user_id
+    }
+  })
+  await UserTechnology.destroy (
+  {
+    where: {
+      userid: req.session.user_id
+    }
+  })
+  .then(deletedUser => {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+    console.log(deletedUser);
+    res.render('signup', { title: 'signup-page', layout: 'signup' });
+  })
+  .catch(err => {
+    console.log(err);
+    res.status(500).json(err);
+  });
+});
+
 
 
 

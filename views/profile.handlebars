@@ -66,39 +66,39 @@
                 <div class="field">
                     <label>First name</label>
                     <input type="text" placeholder="{{user.firstname}}" id="first-name-input">
-                    <button class="fluid green ui button" id="first-name-button"><i class="edit icon"></i>Update First name</button>
+                    <button class="fluid ui button" id="first-name-button"><i class="edit icon"></i>Update First name</button>
                 </div>
                 <div class="field">
                     <label>Last name</label>
                     <input type="text" placeholder="{{user.lastname}}" id="last-name-input">
-                    <button class="fluid green ui button" id="last-name-button"><i class="edit icon"></i>Update Last name</button>
+                    <button class="fluid ui button" id="last-name-button"><i class="edit icon"></i>Update Last name</button>
                 </div>
                 <div class="field">
                     <label>City</label>
                     <input type="text" placeholder="{{user.city}}" id="city-input">
-                    <button class="fluid green ui button" id="city-button"><i class="edit icon"></i>Update City</button>
+                    <button class="fluid ui button" id="city-button"><i class="edit icon"></i>Update City</button>
                 </div>
                 <div class="field">
                     <label>Country</label>
                     <input type="text" placeholder="{{user.country}}" id="country-input">
-                    <button class="fluid green ui button" id="country-button"><i class="edit icon"></i>Update Country</button>
+                    <button class="fluid ui button" id="country-button"><i class="edit icon"></i>Update Country</button>
                 </div>
                 </div>
                     <div class="three fields">
                 <div class="field">
                     <label>Email Address</label>
                     <input type="text" placeholder="{{user.email}}" id="email-input">
-                    <button class="fluid green ui button" id="email-button"><i class="edit icon"></i>Update Email</button>
+                    <button class="fluid ui button" id="email-button"><i class="edit icon"></i>Update Email</button>
                 </div>
                 <div class="field">
                     <label>Linkedin Username</label>
                     <input type="text" placeholder="{{user.linkedin}}" id="linkedin-input">
-                    <button class="fluid green ui button" id="linkedin-button"><i class="edit icon"></i>Update Linkedin</button>
+                    <button class="fluid ui button" id="linkedin-button"><i class="edit icon"></i>Update Linkedin</button>
                 </div>
                 <div class="field">
                     <label>Github Username</label>
                     <input type="text" placeholder="{{user.github}}" id="github-input">
-                    <button class="fluid green ui button" id="github-button"><i class="edit icon"></i>Update Github</button>
+                    <button class="fluid ui button" id="github-button"><i class="edit icon"></i>Update Github</button>
                 </div>
             </div>
         </div>
@@ -151,7 +151,7 @@
             <div class="field fluid">
                 <label>About me</label>
                 <textarea id="about-me" rows="2" placeholder="{{userprofile.aboutme}}"></textarea>
-                <div class="ui fluid green ok fluid button" id="about-me-button">
+                <div class="ui fluid teal ok fluid button" id="about-me-button">
                     <i class="edit icon"></i>Add About me
                 </div>
             </div>
@@ -166,7 +166,7 @@
                         <option>{{techname}}</option>
                         {{/each}}
                     </select>
-                    <div class="ui green ok fluid button" id="add-tech-button">
+                    <div class="ui ok blue fluid button" id="add-tech-button">
                     <i class="add icon"></i>Add Technology</div>
                 </div>
                 <div class=" eight wide field">
@@ -174,15 +174,19 @@
                     <div class="ui input">
                         <input type="text" id="tech-input" placeholder="something new...">
                     </div>
-                    <div class="ui green ok fluid button" id="insert-tech-button">
+                    <div class="ui ok blue fluid button" id="insert-tech-button">
                         <i class="add icon"></i>Add New Technology
                     </div>
                 </div>
             </div>
         </div>
+        <div class="ui fluid red ok fluid button" id="delete-button">
+            <i class="trash icon"></i>Delete Account
+        </div>
     </div>
   </div>
 </div>
+
 <div id="aboutme-container">
     <div class="ui icon message green">
         <i class="inbox icon"></i>

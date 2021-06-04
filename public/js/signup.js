@@ -88,3 +88,18 @@ window.onclick = function(event) {
     modal.style.display = "none";
     }
 }
+
+////////////////////////////BACKGROUND-BLUR////////////////////////////
+const password = document.getElementById('password-signup')
+const background = document.querySelector('.imgBx')
+
+password.addEventListener('input', (e) => {
+  const input = e.target.value
+  const length = input.length
+  const blurValue = 5 - length * 0.5
+  background.style.filter = `blur(${blurValue}px)`
+})
+
+$( document ).ready( () => {
+  background.style.filter = `blur(5px)`
+});
