@@ -34,3 +34,21 @@ password.addEventListener('input', (e) => {
 $( document ).ready( () => {
   background.style.filter = `blur(5px)`
 });
+
+////////////////////////////MODAL////////////////////////////
+
+var modal = document.getElementById("password-modal");
+var btn = document.querySelector(".forgotpassword");
+var span = document.getElementsByClassName("close")[0];
+
+btn.addEventListener('click', (event) => {
+  event.preventDefault();
+  modal.style.display = "block";
+});
+
+span.onclick = function() {modal.style.display = "none";}
+window.onclick = function(event) {
+    if (event.target == modal) {
+    modal.style.display = "none";
+    }
+}

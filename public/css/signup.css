@@ -201,94 +201,18 @@ section .contentBx .formBx .inputBx p a:hover {
   cursor: pointer;
 }
 
-/* Range Slider */
-
-/* .range-container {
-  position: relative;
+.forgotpassword:hover {
+  text-decoration: underline;
 }
 
-input[type='range'] {
-  width: 200px;
-  margin: 18px 0;
-  -webkit-appearance: none;
-}
-
-input[type='range']:focus {
-  outline: none;
-}
-
-input[type='range'] + label {
-  background-color: rgba(255, 255, 255, 0);
-  position: absolute;
-  top: -25px;
-  left: 110px;
-  width: 80px;
-  padding: 0;
-  text-align: center;
-  border-radius: 4px;
-}
-
-/* Chrome & Safari */
-/* input[type='range']::-webkit-slider-runnable-track {
-  background: #484848;
-  border-radius: 4px;
-  width: 100%;
-  height: 10px;
+.forgotpassword p {
+  font-size: 12px;
   cursor: pointer;
 }
 
-input[type='range']::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  height: 24px;
-  width: 24px;
-  background: #fff;
-  border-radius: 50%;
-  border: 1px solid rgb(0, 0, 0);
-  margin-top: -7px;
-  cursor: pointer;
+.contact-text {
+  margin: 0 auto;
 }
-
-/* Firefox */
-/* input[type='range']::-moz-range-track {
-  background: #484848;
-  border-radius: 4px;
-  width: 100%;
-  height: 13px;
-  cursor: pointer;
-}
-
-input[type='range']::-moz-range-thumb {
-  -webkit-appearance: none;
-  height: 24px;
-  width: 24px;
-  background: #fff;
-  border-radius: 50%;
-  border: 1px solid rgb(0, 0, 0);
-  margin-top: -7px;
-  cursor: pointer;
-} */
-
-/* IE
-input[type='range']::-ms-track {
-  background: purple;
-  border-radius: 4px;
-  width: 100%;
-  height: 13px;
-  cursor: pointer;
-}
-
-input[type='range']::-ms-thumb {
-  -webkit-appearance: none;
-  height: 24px;
-  width: 24px;
-  background: #fff;
-  border-radius: 50%;
-  border: 1px solid purple;
-  margin-top: -7px;
-  cursor: pointer;
-}
-
- */
 
 .signlogo {
   margin-bottom: 30px;

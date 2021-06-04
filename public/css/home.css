@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Kalam&family=Kanit&family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 :root {
   --kalam: 'Kalam', arial;
   --kanit: 'Kanit', sans-serif;
@@ -15,14 +16,21 @@
 
 .dark-mode {
   background-color: #151515;
-  color: #accdff;
+  color: #fdeaaf;
 }
 
 .background {
   background-color: rgb(38, 38, 38);
 }
 
-
+.topstars {
+  text-align: center;
+  font-size: 8rem;
+  background: -webkit-linear-gradient(#fff6dc, #fbbd08);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-family: var(--rubik);
+}
 
 .reference-avatar {
   display: flex;

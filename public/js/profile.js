@@ -390,7 +390,7 @@ var displayRepos = function (repos) {
     var repoName = 'https://github.com/'+repos[i].owner.login + '/' + repos[i].name;
 
     var card = document.createElement('div');
-    card.classList.add("ui", "card")
+    card.classList.add("ui", "card", "yellow")
 
     var content = document.createElement('div');
     content.classList.add("content")
@@ -401,6 +401,9 @@ var displayRepos = function (repos) {
     header.setAttribute('target', "_blank");
     header.textContent = repos[i].name;
 
+    var icon = document.createElement('i');
+    icon.classList.add("github", "icon");
+
     var description = document.createElement('div');
     description.classList.add("center", "aligned", "meta");
 
@@ -410,6 +413,7 @@ var displayRepos = function (repos) {
     desctext.setAttribute('target', "_blank");
 
     card.appendChild(content);
+    header.appendChild(icon);
     content.appendChild(header);
     content.appendChild(description);
     description.appendChild(desctext);
@@ -495,7 +499,7 @@ if ($("#portfolio-toast").text() === "1") {
 if ($("#mainproject-toast").text() === "1") {
   $('body')
     .toast({
-      class: 'orange',
+      class: 'yellow',
       displayTime: 0,
       closeIcon: true,
       message: 'Please select a main project...'
