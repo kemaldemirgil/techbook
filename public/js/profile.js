@@ -464,7 +464,8 @@ if ($("#mainproject-toast").text() === "1") {
   ;
 
 }
-
+// tells page state is true
+ifdark=true
 const theme = () => {
   var userbackground = document.querySelector(".user-background");
   userbackground.classList.toggle("background");
@@ -474,7 +475,18 @@ const theme = () => {
   element.classList.toggle("dark-mode");
   var nav = document.querySelector("#nav");
   nav.classList.toggle("inverted");
+  
+  if
+(ifdark){
+$(divider).css({color:"white"})
+ifdark=!ifdark}
+
+else {
+  $(divider).css({color:"black"})
+ifdark=!ifdark
 }
+};
+
 
 $( document ).ready( () => {
   var username = nameInputEl.innerHTML.trim();
