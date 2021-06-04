@@ -83,11 +83,11 @@ const userdata = [
     city: 'Munich',
     country: 'Germany',
     github: 'kim',
-    experience: 'Bright Star',
+    experience: 'New Star',
     usermainproject: 'https://github.com/kim/picky-rs',
     mainprojectname: 'picky-rs',
     avatar: 'Zuko',
-    stars: 56
+    stars: 49
   },
   {
     id: 6,
@@ -117,10 +117,11 @@ const userdata = [
     city: 'Toronto',
     country: 'Canada',
     github: 'stephanie',
-    experience: 'Super Star',
+    experience: 'Bright Star',
     usermainproject: 'https://github.com/stephanie/travel-bot',
     mainprojectname: 'travel-bot',
-    avatar: 'Katara'
+    avatar: 'Katara',
+    stars: 61
   },
   {
     id: 8,
@@ -133,10 +134,11 @@ const userdata = [
     city: 'Fredrickton',
     country: 'Canada',
     github: 'leech001',
-    experience: 'New Star',
+    experience: 'Bright Star',
     usermainproject: 'https://github.com/leech001/RF-BARRIER',
     mainprojectname: 'RF-BARRIER',
-    avatar: 'Katara'
+    avatar: 'Katara',
+    stars: 55
   },
   {
     id: 9,
@@ -149,10 +151,11 @@ const userdata = [
     city: 'Ottawa',
     country: 'Canada',
     github: 'gramps-project',
-    experience: 'Bright Star',
+    experience: 'New Star',
     usermainproject: 'https://github.com/gramps-project/gramps',
     mainprojectname: 'gramps',
-    avatar: 'Katara'
+    avatar: 'Katara',
+    stars: 44
    },
   {
     id: 10,
@@ -165,10 +168,11 @@ const userdata = [
     city: 'Vancover',
     country: 'Canada',
     github: 'TheHamkerCat',
-    experience: 'Bright Star',
+    experience: 'New Star',
     usermainproject: 'https://github.com/TheHamkerCat/WilliamButcherBot',
     mainprojectname: 'WilliamButcherBot',
-    avatar: 'Ozai'
+    avatar: 'Ozai',
+    stars: 4
   },
   {
     id: 11,
@@ -184,7 +188,8 @@ const userdata = [
     experience: 'Bright Star',
     usermainproject: 'https://github.com/psanford',
     mainprojectname: 'wormhole-william',
-    avatar: 'Sokka'
+    avatar: 'Sokka',
+    stars: 67
   },
   {
     id: 12,
@@ -197,10 +202,11 @@ const userdata = [
     city: 'Winnipeg',
     country: 'Canada',
     github: 'whiteblock',
-    experience: 'Super Star',
+    experience: 'New Star',
     usermainproject: 'https://github.com/whiteblock',
     mainprojectname: 'hobbits',
-    avatar: 'Hakoda'
+    avatar: 'Hakoda',
+    stars: 22
   },
   {
     id: 13,
@@ -216,7 +222,8 @@ const userdata = [
     experience: 'Super Star',
     usermainproject: 'https://github.com/dice-group',
     mainprojectname: 'orca',
-    avatar: 'Ozai'
+    avatar: 'Ozai',
+    stars: 354
   },
   {
     id: 14,
@@ -229,10 +236,11 @@ const userdata = [
     city: 'Calgary',
     country: 'Canada',
     github: 'VernonGrant',
-    experience: 'New Star',
+    experience: 'Bright Star',
     usermainproject: 'https://github.com/VernonGrant',
     mainprojectname: 'VernonGrant',
-    avatar: 'Zhao'
+    avatar: 'Zhao',
+    stars: 72
   },
   {
     id: 15,
@@ -245,10 +253,11 @@ const userdata = [
     city: 'Edmonton',
     country: 'Canada',
     github: 'seemoo-lab',
-    experience: 'Bright Star',
+    experience: 'Super Star',
     usermainproject: 'https://github.com/seemoo-lab',
     mainprojectname: 'frankenstein',
-    avatar: 'Aang'
+    avatar: 'Aang',
+    stars: 102
   },
   {
     id: 16,
@@ -264,7 +273,8 @@ const userdata = [
     experience: 'Bright Star',
     usermainproject: 'https://github.com/txthinking',
     mainprojectname: 'frank',
-    avatar: 'Katara'
+    avatar: 'Katara',
+    stars: 99
   },
   {
     id: 17,
@@ -280,7 +290,8 @@ const userdata = [
     experience: 'Bright Star',
     usermainproject: 'https://github.com/matter-labs-archive',
     mainprojectname: 'FranklinPay-iOS',
-    avatar: 'Iroh'
+    avatar: 'Iroh',
+    stars: 51
   },
   {
     id: 18,
@@ -296,7 +307,8 @@ const userdata = [
     experience: 'New Star',
     usermainproject: 'https://github.com/NancyFx',
     mainprojectname: 'Nancy',
-    avatar: 'Sokka'
+    avatar: 'Sokka',
+    stars: 16
   },
   {
     id: 19,
@@ -312,7 +324,8 @@ const userdata = [
     experience: 'New Star',
     usermainproject: 'https://github.com/catcherwong',
     mainprojectname: 'Demos',
-    avatar: 'Suki'
+    avatar: 'Suki',
+    stars: 22
   },
   {
     id: 20,
@@ -325,10 +338,11 @@ const userdata = [
     city: 'Quebec City',
     country: 'Canada',
     github: 'CarterCommunity',
-    experience: 'New Star',
+    experience: 'Super Star',
     usermainproject: 'https://github.com/CarterCommunity',
     mainprojectname: 'Carter',
-    avatar: 'Zhao'
+    avatar: 'Zhao',
+    stars: 149
   },
 ];
 

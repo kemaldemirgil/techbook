@@ -475,16 +475,13 @@ const theme = () => {
   element.classList.toggle("dark-mode");
   var nav = document.querySelector("#nav");
   nav.classList.toggle("inverted");
-  
-  if
-(ifdark){
-$(divider).css({color:"white"})
-ifdark=!ifdark}
-
-else {
-  $(divider).css({color:"black"})
-ifdark=!ifdark
-}
+  if (ifdark) {
+    $(".divider").css({color:"white"})
+    ifdark=!ifdark
+  } else {
+    $(".divider").css({color:"black"})
+    ifdark=!ifdark
+  }
 };
 
 
@@ -505,22 +502,18 @@ $( document ).ready( () => {
 
 $( document ).ready(() => {
   let badge = $(".userbadge");
-  $(badge).css("border", "2px solid grey");
-  if($(badge).text() === "recruiter") {
-    $(badge).css("background-color", "#d589fc")
-    $(badge).text("R");
+  $(badge).css("border", "2px solid yellow");
+  if($(badge).text() === "Star Hunter") {
+    $(badge).css("background-color", "#fbbd08")
   }
-  if($(badge).text() === "junior") {
-    $(badge).css("background-color", "#aafc89")
-    $(badge).text("JR");
+  if($(badge).text() === "New Star") {
+    $(badge).css("background-color", "#ffe596")
   }
-  if($(badge).text() === "intermediate") {
-    $(badge).css("background-color", "#89aafc")
-    $(badge).text("INT");
+  if($(badge).text() === "Bright Star") {
+    $(badge).css("background-color", "#ffd865")
   }
-  if($(badge).text() === "senior") {
-    $(badge).css("background-color", "#fc8989")
-    $(badge).text("SR");
+  if($(badge).text() === "Super Star") {
+    $(badge).css("background-color", "#fbbd08")
   }
 });
 

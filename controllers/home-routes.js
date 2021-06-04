@@ -41,13 +41,40 @@ router.get("/home", async (req, res) => {
     });
     const mainProjectsDB = await User.findAll({
       where: {
-        [Op.or]: [{experience: 'junior'}, {experience: 'intermediate'}, {experience: 'senior'}]
+        [Op.or]: [{experience: 'New Star'}, {experience: 'Bright Star'}, {experience: 'Super Star'}]
+      }
+    });
+    const userStarDB = await User.findAll({
+      attributes: ['stars', 'id'],
+    });
+    const userstars = userStarDB.map(star => star.get({ plain: true }));
+    // console.log(userstars);
+    userstars.forEach(user => {
+      // console.log(user);
+      if (user.stars >= 50 && user.stars < 100) {
+        User.update ({
+          experience: "Bright Star"
+        },
+        {
+          where: {
+            id: user.id
+          }
+        });
+      } if (user.stars >= 100) {
+        User.update ({
+          experience: "Super Star"
+        },
+        {
+          where: {
+            id: user.id
+          }
+        });
       }
     });
     const user = dbUserData.get({ plain: true })
     const mainprojects = mainProjectsDB.map(project => project.get({ plain: true }));
-    console.log(mainprojects);
-    console.log(user);
+    // console.log(mainprojects);
+    // console.log(user);
     res.status(200);
     res.render('home', { user, mainprojects, loggedIn: req.session.loggedIn, firstLog: req.session.firstlog, title: 'home-page', layout: 'main' });
     req.session.firstlog = false;
@@ -64,7 +91,7 @@ router.get("/profile", async (req, res) => {
       res.redirect('/login');
       return;
     }
-    if (req.session.experience === "recruiter") {
+    if (req.session.experience === "Star Hunter") {
       const dbUserData = await User.findOne({
         where: {
           username: req.session.username,
@@ -174,6 +201,33 @@ router.get("/profile/:id", async (req, res) => {
       'mainproject'
     ],
   });
+  const userStarDB = await User.findAll({
+    attributes: ['stars', 'id'],
+  });
+  const userstars = userStarDB.map(star => star.get({ plain: true }));
+  // console.log(userstars);
+  userstars.forEach(user => {
+    // console.log(user);
+    if (user.stars >= 50 && user.stars < 100) {
+      User.update ({
+        experience: "Bright Star"
+      },
+      {
+        where: {
+          id: user.id
+        }
+      });
+    } if (user.stars >= 100) {
+      User.update ({
+        experience: "Super Star"
+      },
+      {
+        where: {
+          id: user.id
+        }
+      });
+    }
+  });
   const userprofile = profileData.get({ plain: true });
   const usertechname = techData.map(post => post.get({ plain: true }));
   const user = userData.get({ plain: true });
@@ -183,6 +237,29 @@ router.get("/profile/:id", async (req, res) => {
   res.status(200);
   res.render('userprofile', {user, usertechname, userprofile, title: 'user-profile-page', layout: 'main' });
 });
+
+//GET//http://localhost:3001/topstars
+router.get("/topstars", async (req, res) => {
+  try {
+    if (!req.session.loggedIn) {
+      res.redirect('/login');
+      return;
+    }
+    const dbUserData = await User.findAll({
+      order: [
+        ['stars', 'DESC'],
+      ],
+    });
+    const user = dbUserData.map(user => user.get({ plain: true }));
+    console.log(user);
+    res.status(200);
+    res.render('topstars', { user, loggedIn: req.session.loggedIn, title: 'topstar-page', layout: 'main' });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 
 //GET//http://localhost:3001/search
 router.get("/search", async (req, res) => {

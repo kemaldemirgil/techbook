@@ -414,10 +414,8 @@ router.put('/star-user', async (req, res) => {
     if (req.session.star === false) {
       User.increment({stars: 1}, { where: { id: req.body.userid } })
       .then(dbUserData => { 
-        console.log(2)
         res.status(200).json(dbUserData);
       })
-  
       req.session.save(() => {
         req.session.star = true;
       });

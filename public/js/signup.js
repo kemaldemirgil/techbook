@@ -5,7 +5,7 @@ const signupFormHandler = async (event) => {
     const password = document.querySelector('#password-signup').value.trim();
     
     if (document.getElementById('recruiter').checked) {
-        const experience = "recruiter";
+        const experience = "Star Hunter";
         const firstname = document.querySelector('#firstname-recruiter-signup').value.trim();
         const lastname = document.querySelector('#lastname-recruiter-signup').value.trim();
         const city = document.querySelector('#city-recruiter-signup').value.trim();

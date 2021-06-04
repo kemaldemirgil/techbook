@@ -65,7 +65,7 @@ User.init(
     experience: {
       type: DataTypes.STRING,
       allowNull: false,
-      defaultValue: "junior",
+      defaultValue: "New Star",
     },
     usermainproject: {
       type: DataTypes.STRING,
@@ -83,7 +83,7 @@ User.init(
     stars: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      defaultValue: 1
+      defaultValue: 0
     }
   },
   {
