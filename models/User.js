@@ -65,6 +65,7 @@ User.init(
     experience: {
       type: DataTypes.STRING,
       allowNull: false,
+      defaultValue: "junior",
     },
     usermainproject: {
       type: DataTypes.STRING,
@@ -77,7 +78,12 @@ User.init(
     avatar: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: "Zuko"
+      defaultValue: "Zuko",
+    },
+    stars: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1
     }
   },
   {

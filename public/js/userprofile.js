@@ -30,7 +30,7 @@ var getUserRepos = async function (user) {
     .then(function (response) {
       if (response.ok) {
         response.json().then(function (data) {
-          console.log(data)
+          // console.log(data)
           displayRepos(data);
         });
       } else {
@@ -108,3 +108,63 @@ $( document ).ready(() => {
     $(badge).text("SR");
   }
 });
+
+const addStar = async () => {
+  const userid = window.location.href.substring(window.location.href.lastIndexOf('/') + 1);
+  // console.log(userid);
+  const response = await fetch('/api/users/star-user', {
+    method: 'PUT',
+    body: JSON.stringify({ userid }),
+    headers: { 'Content-Type': 'application/json' },
+  });
+  // console.log(response)
+  if (response.ok) {
+    $('body')
+    .toast({
+      title: 'SUCCESS',
+      message: 'Starrred User!',
+      showProgress: 'bottom',
+      class: 'success',
+  });
+  window.location.reload()
+  } else if (response.status === 429) {
+    $('body')
+      .toast({
+      class: 'error',
+      message: `Already Starred Today! `
+    });
+  }
+}
+
+
+
+const firstNameUpdate = async () => {
+  const firstname = document.querySelector('#first-name-input').value;
+  $('body')
+  .toast({
+    title: 'SUCCESS',
+    message: 'Your first name has been updated!',
+    showProgress: 'bottom',
+    class: 'success',
+  });
+  if (firstname) {
+    const response = await fetch('/api/users/firstname', {
+      method: 'PUT',
+      body: JSON.stringify({ firstname }),
+      headers: { 'Content-Type': 'application/json' },
+    });
+
+    if (response.statusText === 200) {
+      document.location.replace('/profile');
+    } else {
+      console.log(response);
+    }
+  }
+}
+
+
+
+
+
+const stars = document.getElementById("star-user")
+stars.addEventListener("click", addStar);

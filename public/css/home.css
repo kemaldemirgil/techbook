@@ -125,3 +125,8 @@
 .reviewtext {
   font-family: var(--kalam);
 }
+
+#star-user:hover {
+  color: #ffcc32;
+  cursor: pointer;
+}

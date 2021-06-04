@@ -16,3 +16,11 @@ document.querySelector('.logout-button').addEventListener('click', myLogout);
 $('.ui.basic.modal')
   .modal('show')
 ;
+
+
+let currentDay = $("#currentDay");
+updateCurrentTime();
+setInterval(updateCurrentTime, 1000);
+function updateCurrentTime() {
+    currentDay.text(moment().format('DD M YYYY'));
+}

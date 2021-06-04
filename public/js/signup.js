@@ -12,7 +12,7 @@ const signupFormHandler = async (event) => {
         const country = document.querySelector('#country-recruiter-signup').value.trim();
         const linkedin = document.querySelector('#linkedin-recruiter-signup').value.trim()
         const avatar = "Zuko"
-        if (username && email && password && firstname && lastname && city && country) {
+        if (username && email && password && firstname && lastname && city && country && avatar) {
             const response = await fetch('/api/users', {
             method: 'POST',
             body: JSON.stringify({ username, email, password, firstname, lastname, city, country, linkedin, experience, avatar }),
@@ -29,7 +29,6 @@ const signupFormHandler = async (event) => {
         }
     }
     if (document.getElementById('developer').checked) {
-        const experience = sliderValue;
         const firstname = document.querySelector('#firstname-developer-signup').value.trim();
         const lastname = document.querySelector('#lastname-developer-signup').value.trim();
         const city = document.querySelector('#city-developer-signup').value.trim();
@@ -37,10 +36,10 @@ const signupFormHandler = async (event) => {
         const github = document.querySelector('#github-developer-signup').value.trim();
         const linkedin = document.querySelector('#linkedin-developer-signup').value.trim();
         const avatar = "Zuko"
-        if (username && email && password && firstname && lastname && city && country && github && experience) {
+        if (username && email && password && firstname && lastname && city && country && github && avatar) {
             const response = await fetch('/api/users', {
             method: 'POST',
-            body: JSON.stringify({ username, email, password, firstname, lastname, city, country, linkedin, github, experience, avatar }),
+            body: JSON.stringify({ username, email, password, firstname, lastname, city, country, linkedin, github, avatar }),
             headers: { 'Content-Type': 'application/json' },
             });
             if (response.status === 200) {
@@ -88,43 +87,4 @@ window.onclick = function(event) {
     if (event.target == modal) {
     modal.style.display = "none";
     }
-}
-
-
-///////////////////////////////EXPERIENCE-SLIDER/////////////////////////////////////
-let sliderValue;
-const range = document.getElementById('range')
-
-range.addEventListener('input', (e) => {
-    let value = +e.target.value
-    const label = e.target.nextElementSibling
-
-    const range_width = getComputedStyle(e.target).getPropertyValue('width')
-    const label_width = getComputedStyle(label).getPropertyValue('width')
-
-    const num_width = +range_width.substring(0, range_width.length - 2)
-    const num_label_width = +label_width.substring(0, label_width.length - 2)
-
-    const max = +e.target.max
-    const min = +e.target.min
-
-    const left = value * (num_width / max) - num_label_width / 2 + scale(value, min, max, 10, -10)
-
-    label.style.left = `${left}px`
-
-    if (value >= 0 && value <= 33) {
-        value = "junior"
-    }
-    if (value > 33 && value <= 66) {
-        value = "intermediate"
-    }
-    if (value > 66 && value <= 100) {
-        value = "senior"
-    }
-    label.innerHTML = value
-    sliderValue = value;
-})
-
-const scale = (num, in_min, in_max, out_min, out_max) => {
-    return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
 }

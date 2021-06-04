@@ -149,7 +149,8 @@ router.get("/profile/:id", async (req, res) => {
       'experience',
       'usermainproject',
       'mainprojectname',
-      'avatar'
+      'avatar',
+      'stars'
     ],
   });
   const techData = await UserTechnology.findAll({
@@ -224,6 +225,7 @@ router.get("/search-results", async (req, res) => {
     const city = req.query.c;
     const experience = req.query.e;
     const technology = req.query.t;
+    let dbUserData = "";
     if (country === "") {
       country = false;
     }
@@ -237,131 +239,88 @@ router.get("/search-results", async (req, res) => {
       technology = false;
     }
     if (country) {
-      const dbUserData = await User.findAll({
-          where: {country: country},
-          include: [{model: UserTechnology}],
-        });
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {country: country},
+      include: [{model: UserTechnology}],});
     }
     if (city) {
-      const dbUserData = await User.findAll({where: {city: city},
-          include: [{model: UserTechnology}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({where: {city: city},
+      include: [{model: UserTechnology}]});
     }
     if (experience) {
-      const dbUserData = await User.findAll({where: {experience: experience},
-          include: [{model: UserTechnology}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({where: {experience: experience},
+      include: [{model: UserTechnology}]});
     }
     if (technology) {
-      const dbUserData = await User.findAll({
-          include: [{model: UserTechnology,
-              where: {name: technology}}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      include: [{model: UserTechnology,
+          where: {name: technology}}]});
     }
     if (city && country) {
-      const dbUserData = await User.findAll({
-          where: {city: city,country: country},
-          include: [{model: UserTechnology}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {city: city,country: country},
+      include: [{model: UserTechnology}]});
     }
     if (city && experience) {
-      const dbUserData = await User.findAll({
-          where: {city: city,experience: experience},
-          include: [{model: UserTechnology}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {city: city,experience: experience},
+      include: [{model: UserTechnology}]});
     }
     if (country && experience) {
-      const dbUserData = await User.findAll({
-          where: {[Op.and]: [{ country: country },{ experience: experience }]},
-          include: [{model: UserTechnology,}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {[Op.and]: [{ country: country },{ experience: experience }]},
+      include: [{model: UserTechnology,}]});
     }
     if (city && technology) {
-      const dbUserData = await User.findAll({
-          where: {city:city,},
-          include: [{model: UserTechnology,
-              where: {name: technology}}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {city:city,},
+      include: [{model: UserTechnology,
+          where: {name: technology}}]});
     }
     if (country && technology) {
-      const dbUserData = await User.findAll({
-          where: {country:country,},
-          include: [{model: UserTechnology,
-              where: {name: technology}}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {country:country,},
+      include: [{model: UserTechnology,
+          where: {name: technology}}]});
     }
     if (experience && technology) {
-      const dbUserData = await User.findAll({
-          where: {experience: experience,},
-          include: [{model: UserTechnology,
-              where: {name: technology}}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {experience: experience,},
+      include: [{model: UserTechnology,
+          where: {name: technology}}]});
     }
     if (city && country && experience) {
-      const dbUserData = await User.findAll({
-          where: {city: city,country: country,experience: experience,},
-          include: [{model: UserTechnology}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {city: city,country: country,experience: experience,},
+      include: [{model: UserTechnology}]});
     }
     if (city && country && technology) {
-      const dbUserData = await User.findAll({
-          where: {city: city,country: country,},
-          include: [{model: UserTechnology,
-              where: {name: technology}}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {city: city,country: country,},
+      include: [{model: UserTechnology,
+          where: {name: technology}}]});
     }
     if (city && experience && technology) {
-      const dbUserData = await User.findAll({
-          where: {city: city,experience: experience,},
-          include: [{model: UserTechnology,
-              where: {name: technology}}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {city: city,experience: experience,},
+      include: [{model: UserTechnology,
+          where: {name: technology}}]});
     }
     if (experience && country && technology) {
-      const dbUserData = await User.findAll({
-          where: {experience: experience,country: country},
-          include: [{model: UserTechnology,
-              where: {name: technology}}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {experience: experience,country: country},
+      include: [{model: UserTechnology,
+          where: {name: technology}}]});
     }
     if (city && country && experience && technology) {
-      const dbUserData = await User.findAll({
-          where: {city: city,country: country,experience: experience},
-          include: [{model: UserTechnology,
-              where: {name: technology}}]});
-        const userz = dbUserData.map(users => users.get({ plain: true }));
-        res.status(200);
-        res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
+    dbUserData = await User.findAll({
+      where: {city: city,country: country,experience: experience},
+      include: [{model: UserTechnology,
+          where: {name: technology}}]});
     }
+    const userz = dbUserData.map(users => users.get({ plain: true }));
+    res.status(200);
+    res.render('searchresults', { userz, loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

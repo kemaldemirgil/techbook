@@ -19,8 +19,8 @@ const firstNameUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -43,8 +43,8 @@ const lastNameUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -68,8 +68,8 @@ const cityUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -93,8 +93,8 @@ const countryUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -118,8 +118,8 @@ const emailUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -143,8 +143,8 @@ const linkedinUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -168,8 +168,8 @@ const githubUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -196,10 +196,10 @@ const mainProject = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response2.statusText === 200) {
-      document.location.replace('/profile');
+    if (response2.ok) {
+      window.location.reload();
     } else {
-      console.log(response2);
+      console.log(response);
     }
   }
 };
@@ -222,8 +222,8 @@ const portfolioUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -247,8 +247,8 @@ const aboutmeUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -260,20 +260,21 @@ const insertTech = async () => {
   const tech = document.querySelector('#tech-input').value.trim().toLowerCase();
   console.log(tech);
   if (tech) {
-    $('body')
-    .toast({
-      title: 'SUCCESS',
-      message: 'A new technology been added!',
-      showProgress: 'bottom',
-      class: 'success',
-    });
     const response = await fetch('/api/users/tech', {
       method: 'POST',
-      body: JSON.stringify({ tech }),
+      body: JSON.stringify( {tech} ),
       headers: { 'Content-Type': 'application/json' },
     });
-    console.log(response)
-    if (response.status === 400 ) {
+    if (response.status === 200) {
+      $('body')
+      .toast({
+        title: 'SUCCESS',
+        message: 'A new technology been added!',
+        showProgress: 'bottom',
+        class: 'success',
+      });
+      window.location.reload();
+    } else if (response.status === 400 ) {
       $('body')
       .toast({
       class: 'error',
@@ -301,10 +302,10 @@ const addTech = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.status === 200) {
-      location.reload();
+    if (response.ok) {
+      window.location.reload();
     } else {
-      console.log("addtech");
+      console.log(response);
     }
   }
 };
@@ -316,7 +317,7 @@ const addAvatar = async () => {
   $('body')
   .toast({
     title: 'SUCCESS',
-    message: 'Technology has been updated!',
+    message: 'Avatar has been updated!',
     showProgress: 'bottom',
     class: 'success',
   });
@@ -327,7 +328,7 @@ const addAvatar = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.status === 200) {
+    if (response.ok) {
       location.reload();
     } else {
       $('body')

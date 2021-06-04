@@ -1,5 +1,6 @@
 //Imports............................................
 const router = require('express').Router();
+// const { Sequelize } = require('sequelize/types');
 const { User, Profile, UserTechnology, Technology } = require('../../models');
 
 //HomeRoutes........................................
@@ -18,6 +19,7 @@ router.post('/', async (req, res) => {
       github: req.body.github,
       linkedin: req.body.linkedin,
       experience: req.body.experience,
+      avatar: "Aang"
     });
     await Profile.create({
       userid: dbUserData.id,
@@ -30,15 +32,18 @@ router.post('/', async (req, res) => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
       req.session.loggedIn = true;
-      req.session.experience = dbUserData.experience;
       req.session.firstlog = true;
       res.status(200).json(dbUserData);
+      req.session.star = false;
     });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
   }
 });
+
+
+
 
 //POST//http://localhost:3001/api/users/login
 router.post('/login', async (req, res) => {
@@ -52,7 +57,7 @@ router.post('/login', async (req, res) => {
       res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
       return;
     }
-    const validPassword = await dbUserData.checkPassword(req.body.password);
+    const validPassword = dbUserData.checkPassword(req.body.password);
     if (!validPassword) {
       res.status(400).json({ message: 'Incorrect email or password. Please try again!' });
       return;
@@ -63,6 +68,7 @@ router.post('/login', async (req, res) => {
       req.session.username = dbUserData.username;
       res.status(200).json({ user: dbUserData, message: 'You are now logged in!' });
       req.session.experience = dbUserData.experience;
+      req.session.star = false;
     });
   } catch (err) {
     console.log(err);
@@ -330,10 +336,10 @@ router.post('/tech', async (req, res) => {
         res.status(400).json({ message: 'Tech already exists' });
         return;
       } else if (!techData) {
-        res.status(200);
         Technology.create({
           techname: req.body.tech
         });
+        res.status(200).json(techData);
       }
     })
   } catch (err) {
@@ -401,37 +407,23 @@ router.put('/avatar', async (req, res) => {
     });
 });
 
-
-//POST//http://localhost:3001/api/users/
-router.post('/', async (req, res) => {
+//PUT//http://localhost:3001/api/users/star-user
+router.put('/star-user', async (req, res) => {
   try {
-    const dbUserData = await User.create({
-      username: req.body.username,
-      email: req.body.email,
-      password: req.body.password,
-      firstname: req.body.firstname,
-      lastname: req.body.lastname,
-      city: req.body.city,
-      country: req.body.country,
-      github: req.body.github,
-      linkedin: req.body.linkedin,
-      experience: req.body.experience,
-      avatar: "Aang"
-    });
-    await Profile.create({
-      userid: dbUserData.id,
-      aboutme: null,
-      portfolio: null,
-      mainproject: null,
-    });
-
-    req.session.save(() => {
-      req.session.user_id = dbUserData.id;
-      req.session.username = dbUserData.username;
-      req.session.loggedIn = true;
-      req.seesion.avatar = dbUserData.avatar;
-      res.status(200).json(dbUserData);
-    });
+    console.log(req.session.star)
+    if (req.session.star === false) {
+      User.increment({stars: 1}, { where: { id: req.body.userid } })
+      .then(dbUserData => { 
+        console.log(2)
+        res.status(200).json(dbUserData);
+      })
+  
+      req.session.save(() => {
+        req.session.star = true;
+      });
+    } else {
+      res.status(429).end();
+    }
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
