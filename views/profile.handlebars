@@ -7,7 +7,7 @@
         <div class="user-background">
             <img class="ui centered medium circular image" src="/avatars/{{user.avatar}}.png">
             <h2 class="fullname">{{user.firstname}} {{user.lastname}}<div class="ui label userbadge text white">{{user.experience}}</div></h2>
-            <small class="location">{{user.city}} / {{user.country}}</small>
+            <small class="location" id="divider">{{user.city}} / {{user.country}}</small>
         </div>
     </div>
     <div class="three ui buttons">
@@ -29,7 +29,7 @@
     <div id="about-me-div">
         <div class="ui vertical stripe segment">
             <div class="ui text container">
-                <h4 class="ui horizontal header divider"><p>About me</p></h4>
+                <h4 class="ui horizontal header divider" id="divider"><p>About me</p></h4>
                 <p>{{userprofile.aboutme}}</p>
             </div>
         </div>
@@ -53,7 +53,8 @@
     </div>
     {{!--  --}}
     <div class="ui modal">
-        <i class="close icon"></i>
+        <a href="/profile" class="close icon"><i class="close icon" ></i></a>
+        
         <div class="header">
             <i class="user icon"></i>Edit Your Profile
         </div>
