@@ -334,7 +334,7 @@ const addAvatar = async () => {
       $('body')
       .toast({
       class: 'error',
-      message: `Select an avatar !  !`
+      message: `Select an avatar !`
     });
     }
   }

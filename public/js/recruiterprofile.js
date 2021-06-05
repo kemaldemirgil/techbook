@@ -14,8 +14,8 @@ const firstNameUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -38,8 +38,8 @@ const lastNameUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -63,8 +63,8 @@ const cityUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -88,8 +88,8 @@ const countryUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -113,8 +113,8 @@ const emailUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -138,8 +138,8 @@ const linkedinUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -163,8 +163,8 @@ const aboutmeUpdate = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.statusText === 200) {
-      document.location.replace('/profile');
+    if (response.ok) {
+      window.location.reload();
     } else {
       console.log(response);
     }
@@ -189,13 +189,13 @@ const addAvatar = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.status === 200) {
+    if (response.ok) {
       location.reload();
     } else {
       $('body')
       .toast({
       class: 'error',
-      message: `Select an avatar !  !`
+      message: `Select an avatar !`
     });
     }
   }
