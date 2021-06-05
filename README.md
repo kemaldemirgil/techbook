@@ -64,6 +64,12 @@ Top Stars
 :-------------------------: 
 ![](/assets/topstars.PNG)
 
+
+Each star +1 Cabbage!
+:-------------------------: 
+![](/assets/cabbage.PNG)
+
+
 ## 🌐Techbook Organization
 The motivation for our Techbook application was to allow new developers to meet, see each other’s work on Github and view profiles. One of the key elements of a new developers journey whether through a bootcamp or being self-taught, is to create a profile.\
 This profile helps potential Recruiters view more information about candidates and whether they would make a good fit with their team. Our team decided on this application based on the fact we have a common interest of finding employment after the course has completed. When a group has a common interest, they tend to come together easier and have a vested interested in a desired outcome.
