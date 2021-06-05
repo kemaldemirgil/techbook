@@ -60,6 +60,15 @@
                     <button class="fluid ui button" id="country-button"><i class="edit icon"></i>Update Country</button>
                 </div>
                 </div>
+                    <div class="ui form">
+                <div class="field fluid">
+                    <label>About me</label>
+                    <textarea id="about-me" rows="2" placeholder="{{userprofile.aboutme}}"></textarea>
+                    <div class="ui fluid teal ok fluid button" id="about-me-button">
+                        <i class="edit icon"></i>Add About me
+                    </div>
+                    </div>
+                </div>
                     <div class="three fields">
                 <div class="field">
                     <label>Email Address</label>
@@ -87,6 +96,7 @@
                             <div class="item" data-value="Ozai"><img class="ui mini avatar image" src="/avatars/Ozai.png">Ozai</div>
                             <div class="item" data-value="Sokka"><img class="ui mini avatar image" src="/avatars/Sokka.png">Sokka</div>
                             <div class="item" data-value="Zuko"><img class="ui mini avatar image" src="/avatars/Zuko.png">Zuko</div>
+                            <div class="item" data-value="Cabbage-Man"><img class="ui mini avatar image" src="/avatars/Cabbage-Man.png">Cabbage Man</div>
                         </div>
                         </div>
                         <div class="ui ok fluid button" id="avatar-button">
@@ -95,14 +105,9 @@
                 </div>
             </div>
         </div>
-        <div class="ui form">
-            <div class="field fluid">
-                <label>About me</label>
-                <textarea id="about-me" rows="2" placeholder="{{userprofile.aboutme}}"></textarea>
-                <div class="ui fluid teal ok fluid button" id="about-me-button">
-                    <i class="edit icon"></i>Add About me
-                </div>
-            </div>
+        <h4 class="ui horizontal header divider"></h4>
+        <div class="ui fluid red ok fluid button" id="delete-button">
+            <i class="trash icon"></i>Delete Account
         </div>
     </div>
   </div>

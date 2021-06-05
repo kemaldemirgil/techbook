@@ -201,6 +201,43 @@ const addAvatar = async () => {
   }
 };
 
+const deleteAccount = async () => {
+  const response = await fetch('/api/users/delete', {
+    method: 'DELETE',
+    headers: { 'Content-Type': 'application/json' }
+  });
+  if (response.ok) {
+    location.reload();
+  } else {
+    alert(response.statusText);
+  }
+}
+
+document.getElementById("delete-button").addEventListener("click", () => {
+  $('body')
+  .toast({
+    message: 'Are you sure you want to delete your account? All your stars will be deleted as well.',
+    displayTime: 0,
+    class: 'black',
+    classActions: 'left vertical attached',
+    actions:	[{
+      text: 'Delete Account',
+      class: 'red',
+      click: function() {
+        $('body').toast({message:'Account Deleted'});
+        deleteAccount();
+      }
+    },{
+      text: 'Nevermind',
+      class: 'green',
+      click: function() {
+        $('body').toast({message:'Hooray!'});
+      }
+    }]
+  });
+})
+
+
 $(".edit-profile-button").click(function() {
   $('.ui.modal').modal({
     onHide: function(){

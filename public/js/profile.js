@@ -347,11 +347,35 @@ const deleteAccount = async () => {
     headers: { 'Content-Type': 'application/json' }
   });
   if (response.ok) {
-    console.log(response);
+    location.reload();
   } else {
     alert(response.statusText);
   }
 }
+
+document.getElementById("delete-button").addEventListener("click", () => {
+  $('body')
+  .toast({
+    message: 'Are you sure you want to delete your account? All your stars will be deleted as well.',
+    displayTime: 0,
+    class: 'black',
+    classActions: 'left vertical attached',
+    actions:	[{
+      text: 'Delete Account',
+      class: 'red',
+      click: function() {
+        $('body').toast({message:'Account Deleted'});
+        deleteAccount();
+      }
+    },{
+      text: 'Nevermind',
+      class: 'green',
+      click: function() {
+        $('body').toast({message:'Hooray!'});
+      }
+    }]
+  });
+})
 
 
 var getUserRepos = async function (user) {
@@ -447,31 +471,6 @@ $(".edit-profile-button").click(function() {
 $('.dropdown')
   .dropdown()
 ;
-
-document.getElementById("delete-button").addEventListener("click", () => {
-  $('body')
-  .toast({
-    message: 'Are you sure you want to delete your account? All your stars will be deleted as well.',
-    displayTime: 0,
-    class: 'black',
-    classActions: 'left vertical attached',
-    actions:	[{
-      text: 'Delete Account',
-      class: 'red',
-      click: function() {
-        $('body').toast({message:'Account Deleted'});
-        deleteAccount();
-      }
-    },{
-      text: 'Nevermind',
-      class: 'green',
-      click: function() {
-        $('body').toast({message:'Hooray!'});
-      }
-    }]
-  });
-
-})
 
 
 if ($("#aboutme-toast").text() === "1") {
