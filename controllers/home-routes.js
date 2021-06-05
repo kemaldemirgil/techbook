@@ -167,7 +167,7 @@ router.get("/profile", async (req, res) => {
   }
 });
 
-//GET//http://localhost:3001/
+//GET//http://localhost:3001/profile/:id
 router.get("/profile/:id", async (req, res) => {
   const userData = await User.findOne({
     where: {
@@ -240,9 +240,9 @@ router.get("/profile/:id", async (req, res) => {
   const userprofile = profileData.get({ plain: true });
   const usertechname = techData.map(post => post.get({ plain: true }));
   const user = userData.get({ plain: true });
-  console.log(userprofile);
-  console.log(usertechname);
-  console.log(user);
+  // console.log(userprofile);
+  // console.log(usertechname);
+  // console.log(user);
   res.status(200);
   res.render('userprofile', {user, usertechname, userprofile, title: 'user-profile-page', layout: 'main' });
 });
@@ -263,7 +263,7 @@ router.get("/topstars", async (req, res) => {
       ],
     });
     const user = dbUserData.map(user => user.get({ plain: true }));
-    console.log(user);
+    // console.log(user);
     res.status(200);
     res.render('topstars', { user, loggedIn: req.session.loggedIn, title: 'topstar-page', layout: 'main' });
   } catch (err) {
@@ -293,7 +293,7 @@ router.get("/search", async (req, res) => {
     });
     const user = dbUserData.get({ plain: true })
     const technames = Technames.map(post => post.get({ plain: true }));
-    console.log(user);
+    // console.log(user);
     res.status(200);
     res.render('search', { user, technames ,loggedIn: req.session.loggedIn, title: 'search-page', layout: 'main' });
   } catch (err) {

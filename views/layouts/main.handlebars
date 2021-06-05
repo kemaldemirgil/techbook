@@ -1,39 +1,67 @@
+
+{{!-- This page applies on all the other pages except the signup/login pages --}}
+
+
+
+
+{{!- start --}}
+
+
+
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Techbook</title>
+
+  {{!--  jquery cdn--}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" 
     integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" 
     crossorigin="anonymous" 
-    referrerpolicy="no-referrer"></script>
+    referrerpolicy="no-referrer">
+  </script>
+
+  {{!-- font awesome cdn--}}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" 
     integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" 
     crossorigin="anonymous"/>
+    
+  {{!-- favicons --}}
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+
+    
+  {{!-- use semantic UI --}}
   <link rel="stylesheet" type="text/css" href="/semantic/dist/semantic.min.css">
-    <!-- Moment.js -->
+
+  {{!-- scripts --}}
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
   <script src="/semantic/dist/semantic.min.js"></script>
+
+  {{!-- css --}}
   <link rel="stylesheet" type="text/css" href="/css/home.css">
+
+
 </head>
+
+
 <body>
-<div id="nav" class="ui stackable menu">
-  <div class="item">
-    <img src="/images/techbook-icon2.PNG">
+  <div id="nav" class="ui stackable menu">
+    <div class="item">
+      <img src="/images/techbook-icon2.PNG">
+    </div>
+    <a class="item" href="/home"><i class="home icon"></i>Home</a>
+    <a class="item" href="/profile"><i class="user icon"></i>Profile</a>
+    <a class="item" href="/search"><i class="search icon"></i>Search</a>
+    <a class="item" href="/topstars"><i class="star icon"></i>Top Stars</a>
+    <a class="item right logout-button"><i class="sign out alternate icon"></i>Logout</a>
+    <button class="ui icon button toggle" onclick="theme()"><i class="moon icon"></i></button>
   </div>
-  <a class="item" href="/home"><i class="home icon"></i>Home</a>
-  <a class="item" href="/profile"><i class="user icon"></i>Profile</a>
-  <a class="item" href="/search"><i class="search icon"></i>Search</a>
-  <a class="item" href="/topstars"><i class="star icon"></i>Top Stars</a>
-  <a class="item right logout-button"><i class="sign out alternate icon"></i>Logout</a>
-  <button class="ui icon button toggle" onclick="theme()"><i class="moon icon"></i></button>
-</div>
   {{{body}}}
   <div id="footer">
     <div class="ui inverted vertical footer segment">
@@ -72,3 +100,6 @@
   <script src="/js/logout.js"></script>
 </body>
 </html>
+
+
+{{!-- end --}}

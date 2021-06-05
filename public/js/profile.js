@@ -1,7 +1,15 @@
+//This script applies on the developer profile.handlebars
+
+
+
+//...............................save........................................
 var nameInputEl = document.querySelector('#username');
 var usersContainerEl = document.querySelector('.users-container');
 let myRepos = document.getElementById("myRepos");
 let userGithub = document.getElementById("usergithub");
+
+
+//...............................run........................................
 
 const firstNameUpdate = async () => {
   const firstname = document.querySelector('#first-name-input').value;
@@ -27,6 +35,11 @@ const firstNameUpdate = async () => {
   }
 }
 
+
+
+
+//...............................run........................................
+
 const lastNameUpdate = async () => {
   const lastname = document.querySelector('#last-name-input').value;
   $('body')
@@ -50,6 +63,10 @@ const lastNameUpdate = async () => {
     }
   }
 }
+
+
+
+//...............................run........................................
 
 
 const cityUpdate = async () => {
@@ -77,6 +94,10 @@ const cityUpdate = async () => {
 }
 
 
+
+//...............................run........................................
+
+
 const countryUpdate = async () => {
   const country = document.querySelector('#country-input').value;
   $('body')
@@ -100,6 +121,10 @@ const countryUpdate = async () => {
     }
   }
 }
+
+
+
+//...............................run........................................
 
 
 const emailUpdate = async () => {
@@ -127,6 +152,10 @@ const emailUpdate = async () => {
 }
 
 
+
+//...............................run........................................
+
+
 const linkedinUpdate = async () => {
   const linkedin = document.querySelector('#linkedin-input').value;
   $('body')
@@ -150,6 +179,10 @@ const linkedinUpdate = async () => {
     }
   }
 }
+
+
+
+//...............................run........................................
 
 
 const githubUpdate = async () => {
@@ -176,6 +209,9 @@ const githubUpdate = async () => {
   }
 }
 
+
+
+//...............................run........................................
 
 
 const mainProject = async () => {
@@ -205,6 +241,11 @@ const mainProject = async () => {
 };
 
 
+
+//...............................run........................................
+
+
+
 const portfolioUpdate = async () => {
   const portfolio = document.querySelector('#portfolio-input').value;
   $('body')
@@ -230,6 +271,11 @@ const portfolioUpdate = async () => {
   }
 };
 
+
+
+//...............................run........................................
+
+
 const aboutmeUpdate = async () => {
   const aboutme = document.querySelector('#about-me').value;
   $('body')
@@ -254,6 +300,11 @@ const aboutmeUpdate = async () => {
     }
   }
 };
+
+
+
+//...............................run........................................
+
 
 
 const insertTech = async () => {
@@ -285,6 +336,11 @@ const insertTech = async () => {
 };
 
 
+
+//...............................run........................................
+
+
+
 const addTech = async () => {
   const tech = document.querySelector('#techs').value;
   $('body')
@@ -309,6 +365,12 @@ const addTech = async () => {
     }
   }
 };
+
+
+
+
+//...............................run........................................
+
 
 const addAvatar = async () => {
 
@@ -341,6 +403,11 @@ const addAvatar = async () => {
 };
 
 
+
+//...............................delete........................................
+
+
+
 const deleteAccount = async () => {
   const response = await fetch('/api/users/delete', {
     method: 'DELETE',
@@ -353,29 +420,11 @@ const deleteAccount = async () => {
   }
 }
 
-document.getElementById("delete-button").addEventListener("click", () => {
-  $('body')
-  .toast({
-    message: 'Are you sure you want to delete your account? All your stars will be deleted as well.',
-    displayTime: 0,
-    class: 'black',
-    classActions: 'left vertical attached',
-    actions:	[{
-      text: 'Delete Account',
-      class: 'red',
-      click: function() {
-        $('body').toast({message:'Account Deleted'});
-        deleteAccount();
-      }
-    },{
-      text: 'Nevermind',
-      class: 'green',
-      click: function() {
-        $('body').toast({message:'Hooray!'});
-      }
-    }]
-  });
-})
+
+
+
+//...............................get.github.repos.w/h.username........................................
+
 
 
 var getUserRepos = async function (user) {
@@ -403,6 +452,11 @@ var getUserRepos = async function (user) {
     });
   });
 };
+
+
+
+//...............................display.github.repos........................................
+
 
 var displayRepos = function (repos) {
   if (repos.length === 0) {
@@ -451,6 +505,10 @@ var displayRepos = function (repos) {
 
 
 
+
+//...............................edit.profile.modal........................................
+
+
 $(".edit-profile-button").click(function() {
   $('.ui.modal').modal({
     onHide: function(){
@@ -473,6 +531,10 @@ $('.dropdown')
 ;
 
 
+
+//...............................Toasts........................................
+
+
 if ($("#aboutme-toast").text() === "1") {
   $('body')
     .toast({
@@ -484,6 +546,9 @@ if ($("#aboutme-toast").text() === "1") {
   ;
 
 }
+
+//........
+
 if ($("#portfolio-toast").text() === "1") {
   $('body')
     .toast({
@@ -495,6 +560,9 @@ if ($("#portfolio-toast").text() === "1") {
   ;
 
 }
+
+//........
+
 if ($("#mainproject-toast").text() === "1") {
   $('body')
     .toast({
@@ -506,8 +574,45 @@ if ($("#mainproject-toast").text() === "1") {
   ;
 
 }
-// tells page state is true
-ifdark=true
+
+
+
+//...............................delete.toast........................................
+
+
+document.getElementById("delete-button").addEventListener("click", () => {
+  $('body')
+  .toast({
+    message: 'Are you sure you want to delete your account? All your stars will be deleted as well.',
+    displayTime: 0,
+    class: 'black',
+    classActions: 'left vertical attached',
+    actions:	[{
+      text: 'Delete Account',
+      class: 'red',
+      click: function() {
+        $('body').toast({message:'Account Deleted'});
+        deleteAccount();
+      }
+    },{
+      text: 'Nevermind',
+      class: 'green',
+      click: function() {
+        $('body').toast({message:'Hooray!'});
+      }
+    }]
+  });
+})
+
+
+
+
+
+//...............................night.mode........................................
+
+
+ifdark = true;
+
 const theme = () => {
   var userbackground = document.querySelector(".user-background");
   userbackground.classList.toggle("background");
@@ -527,6 +632,10 @@ const theme = () => {
 };
 
 
+
+
+//...............................run........................................
+
 $( document ).ready( () => {
   var username = nameInputEl.innerHTML.trim();
   if (username) {
@@ -536,10 +645,15 @@ $( document ).ready( () => {
     $('body')
     .toast({
     class: 'error',
-    message: `No github under this name !`
+    message: `No github username under this account !`
   });
   }
 });
+
+
+
+
+//...............................badge.color........................................
 
 
 $( document ).ready(() => {
@@ -560,6 +674,13 @@ $( document ).ready(() => {
 });
 
 
+
+
+
+//...............................start........................................
+
+
+
 document.querySelector('#avatar-button').addEventListener('click', addAvatar);
 document.querySelector('#add-tech-button').addEventListener('click', addTech);
 document.querySelector('#insert-tech-button').addEventListener('click', insertTech);
@@ -574,3 +695,8 @@ document.querySelector('#email-button').addEventListener('click', emailUpdate);
 document.querySelector('#linkedin-button').addEventListener('click', linkedinUpdate);
 document.querySelector('#github-button').addEventListener('click', githubUpdate);
 
+
+
+
+
+//..........................................end........................................................

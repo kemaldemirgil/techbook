@@ -1,3 +1,16 @@
+
+
+//This script only applies on the search.handlebars page
+
+
+
+
+
+//..........................................search.form.........................................................
+
+
+
+
 const getUsers = async () => {
   const locationCity = document.getElementById("location-city").value;
   const locationCountry = document.getElementById("location-country").value;
@@ -54,7 +67,11 @@ const getUsers = async () => {
 
   }
 }
-//.........................................................IN-PROGRESS................................................................
+
+
+
+//.........................................................night.mode................................................................
+
 const theme = () => {
   var element = document.body;
   element.classList.toggle("dark-mode");
@@ -63,7 +80,18 @@ const theme = () => {
 }
 
 
+//..........................................dropdown.........................................................
+
 $('.dropdown').dropdown();
 
-// document.getElementById("searched-users").style.display = "none"
+
+
+//..........................................start.........................................................
+
+
 document.getElementById("search-user-button").addEventListener("click", getUsers);
+
+
+
+
+//..........................................end........................................................

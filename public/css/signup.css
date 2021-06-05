@@ -1,5 +1,11 @@
+/* signup.css will be applied on every signup.handlebars templates which would make it applied only on the signup/login pages */
+
+/*...............................Import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Kanit&family=Ubuntu+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+
+/*...............................variables */
 :root {
   --kalam: 'Kalam', cursive;
   --kanit: 'Kanit', sans-serif;
@@ -7,6 +13,9 @@
   --rubik: 'Rubik', sans-serif;
 }
 
+
+
+/*.........global......................rubik default font */
 * {
   margin: 0;
   padding: 0;
@@ -160,7 +169,10 @@ section .contentBx .formBx .inputBx p a:hover {
   text-decoration: underline;
 }
 
-/* Signup Modal*/
+
+
+/* ......................Signup.Modal......................... */
+
 .modal {
   display: none;
   position: fixed;
@@ -218,6 +230,9 @@ section .contentBx .formBx .inputBx p a:hover {
   margin-bottom: 30px;
 }
 
+
+/* ......................Background.Images......................... */
+
 @keyframes connect {
   0%   {background: url(/images/signup.jpg)no-repeat center center/cover;}
   25%  {background: url(/images/signup1.webp)no-repeat center center/cover;}
@@ -228,7 +243,8 @@ section .contentBx .formBx .inputBx p a:hover {
 
 
 
-/* Media Queries */
+/* ......mobil..............Media.Queris......................... */
+
 @media (max-width: 768px) {
 
   section .imgBx {

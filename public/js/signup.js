@@ -1,3 +1,13 @@
+
+//THis script is only applied on the signup.handlebars page
+
+
+
+
+
+//..........................................dropdown.........................................................
+
+
 const signupFormHandler = async (event) => {
     event.preventDefault();
     const username = document.querySelector('#username-signup').value.trim();
@@ -58,7 +68,11 @@ document.getElementById('create-developer').addEventListener('click', signupForm
 document.getElementById('create-recruiter').addEventListener('click', signupFormHandler);
 
 
-////////////////////////////MODAL////////////////////////////
+
+
+//..........................................signup.developer.modal.........................................................
+
+
 
 var modal = document.getElementById("developer-modal");
 var btn = document.getElementById("modal-button");
@@ -89,7 +103,15 @@ window.onclick = function(event) {
     }
 }
 
-////////////////////////////BACKGROUND-BLUR////////////////////////////
+
+
+
+
+//..........................................background.blur.listener.........................................................
+
+
+
+
 const password = document.getElementById('password-signup')
 const background = document.querySelector('.imgBx')
 
@@ -103,3 +125,9 @@ password.addEventListener('input', (e) => {
 $( document ).ready( () => {
   background.style.filter = `blur(5px)`
 });
+
+
+
+
+//..........................................end........................................................
+

@@ -1,3 +1,10 @@
+
+// This script is only applied on the 
+
+
+
+//..........................................end........................................................
+
 var nameInputEl = document.querySelector('#username');
 var usersContainerEl = document.querySelector('.users-container');
 
@@ -12,8 +19,11 @@ $( document ).ready( () => {
     }
 });
 
-// tells page state is true
-ifdark=true
+
+//..........................................night.mode........................................................
+
+ifdark = true
+
 const theme = () => {
   var userbackground = document.querySelector(".user-background");
   userbackground.classList.toggle("background");
@@ -31,7 +41,12 @@ const theme = () => {
     ifdark=!ifdark
   }
 };
-  
+
+
+
+
+//..........................................get.github.repos.w/.username........................................................
+
 var getUserRepos = async function (user) {
   var apiUrl = 'https://api.github.com/users/' + user + '/repos';
 
@@ -50,6 +65,15 @@ var getUserRepos = async function (user) {
     alert(error);
   });
 };
+
+
+
+
+
+
+//..........................................display.github.repos........................................................
+
+
 
 var displayRepos = function (repos) {
   if (repos.length === 0) {
@@ -93,12 +117,29 @@ var displayRepos = function (repos) {
 };
 
 
+
+
+
+
+//............star.hunter.badge..........................
+
+
+
+
 $( document ).ready(() => {
   let badge = $(".userbadge");
   if($(badge).text() === "Star Hunter") {
     window.location.replace('/recruiter')
   }
 });
+
+
+
+
+
+//...............................................badges...................................................
+
+
 
 
 $( document ).ready(() => {
@@ -146,6 +187,15 @@ const addStar = async () => {
 
 
 
+
+
+//...............................................run...................................................
+
+
+
+
+
+
 const firstNameUpdate = async () => {
   const firstname = document.querySelector('#first-name-input').value;
   $('body')
@@ -174,5 +224,22 @@ const firstNameUpdate = async () => {
 
 
 
+
+
+//...............................................start..................................................
+
+
+
+
+
 const stars = document.getElementById("star-user")
 stars.addEventListener("click", addStar);
+
+
+
+
+
+
+
+
+//...............................................end..................................................

@@ -1,3 +1,7 @@
+//This script is only applied on the home.handlebars page
+
+
+//............................night.mode...............................
 const theme = () => {
     var element = document.body;
     element.classList.toggle("dark-mode");
@@ -5,6 +9,9 @@ const theme = () => {
     nav.classList.toggle("inverted");
 }
 
+
+
+//............................auto.text...............................
 const textEl = document.getElementById('text1')
 const text = "'Easy to Connect'                                            ";
 let idx = 1
@@ -17,7 +24,6 @@ function writeText() {
     }
     setTimeout(writeText, speed)
 }
-writeText()
 
 const textEl2 = document.getElementById('text2')
 const text2 = "'One stop for all information, find everything you need.'                                                                                        ";
@@ -31,4 +37,12 @@ function writeText2() {
     }
     setTimeout(writeText2, speed2)
 }
+
 writeText2()
+writeText()
+
+
+
+
+
+//..........................................end........................................................

@@ -357,7 +357,7 @@ router.put('/mytech', async (req, res) => {
       },
     });
     const techData = tech.get({ plain: true});
-    console.log(techData);
+    // console.log(techData);
     await UserTechnology.findOne({
       where: {
         userid: req.session.user_id,
@@ -383,7 +383,7 @@ router.put('/mytech', async (req, res) => {
 });
 
 
-//PUT//http://localhost:3001/api/users/mytech
+//PUT//http://localhost:3001/api/users/avatar
 router.put('/avatar', async (req, res) => {
     User.update ({
       avatar: req.body.avatar,
@@ -447,7 +447,7 @@ router.delete('/delete', async (req, res) => {
     req.session.destroy(() => {
       res.status(204).end();
     });
-    console.log(deletedUser);
+    // console.log(deletedUser);
     res.render('signup', { title: 'signup-page', layout: 'signup' });
   })
   .catch(err => {

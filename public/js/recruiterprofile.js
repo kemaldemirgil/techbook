@@ -1,3 +1,10 @@
+//This script applies on the recruiter recruiterprofile.handlebars
+
+
+
+
+//...............................run........................................
+
 const firstNameUpdate = async () => {
   const firstname = document.querySelector('#first-name-input').value;
   $('body')
@@ -22,6 +29,9 @@ const firstNameUpdate = async () => {
   }
 }
 
+
+//...............................run........................................
+
 const lastNameUpdate = async () => {
   const lastname = document.querySelector('#last-name-input').value;
   $('body')
@@ -45,6 +55,12 @@ const lastNameUpdate = async () => {
     }
   }
 }
+
+
+
+
+
+//...............................run........................................
 
 
 const cityUpdate = async () => {
@@ -72,6 +88,13 @@ const cityUpdate = async () => {
 }
 
 
+
+
+
+//...............................run........................................
+
+
+
 const countryUpdate = async () => {
   const country = document.querySelector('#country-input').value;
   $('body')
@@ -95,6 +118,11 @@ const countryUpdate = async () => {
     }
   }
 }
+
+
+
+//...............................run........................................
+
 
 
 const emailUpdate = async () => {
@@ -122,6 +150,11 @@ const emailUpdate = async () => {
 }
 
 
+
+//...............................run........................................
+
+
+
 const linkedinUpdate = async () => {
   const linkedin = document.querySelector('#linkedin-input').value;
   $('body')
@@ -145,6 +178,12 @@ const linkedinUpdate = async () => {
     }
   }
 }
+
+
+
+//...............................run........................................
+
+
 
 const aboutmeUpdate = async () => {
   const aboutme = document.querySelector('#about-me').value;
@@ -170,6 +209,12 @@ const aboutmeUpdate = async () => {
     }
   }
 };
+
+
+
+//...............................run........................................
+
+
 
 const addAvatar = async () => {
 
@@ -201,6 +246,12 @@ const addAvatar = async () => {
   }
 };
 
+
+
+//...............................delete........................................
+
+
+
 const deleteAccount = async () => {
   const response = await fetch('/api/users/delete', {
     method: 'DELETE',
@@ -212,6 +263,61 @@ const deleteAccount = async () => {
     alert(response.statusText);
   }
 }
+
+
+
+
+
+//...............................edit.profile.modal........................................
+
+
+
+
+$(".edit-profile-button").click(function() {
+  $('.ui.modal').modal({
+    onHide: function(){
+      console.log('hidden');
+
+  },
+  onShow: function(){
+      console.log('shown');
+  },
+  onApprove: function() {
+      console.log('Approve');
+      return validateModal()
+  }
+  })
+  .modal('show');
+});
+
+
+
+$('.dropdown')
+  .dropdown()
+;
+
+
+
+
+//...............................a.toast........................................
+
+
+
+if ($("#aboutme-toast").text() === "1") {
+  $('body')
+    .toast({
+      class: 'warning',
+      displayTime: 0,
+      closeIcon: true,
+      message: 'Please fill in your about me...'
+    })
+  ;
+
+}
+
+//...............................delete.toast........................................
+
+
 
 document.getElementById("delete-button").addEventListener("click", () => {
   $('body')
@@ -237,43 +343,12 @@ document.getElementById("delete-button").addEventListener("click", () => {
   });
 })
 
-
-$(".edit-profile-button").click(function() {
-  $('.ui.modal').modal({
-    onHide: function(){
-      console.log('hidden');
-
-  },
-  onShow: function(){
-      console.log('shown');
-  },
-  onApprove: function() {
-      console.log('Approve');
-      return validateModal()
-  }
-  })
-  .modal('show');
-});
-
-$('.dropdown')
-  .dropdown()
-;
-
-if ($("#aboutme-toast").text() === "1") {
-  $('body')
-    .toast({
-      class: 'warning',
-      displayTime: 0,
-      closeIcon: true,
-      message: 'Please fill in your about me...'
-    })
-  ;
-
-}
+//...............................night.mode........................................
 
 
-// tells page state is true
-ifdark=true
+ifdark = true;
+
+
 const theme = () => {
   var userbackground = document.querySelector(".user-background");
   userbackground.classList.toggle("background");
@@ -291,6 +366,12 @@ const theme = () => {
     ifdark=!ifdark
   }
 };
+
+
+
+
+//...............................badge.color........................................
+
 
 $( document ).ready(() => {
   let badge = $(".userbadge");
@@ -310,6 +391,14 @@ $( document ).ready(() => {
 });
 
 
+
+
+
+
+//...............................start........................................
+
+
+
 document.querySelector('#avatar-button').addEventListener('click', addAvatar);
 document.querySelector('#about-me-button').addEventListener('click', aboutmeUpdate);
 document.querySelector('#first-name-button').addEventListener('click', firstNameUpdate);
@@ -319,3 +408,8 @@ document.querySelector('#country-button').addEventListener('click', countryUpdat
 document.querySelector('#email-button').addEventListener('click', emailUpdate);
 document.querySelector('#linkedin-button').addEventListener('click', linkedinUpdate);
 
+
+
+
+
+//..........................................end........................................................

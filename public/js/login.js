@@ -1,3 +1,8 @@
+//This script is only applied on the login.handlebars page
+
+
+//............................run...............................
+
 const loginFormHandler = async (event) => {
     event.preventDefault();
     const email = document.querySelector('#email-login').value.trim();
@@ -20,7 +25,9 @@ const loginFormHandler = async (event) => {
 
 document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
 
-////////////////////////////BACKGROUND-BLUR////////////////////////////
+
+
+//............................background.blur...............................
 const password = document.getElementById('password-login')
 const background = document.querySelector('.imgBx')
 
@@ -35,7 +42,7 @@ $( document ).ready( () => {
   background.style.filter = `blur(5px)`
 });
 
-////////////////////////////MODAL////////////////////////////
+//............................forgot.password.modal...............................
 
 var modal = document.getElementById("password-modal");
 var btn = document.querySelector(".forgotpassword");
@@ -52,3 +59,9 @@ window.onclick = function(event) {
     modal.style.display = "none";
     }
 }
+
+
+
+
+
+//..........................................end........................................................

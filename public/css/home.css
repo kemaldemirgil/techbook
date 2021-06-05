@@ -1,5 +1,10 @@
+/* home.css will be applied on every main.handlebars templates which would make it applied on all pages excpet the signup/login pages */
+
+/*...............................Import google fonts */
 @import url('https://fonts.googleapis.com/css2?family=Kalam&family=Kanit&family=Ubuntu+Mono&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+/*...............................variables */
 :root {
   --kalam: 'Kalam', arial;
   --kanit: 'Kanit', sans-serif;
@@ -9,11 +14,13 @@
   --rubik: 'Rubik', sans-serif;
 }
 
+
+/*.........global......................rubik default font */
 * {
   font-family: var(--rubik);
 }
 
-
+/* ............ */
 .dark-mode {
   background-color: #151515;
   color: #fdeaaf;
@@ -23,6 +30,8 @@
   background-color: rgb(38, 38, 38);
 }
 
+
+/* ............ */
 .topstars {
   text-align: center;
   font-size: 8rem;
@@ -32,6 +41,14 @@
   font-family: var(--rubik);
 }
 
+
+#star-user:hover {
+  color: #ffcc32;
+  cursor: pointer;
+}
+
+
+/* ............ */
 .reference-avatar {
   display: flex;
   justify-content: right;
@@ -40,6 +57,8 @@
   font-size: 12px;
 }
 
+
+/* ............ */
 
 .header-h1-title {
   font-family: var(--audio);
@@ -68,13 +87,12 @@
   width: 80%;
 }
 
-.userbadge {
-  top: -40px;
-  right: 0px;
-  position: relative;
-  color: #fff;
+.reviewtext {
+  font-family: var(--kalam);
 }
 
+
+/* ............ */
 .edit-profile-button {
   margin: 30px 0;
 }
@@ -118,6 +136,16 @@
   display: none;
 }
 
+/* ............ */
+.userbadge {
+  top: -40px;
+  right: 0px;
+  position: relative;
+  color: #fff;
+}
+
+
+/* ............ */
 .footer-padding {
   padding: 20%;
 }
@@ -130,11 +158,4 @@
   padding: 15%;
 }
 
-.reviewtext {
-  font-family: var(--kalam);
-}
-
-#star-user:hover {
-  color: #ffcc32;
-  cursor: pointer;
-}
+/* ......end...... */

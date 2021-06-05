@@ -35,10 +35,10 @@
     "type": "git",
     "url": "git+https://github.com/kemaldemirgil/techbook.git"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Techbook Organization Members",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/kemaldemirgil/techbook/issues"
+    "url": "https://github.com/Techbook-Organization/techbook"
   },
-  "homepage": "https://github.com/kemaldemirgil/techbook#readme"
+  "homepage": "https://github.com/Techbook-Organization/techbook"
 }
