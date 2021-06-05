@@ -329,6 +329,23 @@ const userdata = [
   },
   {
     id: 20,
+    username: 'mr.cabbage',
+    email: 'cabbageman@gmail.com',
+    password: 'cabbage123',
+    firstname: 'Cabbage',
+    lastname: 'Man',
+    linkedin: 'cabbageman',
+    city: 'Ba Sing Se',
+    country: 'Earth Kingdom',
+    github: 'cabbageman',
+    experience: 'New Star',
+    usermainproject: 'https://github.com/cabbageman',
+    mainprojectname: 'My-Cabbages!',
+    avatar: 'Cabbage-Man',
+    stars: 3
+  },
+  {
+    id: 21,
     username: 'GeneCarter',
     email: 'GeneCarter34@gmail.com',
     password: 'Gene123',
