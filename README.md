@@ -14,7 +14,7 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://my-techbook.herokuapp.com)
 
-## 🌐What is Techbook?
+## ![](/public/images/favicon-32x32.png) What is Techbook?
 
 Techbook allows people from the *Tech industry* to connect with each other, gives **recruiters** the ability to connect and interact with people, enables **students** to improve their work. 
 
@@ -45,7 +45,7 @@ Developer Profile
 :-------------------------: 
 ![](/assets/user.PNG)
 
-## 📚About Techbook
+## ![](/public/images/favicon-32x32.png) About Techbook
 
 There are two profiles connected to this application, *LinkedIn* and there is a section to add a link to the users *portfolio*. This portfolio is shared with **Recruiters** and **users** alike. Users can generate ideas for their Portfolios by viewing different developers, which can generate new learning and ideas.\
 \
@@ -83,11 +83,12 @@ The direction of the project changed midway, as it was determined that the main 
 Another issue that arose was determining which css framework the group was going to use. Searching for a framework was difficult as we wanted one that was like bootstrap and didn’t have a huge learning curve for the group. The group ultimately decided on Fomantic as it had a vast library of easy to access syntax.
 One feature that the group would like to add in the future is a messenger service within the application. This would create an even more interactive user experience.
 
+
 ## ℹ️For More Information
 [UI Wireframe](https://github.com/Techbook-Organization/techbook/blob/main/assets/UI.png) \
 [Database Modal](https://github.com/Techbook-Organization/techbook/blob/main/assets/techbook_mvp.PNG) \
 [Development Roles](https://github.com/Techbook-Organization/techbook/blob/main/assets/techbook_team.PNG)
 
 ## ©️License:
-Copyright © Techbook Organization. All rights reserved.
+Copyright © ![](/public/images/favicon-16x16.png) Techbook Organization. All rights reserved.
 Licensed under the [MIT](https://github.com/Techbook-Organization/techbook/blob/main/LICENSE) license.
