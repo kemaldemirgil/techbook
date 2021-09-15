@@ -89,6 +89,9 @@ The direction of the project changed midway, as it was determined that the main 
 Another issue that arose was determining which css framework the group was going to use. Searching for a framework was difficult as we first started with `Tailwind CSS` then realized that we would be better off if we selected one that would use components. The group ultimately decided on `Fomantic UI` as it had a vast library of easy to access syntax.
 One feature that the group would like to add in the future is a messenger service within the application. This would create an even more interactive user experience.
 
+Responsive Design
+:-------------------------: 
+![](/assets/ss.png)
 
 ## ℹ️For More Information
 [UI Wireframe](https://github.com/Techbook-Organization/techbook/blob/main/assets/UI.png) \
